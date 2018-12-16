@@ -1,0 +1,12 @@
+East_European
+West_European
+Mediterranean
+Neo_African
+West_Asian
+South_Asian
+Northeast_Asian
+Southeast_Asian
+East_African
+Southwest_Asian
+Northwest_African
+Palaeo_African

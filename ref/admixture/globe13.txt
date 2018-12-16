@@ -1,0 +1,13 @@
+Siberian
+Amerindian
+West_African
+Palaeo_African
+Southwest_Asian
+East_Asian
+Mediterranean
+Australasian
+Arctic
+West_Asian
+North_European
+South_Asian
+East_African
