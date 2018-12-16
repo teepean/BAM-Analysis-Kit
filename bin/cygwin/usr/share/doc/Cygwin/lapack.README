@@ -1,0 +1,14 @@
+
+Binary archive includes a reference implementation blas library.
+
+The unusual ddl directory 
+  /usr/lib/lapack/cygblas-0.dll
+  /usr/lib/lapack/cyglapack-0.dll
+
+is to allow to create locally optimized lapack and blas libraries,
+ATLAS (http://math-atlas.sourceforge.net/).
+
+  /usr/bin/cygblas-0.dll
+  /usr/bin/cyglapack-0.dll
+and to have them in precedence on the PATH
+

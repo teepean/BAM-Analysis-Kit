@@ -1,0 +1,4 @@
+<map id="TestFactory" name="TestFactory">
+<area shape="rect" id="node2" href="$class_test_factory_registry.html" title="Registry for TestFactory.Notes that the registry DON&#39;T assumes lifetime control for any registered te..." alt="" coords="5,87,147,114"/>
+<area shape="rect" id="node3" href="$class_test_suite_factory.html" title="TestFactory for TestFixture that implements a static suite() method. " alt="" coords="171,80,362,121"/>
+</map>

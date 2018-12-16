@@ -1,0 +1,69 @@
+2014-10-15  Corinna Vinschen  <corinna@vinschen.de>
+
+	* login.c: Minor cleanups.  Avoid compiler warnings.
+	(sccsid): Mark as used.
+	(testUserRightsByUID): Move declaration down to isROOT_UID function.
+	(getstr): Remove unused function.
+	(currentUserIsLocalSystem): Drop declaration of unused external
+	function.
+	(currentUserIsMemberOfLocalAdministrators): Ditto.
+	(uidIsMemberOfLocalAdministrators): Enable declaration.
+	(testUserRightsByUID): Declare.
+	(isROOT_UID): Drop SeCreateTokenPrivilege as required privilege.
+	Ignore old Windows versions.  Align comments.
+
+2014-10-15  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* winpriv.c (getSID): Return NULL, not uninitialized variable, in
+	case of failure.
+
+2014-10-15  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* Makefile (install): Do not strip.
+
+2014-10-14  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* Makefile: Throughout, add rules for lastlog.exe and lastlog.8.
+	* lastlog.c: New file.
+	* lastlog.8: New file.
+
+2014-10-14  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* winsec.c: Throughout, remove autoloading of advapi32 and
+	netapi32 symbols and use direct function calls instead.
+	* Makefile (login.exe): Add -lnetapi32.
+	(test_winsec.exe): Ditto.
+
+2014-10-14  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* login.1: Update for removal of 9x support.
+
+2014-10-13  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	Drop support for Windows 9x.
+	* Makefile (login.exe): Remove -lcrypt.
+	(test_winsec.exe): Ditto.
+	* login.c (is_winnt): Remove definition.
+	(main): Make is_winnt code path unconditional.
+
+2014-10-13  Yaakov Selkowitz  <yselkowitz@cygwin.com>
+
+	* Makefile (docdir): Fix for unversioned docdirs.
+	* test_winsec.c: Include <stdlib.h> for exit().
+	* winpriv.c: Fix includes for mingw-w64 w32api-headers.
+
+2009-04-20  Charles Wilson  <...>
+
+	Release 1.10.
+	* Makefile: bump version number.
+
+2009-04-20  Charles Wilson  <...>
+
+	Incorporate changes from 1.9-8 release
+	* test_winsec.c: New.
+	* winpriv.c: New.
+	* winsec.c: New.
+	* login.c: Reformat using indent. Change
+	sccsid.
+	* Makefile: Add $(O) variable. Use it.
+	Fix clean command.

@@ -1,0 +1,8 @@
+<map id="CompilerOutputter" name="CompilerOutputter">
+<area shape="rect" id="node2" href="$class_outputter.html" title="Abstract outputter to print test result summary. " alt="" coords="5,261,81,288"/>
+<area shape="rect" id="node3" href="$class_test_result_collector.html" title="Collects test result.A TestResultCollector is a TestListener which collects the results of executing ..." alt="" coords="106,261,245,288"/>
+<area shape="rect" id="node4" href="$class_test_success_listener.html" title="TestListener that checks if any test case failed. " alt="" coords="103,185,248,212"/>
+<area shape="rect" id="node5" href="$class_test_listener.html" title="Listener for test progress and result.Implementing the Observer pattern a TestListener may be registe..." alt="" coords="85,109,180,136"/>
+<area shape="rect" id="node6" href="$class_synchronized_object.html" title="Base class for synchronized object. " alt="" coords="205,109,343,136"/>
+<area shape="rect" id="node7" href="$class_synchronized_object_1_1_synchronization_object.html" title="Abstract synchronization object (mutex) " alt="" coords="193,5,355,47"/>
+</map>

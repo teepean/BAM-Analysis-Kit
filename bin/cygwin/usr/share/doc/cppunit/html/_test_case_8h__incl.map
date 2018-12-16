@@ -1,0 +1,16 @@
+<map id="TestCase.h" name="TestCase.h">
+<area shape="rect" id="node2" href="$_portability_8h.html" title="cppunit/Portability.h" alt="" coords="519,483,656,509"/>
+<area shape="rect" id="node6" href="$_test_leaf_8h.html" title="cppunit/TestLeaf.h" alt="" coords="843,80,974,107"/>
+<area shape="rect" id="node9" href="$_test_assert_8h.html" title="cppunit/TestAssert.h" alt="" coords="355,80,497,107"/>
+<area shape="rect" id="node22" href="$_test_fixture_8h.html" title="cppunit/TestFixture.h" alt="" coords="1049,401,1195,427"/>
+<area shape="rect" id="node4" href="$_cpp_unit_api_8h.html" title="cppunit/config/CppUnitApi.h" alt="" coords="495,565,680,591"/>
+<area shape="rect" id="node5" href="$_select_dll_loader_8h.html" title="cppunit/config/SelectDll\lLoader.h" alt="" coords="705,557,865,599"/>
+<area shape="rect" id="node7" href="$_test_8h.html" title="cppunit/Test.h" alt="" coords="868,319,973,345"/>
+<area shape="rect" id="node10" href="$_exception_8h.html" title="cppunit/Exception.h" alt="" coords="205,244,343,271"/>
+<area shape="rect" id="node16" href="$_asserter_8h.html" title="cppunit/Asserter.h" alt="" coords="479,162,607,189"/>
+<area shape="rect" id="node18" href="$_stream_8h.html" title="cppunit/portability\l/Stream.h" alt="" coords="632,155,756,196"/>
+<area shape="rect" id="node11" href="$_message_8h.html" title="cppunit/Message.h" alt="" coords="359,319,491,345"/>
+<area shape="rect" id="node14" href="$_source_line_8h.html" title="cppunit/SourceLine.h" alt="" coords="515,319,659,345"/>
+<area shape="rect" id="node12" href="$_cpp_unit_deque_8h.html" title="cppunit/portability\l/CppUnitDeque.h" alt="" coords="5,393,129,435"/>
+<area shape="rect" id="node17" href="$_additional_message_8h.html" title="cppunit/AdditionalMessage.h" alt="" coords="367,244,557,271"/>
+</map>

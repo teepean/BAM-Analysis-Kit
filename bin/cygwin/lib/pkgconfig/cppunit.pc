@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: CppUnit
+Description: The C++ Unit Test Library
+Version: 1.13.2
+Libs: -L${libdir} -lcppunit
+Libs.private: -ldl
+Cflags: -I${includedir}

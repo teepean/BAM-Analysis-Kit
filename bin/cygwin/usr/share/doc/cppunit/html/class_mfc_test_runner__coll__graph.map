@@ -1,0 +1,5 @@
+<map id="MfcTestRunner" name="MfcTestRunner">
+<area shape="rect" id="node2" href="$class_test_suite.html" title="A Composite of Tests.It runs a collection of test cases. Here is an example. " alt="" coords="22,157,101,184"/>
+<area shape="rect" id="node3" href="$class_test_composite.html" title="A Composite of Tests. " alt="" coords="6,81,117,108"/>
+<area shape="rect" id="node4" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="37,5,85,32"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="TestPlugInDefaultImpl" name="TestPlugInDefaultImpl">
+<area shape="rect" id="node2" href="$struct_cpp_unit_test_plug_in.html" title="Test plug&#45;in interface.This class define the interface implemented by test plug&#45;in. A pointer to that interface is returned by the function exported by the test plug&#45;in. " alt="" coords="15,5,148,32"/>
+</map>

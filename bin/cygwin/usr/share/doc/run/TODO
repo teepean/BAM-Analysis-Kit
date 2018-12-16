@@ -1,0 +1,6 @@
+* support of (extremely) long paths
+* support wide chars
+
+* Windows 7:
+  - investigate emacs performance degradation (see README/LIMITATIONS),
+    and http://cygwin.com/ml/cygwin/2009-08/msg00379.html

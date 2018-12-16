@@ -1,0 +1,132 @@
+    Copyright (C) 1989-2014 Free Software Foundation, Inc.
+
+    Copying and distribution of this file, with or without
+    modification, are permitted in any medium without royalty provided
+    the copyright notice and this notice are preserved.
+
+This is the GNU `groff' document formatting system.  The version
+number is given in the file VERSION.
+
+Included in this release are implementations of `troff', `pic', `eqn',
+`tbl', `grn', `refer', `-man', `-mdoc', `-mom', and `-ms' macros, and
+drivers for `PostScript', `PDF', `TeX DVI' format, `HP LaserJet 4'
+printers, `Canon CAPSL' printers, `HTML' and `XHTML' formats (beta
+status), and typewriter-like devices.  Also included is a modified
+version of the Berkeley `-me' macros, the enhanced version `gxditview'
+of the X11 `xditview' previewer, and an implementation of the `-mm'
+macros contributed by Joergen Haegg.
+
+See the file `INSTALL' for instructions on how to install from a
+release.  You will require a C++ compiler.
+
+The file `INSTALL.REPO' contains supplementary instructions for
+building directly from a clone of the repository or a snapshot
+tarball.
+
+The file `NEWS' describes recent user-visible changes to `groff'.
+
+`groff' is free software.  See the file `COPYING' for copying
+permission.
+
+The file `PROBLEMS' describes various problems that have been
+encountered in compiling, installing, and running `groff'.
+
+The file `MORE.STUFF' contains information about add-on packages
+useful for `groff'.
+
+The most recent released version of `groff' is always available by
+anonymous ftp from `ftp.gnu.org' in the directory `gnu/groff'.
+
+The current development version of `groff' is available from a git
+repository at
+
+  https://savannah.gnu.org/git/?group=groff
+
+To view the git repository in your browser, go to
+
+  http://git.savannah.gnu.org/cgit/groff.git
+
+There you can also download snapshots; simply click on a commit entry
+line to get the URL.
+
+Depending on your requirements, you may need at least some of the
+following tools to build `groff' directly from its source:
+
+  perl >= v5.6.1 (see macro GROFF_PERL in file `m4/groff.m4')
+  ghostscript
+  the psutils package
+  the netpbm package
+  texinfo 4.8
+  bison >= 1.875b or byacc
+
+Note that `texinfo' and `bison' or `byacc' are required only for
+building from repository sources (either a checked out working copy,
+or a commit snapshot).  They are not required for building from a
+stable release tarball.  Also note that the version numbers stated are
+the minimum supported.  No version of `texinfo' < 4.8 works, and the
+original release of `bison' 1.875 is known not to work; you *may* find
+that `bison' releases < 1.875 work, but in case of difficulty, please
+update to a later version *before* posting a bug report.
+
+For *all* sources, you need `ghostscript' for creation of either `PDF'
+or `HTML' output; the `netpbm' and `psutils' packages are required
+only for `HTML' output (and for compilation from the repository).  If
+you don't intend to produce output in either of these formats, then
+these packages are unnecessary.
+
+Additionally, producing `PDF' output directly with the `gropdf' device needs
+a working installation of `perl'.  The same is true for some other
+preprocessors like `chem'.
+
+In Linux Debian, the installation of `texinfo' is dangerous.  For it
+creates a file `install-info' that blocks the system installation.  So
+the created `/usr/local/bin/install-info' must be renamed.
+
+The `groff' configure script searches for the X11 headers and
+libraries `Xaw' and `Xmu'.  So the corresponding developer packages of
+your system must be installed, otherwise `groff' does not install
+`gxditview' and the `-TX*' devices.  In Debian, the developer packages
+are `libxaw7-dev' and `libxmu-dev'.
+
+Please report bugs using the bug tracker available from the project
+page at
+
+  https://savannah.gnu.org/projects/groff
+
+Alternatively, but less preferable, you may use the form in the file
+`BUG-REPORT'; the idea of this is to make sure that FSF has all the
+information it needs to fix the bug.  At the very least, read the
+`BUG-REPORT' form and make sure that you supply all the information
+that it asks for.  Even if you are not sure that something is a bug,
+report it using `BUG-REPORT': this enables us to determine whether it
+really is a bug or not.
+
+Three mailing lists are available:
+
+  bug-groff@gnu.org          for reporting bugs and following bug
+                             reports
+  groff@gnu.org              for general discussion of groff
+  groff-commit@gnu.org       a read-only list to follow commits
+                             to the git repository
+
+To subscribe, send a mail to <list>-request@<domain> (example:
+groff-request@gnu.org for the `groff' list) with the word `subscribe'
+in either the subject or body of the e-mail (don't include the quotes).
+Alternatively, you may subscribe by visiting the web pages at
+
+  http://lists.gnu.org/mailman/listinfo/bug-groff
+  http://lists.gnu.org/mailman/listinfo/groff
+  http://lists.gnu.org/mailman/listinfo/groff-commit
+
+Each of these web pages also provides a link to a browseable archive of
+postings to the corresponding mailing list.
+
+GNU `groff' was written by James Clark <jjc@jclark.com>.  It is now
+maintained by Ted Harding <ted.harding@nessie.mcc.ac.uk> and Werner
+Lemberg <wl@gnu.org>.
+
+
+##### Emacs settings
+Local Variables:
+mode: text
+End:

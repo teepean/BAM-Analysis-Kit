@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_test_factory.html" title="Abstract Test factory. " alt="" coords="5,35,97,61"/>
+<area shape="rect" id="node2" href="$class_test_factory_registry.html" title="Registry for TestFactory.Notes that the registry DON&#39;T assumes lifetime control for any registered te..." alt="" coords="170,5,311,32"/>
+<area shape="rect" id="node3" href="$class_test_suite_factory.html" title="TestFactory for TestFixture that implements a static suite() method. " alt="" coords="145,57,336,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="TestDecorator" name="TestDecorator">
+<area shape="rect" id="node3" href="$class_repeated_test.html" title="Decorator that runs a test repeatedly. " alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node4" href="$class_test_set_up.html" title="Decorates a test by providing a specific setUp() and tearDown(). " alt="" coords="133,155,219,181"/>
+<area shape="rect" id="node2" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="92,5,140,32"/>
+</map>

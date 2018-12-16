@@ -1,0 +1,263 @@
+
+        NEWS file for gamin
+
+  Note that this is automatically generated from the news webpage at:
+       http://www.gnome.org/~veillard/gamin/news.html
+
+
+0.1.10: Nov 24 2008:
+   - Portability fixes: configure fixes (Daniel Drake), configure extension
+      detection (Dodji Seketeli), missing quotes in acinclude (Daichi Kawahata),
+      daemon build flags (Rémi Cardona), drop glib dependency for libgamin
+      (Rémi Cardona), python bindings install (Rémi Cardona), system inotify
+      detection and use (Adrian Bunk)
+   - Bug fixes: parent recursing on missing watch (Ray Strode), memory
+      leak when releasing fses (Matthias Clasen)
+   - Improvement: API and ABI missing entry points (Ryan Underwood),
+      configure switches for just server or lib build (Rémi Cardona)
+
+
+0.1.9: Jul 27 2007:
+   - Bug fixes: enable polling when using inotify this fixes support for NFS 
+      partitions (Alexander Larsson), do not run idle handler if not needed
+      reduce wakeups (Alexander Larsson), handling of failure of inotify
+      initialization (Robert Clark), force poll support if compiled without
+      inotify and dnotify (Ray Strode)
+   - Portability: patches to allow compiling again on Hurd and kFreeBSD
+      (Michael Banck), patches to ease compilation on OS X (Brendan Cully)
+
+
+0.1.8: Oct 31 2006:
+   - Build and portability fixes: handle sys/inotify.h, Python detection
+      (Joseph Sacco), FreeBSD portability fix (Loïc Minier/Petr Salinger),
+      out of tree build and install (Loïc Minier), fix build with Sun's
+      compiler (James Andrewartha)
+   - Bug fixes: pkg-config cflags (Claudio Fontana), debug signal hookup
+      fix (Bastien Nocera), client filedescriptor close trouble (Alexander
+      Larsson), low filedescriptor handling in the server (Alexander Larsson),
+      buffer on connection reset cleanup (Ariel T. Glenn), inotify new backend
+      fixes (Alexander Larsson)
+   - Improvements: update the inotify backend to the version used by 
+      gnome-vfs (John McCutchan), minimize the timeouts usage
+      to not wake up apps unduely (Alexander Larsson)
+
+
+0.1.7: Oct 27 2005:
+   - Portability fixes (Diego Pettenò, Sjoerd Simons, Daichi Kawahata)
+   - A small memory leak fix (Christopher Aillon)
+   - Fixes for gam_server segfaults (Ed Catmur, DV)
+   - One last patch for Python detection
+
+
+0.1.6: Sep  8 2005:
+   - Large revamp of the inotify back-end (John McCutchan)
+   - Code reorganization, changes for polling (John McCutchan)
+   - Portability patches for NetBSD (Johnny Lam)
+   - Fix compilation without inotify
+   - environment variable GAM_TEST_DNOTIFY to force dnotify on inotify kernels
+      (John McCutchan)
+   - Inotify race conditions fixes (John McCutchan)
+   - Removal of some asserts resulting in crashes
+   - Applied some testing patches (TomPh)
+   - Fixed a memory leak on inotify back-end
+   - Python detection fix
+
+
+0.1.5: Aug  9 2005:
+   - Improvement of configuration, system wide configuration files and
+      per filesystem type default (John McCutchan)
+   - Rewrite of the inotify back-end, reduce resources usage, tuning in
+      case of busy resources (John McCutchan)
+   - Documentation updates
+   - Changes to compile inotify back-end on various architectures
+   - Debugging output improvements
+
+
+0.1.3: Aug  2 2005:
+   -  Fix to compile on older gcc versions (Jean-Yves Lefort)
+   -  Inotify back-end changes and optimizations (John McCutchan)
+   -  Debug ouput cleanup, pid and process name reports (John McCutchan)
+   -  Dropped kernel monitor bugfix (John McCutchan)
+   -  Removed the old glist copy used for debugging
+   -  Maintain mounted filesystems knowledge, and per fstype preferences (John McCutchan)
+
+
+0.1.2: Jul 13 2005:
+   -  More patches from John McCutchan for the inotify back-end, inotify
+       is now in Linus's kernel tree, a patch for the new kernel API was
+       needed.
+   -  Lot of cleanup patches from Neal H. Walfield affecting most of the
+       server code.
+   -  Fixed an authentication problem.
+
+
+0.1.1: Jun 10 2005:
+   -  Bug fixes: gamin_data_conn_event (Mark McLoughlin),
+       crash from bug #303932 (Frederic Crozat),
+       Inotify and mounted media #171201 (John McCutchan),
+       monitoring multiple files in busy directories #159748
+       (mounted media did not show up on Desktop),
+       write may not be atomic (Neal H. Walfield),
+       Monitoring a directory when it is a file.
+  
+   -  Portability to Hurd/Mach and various code cleanups (Neal H. Walfield)
+  
+   -  Added support for ~ as user home alias in .gaminrc
+
+
+
+0.1.0: May 12 2005:
+   - Close inherited file descriptors on exec of gam_server
+   - Cancelling a monitor send back a FAMAcknowledge based on patch by
+      Christophe Saout
+   - Fixed for big files > 2GB
+   - Bug when monitoring a non existing directory
+   - Make client side thread safe (Nicholas Miell base patch)
+   - Unreadable directory fixes (Nickolay Shmyrev)
+   - A lot more regression tests, more debugging support and code
+      cleanups.
+   - Better flow control handling
+   - Updated to latest inotify version: 0.23-6 (John McCutchan, Todor Penev,
+      Andrei Lahun, Daniel Drake)
+   - MacOSX/BSDs portability using kqueue (Joe Marcus Clarke, Fred Leason)
+
+
+0.0.26: Mar 15 2005:
+   - Fixed an include problem showing up with gcc4
+   - A couple of documentation typo fixes
+   - fixed the crash on failed tree assert bug #150471 based on patch from
+      Dean Brettle
+   - removed an incompatibility with SGI FAM #149822
+
+
+0.0.25: Mar  1 2005:
+   - Fix a configure problem reported by Martin Schlemmer
+   - Fix the /media/* and /mnt/* mount blocking problems from 0.0.24
+   - Fix the monitoring of directory using poll and not kernel
+
+
+0.0.24: Feb 18 2005:
+   -  more documentation
+   -  lot of serious bug fixes including Gnome Desktop refresh bug
+   -  extending the framework for more debug (configure --enable-debug-api)
+   -  extending the python bindings for watching the same resource multiple times and adding debug framework support
+   -  growing the regression tests a lot based on python bindings
+   -  inotify-0.19 patch from John McCutchan
+   -  renamed python private module to _gamin to follow Python PEP 8
+
+
+0.0.23: Feb  8 2005:
+   -  memory corruption fix from Mark on the client side.
+   -  extending the protocol and API to allow skipping Exists and EndExists
+       events to avoid deadlock on reconnect or when they are not used
+       (all gam_servers should be killed after an update to 0.0.23).
+
+
+0.0.22: Jan 31 2005:
+   -  Added Python regression test, and a python disconnect() operation.
+   -  Applied patches from John McCutchan to fix inotify 0.18 backend.
+   -  3 bugs fixed.
+
+
+0.0.21: Jan 26 2005:
+   -  Added Python bindings.
+   -  Applied patch from Philipp Zabel to switch to inotify 0.18
+       protocol. This won't work with older inotify kernel versions.
+   -  Doc fix (Mark McLoughlin).
+   -  Removal of compilation warnings.
+
+
+0.0.20: Jan  6 2005:
+   -  Frederic Crozat seems to have found the list corruption bug
+       and provided a patch.
+   -  Frederic Crozat fixed the poll only mode.
+
+
+0.0.19: Dec  3 2004:
+   -  still chasing the loop bug, made another pass at checking GList,
+  added own copy with memory poisonning of GList implementation.
+   -  fixed a compile issue when compiling without debug
+   -  Another internal bugfix.
+
+
+0.0.18: Nov 26 2004:
+   -  still chasing the loop bug, checked and cleaned up all GList use
+   -  patch from markmc to minimize load on busy apps
+
+
+0.0.16: Oct 20 2004:
+   -  chasing #132354, lot of debugging, checking and testing and a bit
+  of refactoring
+
+
+0.0.15: Oct 16 2004:
+   -  workaround to detect loops and avoid the nasty effects, see RedHat bug #132354
+
+
+0.0.14: Oct  3 2004:
+   -  Found and fixed the annoying bug where update were not received
+  should fix bugs ##132429, #133665 and #134413
+   -  new mechanism to debug on-the-fly by sending SIGUSR2 to client or server
+   -  Added documentation about internals
+
+
+0.0.14: Oct  3 2004:
+   - Found and fixed the annoying bug where update were not received should
+    fix bugs ##132429, #133665 and #134413 in Red Hat bugzilla
+   - new mechanism to debug on-the-fly by sending SIGUSR2 to client or
+  server
+   - Added documentation about internals
+
+
+0.0.13: Oct  1 2004:
+   - applied portability fixes
+   - hardened the code while chasing a segfault
+
+
+0.0.12: Sep 30 2004:
+   - potential fix for a hard to reproduce looping problem.
+
+
+0.0.11: Sep 27 2004:
+   - inotify support compiled in by default
+   - fix ABI FAM compatibility problems #133162
+   - update to the latest version of inotify 
+
+
+0.0.10: Sep 21 2004:
+   - fixed API/ABI incompatibility between FAM and gamin about FAMErrno and
+    FamErrlist
+   - added support for a per-user configuration file $HOME/.gaminrc
+   - applied a portability patch from Michael Banck
+   - extended the documentation
+
+
+0.0.9: Sep 1 2004:
+   - fix konqueror crash Red Hat bug #130967
+   - statically excludes /mnt//* /media//* from kernel monitoring to avoid
+    umount problems
+
+
+0.0.8: Aug 26 2004:
+   - inotify backend patch (Martin Schlemmer)
+   - documentation
+   - fixed 0.0.7 crashes
+   - fixed the kernel/poll detection code which was buggy
+
+
+0.0.7: Aug 24 2004:
+   - increased the test suite
+   - activate poll and kernel monitoring (dnotify) simultaneously
+   - fix monitoring of resources initially missing
+   - fix load problem due to dnotify on very busy resources
+
+
+0.0.6: Aug 19 2004:
+   - fix monitoring of file resources
+   - moved gam_server to $libexec since it doesn't need to be started from
+    the command line usually
+   - test and fixes on x86_64
+   - removal all thread dependancies and conditional code
+
+Daniel Veillard at 
+contacts.html

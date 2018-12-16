@@ -1,0 +1,3 @@
+<map id="TestDecorator" name="TestDecorator">
+<area shape="rect" id="node2" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="34,5,82,32"/>
+</map>

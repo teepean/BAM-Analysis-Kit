@@ -1,0 +1,8 @@
+<map id="ProtectorContext" name="ProtectorContext">
+<area shape="rect" id="node2" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="57,199,105,225"/>
+<area shape="rect" id="node3" href="$class_test_result.html" title="Manages TestListener.A single instance of this class is used when running the test. It is usually created by the test runner (TestRunner). " alt="" coords="129,199,216,225"/>
+<area shape="rect" id="node4" href="$class_synchronized_object.html" title="Base class for synchronized object. " alt="" coords="17,109,155,136"/>
+<area shape="rect" id="node5" href="$class_synchronized_object_1_1_synchronization_object.html" title="Abstract synchronization object (mutex) " alt="" coords="5,5,167,47"/>
+<area shape="rect" id="node6" href="$class_protector_chain.html" title="Protector chain (Implementation). Implementation detail. " alt="" coords="179,109,289,136"/>
+<area shape="rect" id="node7" href="$class_protector.html" title="Protects one or more test case run. " alt="" coords="197,13,271,39"/>
+</map>

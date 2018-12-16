@@ -1,0 +1,10 @@
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: CBLAS
+Description: C Standard Interface to BLAS Basic Linear Algebra Subprograms
+Version: 3.8.0
+URL: http://www.netlib.org/blas/#_cblas
+Libs: -L${libdir} -lcblas
+Cflags: -I${includedir}
+Requires.private: blas

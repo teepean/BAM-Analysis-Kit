@@ -1,0 +1,5 @@
+<map id="TestCase" name="TestCase">
+<area shape="rect" id="node2" href="$class_test_leaf.html" title="A single test object. " alt="" coords="5,80,79,107"/>
+<area shape="rect" id="node3" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="18,5,66,32"/>
+<area shape="rect" id="node4" href="$class_test_fixture.html" title="Wraps a test case with setUp and tearDown methods.A TestFixture is used to provide a common environme..." alt="" coords="103,80,191,107"/>
+</map>

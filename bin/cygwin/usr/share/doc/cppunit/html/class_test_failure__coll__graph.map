@@ -1,0 +1,6 @@
+<map id="TestFailure" name="TestFailure">
+<area shape="rect" id="node2" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="43,95,91,121"/>
+<area shape="rect" id="node3" href="$class_exception.html" title="Exceptions thrown by failed assertions.Exception is an exception that serves descriptive strings thro..." alt="" coords="137,95,217,121"/>
+<area shape="rect" id="node5" href="$class_source_line.html" title="Represents a source line location.Used to capture the failure location in assertion. " alt="" coords="134,5,221,32"/>
+<area shape="rect" id="node6" href="$class_message.html" title="Message associated to an Exception.A message is composed of two items: " alt="" coords="256,5,331,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$struct_cpp_unit_test_plug_in.html" title="Test plug&#45;in interface.This class define the interface implemented by test plug&#45;in. A pointer to that interface is returned by the function exported by the test plug&#45;in. " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$class_test_plug_in_default_impl.html" title="Default implementation of test plug&#45;in interface.Override getSuiteName() to specify the suite name..." alt="" coords="187,5,339,32"/>
+</map>

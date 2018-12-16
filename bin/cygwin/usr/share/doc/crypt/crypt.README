@@ -1,0 +1,20 @@
+This is the crypt package Version 2.1
+
+It provides a static library libcrypt.a as well as a shared library
+cygcrypt-0.dll together with a link lib libcrypt.dll.a, which export
+the functions
+
+        crypt(3)
+        crypt_r(3)
+        encrypt(3)
+        setkey(3)
+
+The passwords created by crypt(3) are 100% identical to those created by 
+the Linux crypt().  DES, MD5, Blowfish, SHA-256, and SHA-512 algorithms are 
+supported.
+
+Please send requests, error reports etc. to the mailing list
+cygwin@cygwin.com.
+
+Have fun,
+Corinna Vinschen

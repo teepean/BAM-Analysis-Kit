@@ -1,0 +1,170 @@
+2018/11/03 23:20:22 Starting cygwin install, version 2.893
+2018/11/03 23:20:22 User has backup/restore rights
+2018/11/03 23:20:22 Current Directory: G:\cyglataus
+2018/11/03 23:20:22 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2018/11/03 23:20:24 source: network install
+2018/11/03 23:20:25 root: G:\BAM_Analysis_Kit_2_0\bin\cygwin system
+2018/11/03 23:20:26 Selected local directory: G:\cyglataus
+2018/11/03 23:20:27 net: Preconfig
+Loaded cached mirror list
+Request for URL https://cygwin.com/mirrors.lst satisfied from cache
+Fetched URL: https://cygwin.com/mirrors.lst
+2018/11/03 23:20:28 site: http://cygwin.mirror.constant.com/
+Request for URL http://cygwin.mirror.constant.com/x86_64/setup.xz.sig satisfied from cache
+Fetched URL: http://cygwin.mirror.constant.com/x86_64/setup.xz.sig
+Request for URL http://cygwin.mirror.constant.com/x86_64/setup.xz satisfied from cache
+Fetched URL: http://cygwin.mirror.constant.com/x86_64/setup.xz
+compress_xz::bid_xz: success: 48
+compress_xz::bid_xz: success: 48
+.ini setup_version is 2.893, our setup_version is 2.893
+INSTALLED.DB version 3
+No source package for 'libboost1.53' 1.53.0-2, source package name 'libboost1.53-src'
+No source package for 'libboost_atomic1.55' 1.55.0-1, source package name 'libboost_atomic1.55-src'
+No source package for 'libboost_atomic1.57' 1.57.0-1, source package name 'libboost_atomic1.57-src'
+No source package for 'libboost_chrono1.55' 1.55.0-1, source package name 'libboost_chrono1.55-src'
+No source package for 'libboost_chrono1.57' 1.57.0-1, source package name 'libboost_chrono1.57-src'
+No source package for 'libboost_container1.57' 1.57.0-1, source package name 'libboost_container1.57-src'
+No source package for 'libboost_context1.55' 1.55.0-1, source package name 'libboost_context1.55-src'
+No source package for 'libboost_context1.57' 1.57.0-1, source package name 'libboost_context1.57-src'
+No source package for 'libboost_coroutine1.55' 1.55.0-1, source package name 'libboost_coroutine1.55-src'
+No source package for 'libboost_coroutine1.57' 1.57.0-1, source package name 'libboost_coroutine1.57-src'
+No source package for 'libboost_date_time1.55' 1.55.0-1, source package name 'libboost_date_time1.55-src'
+No source package for 'libboost_date_time1.57' 1.57.0-1, source package name 'libboost_date_time1.57-src'
+No source package for 'libboost_filesystem1.55' 1.55.0-1, source package name 'libboost_filesystem1.55-src'
+No source package for 'libboost_filesystem1.57' 1.57.0-1, source package name 'libboost_filesystem1.57-src'
+No source package for 'libboost_graph1.55' 1.55.0-1, source package name 'libboost_graph1.55-src'
+No source package for 'libboost_graph1.57' 1.57.0-1, source package name 'libboost_graph1.57-src'
+No source package for 'libboost_iostreams1.55' 1.55.0-1, source package name 'libboost_iostreams1.55-src'
+No source package for 'libboost_iostreams1.57' 1.57.0-1, source package name 'libboost_iostreams1.57-src'
+No source package for 'libboost_locale1.55' 1.55.0-1, source package name 'libboost_locale1.55-src'
+No source package for 'libboost_locale1.57' 1.57.0-1, source package name 'libboost_locale1.57-src'
+No source package for 'libboost_log1.55' 1.55.0-1, source package name 'libboost_log1.55-src'
+No source package for 'libboost_log1.57' 1.57.0-1, source package name 'libboost_log1.57-src'
+No source package for 'libboost_math1.55' 1.55.0-1, source package name 'libboost_math1.55-src'
+No source package for 'libboost_math1.57' 1.57.0-1, source package name 'libboost_math1.57-src'
+No source package for 'libboost_program_options1.55' 1.55.0-1, source package name 'libboost_program_options1.55-src'
+No source package for 'libboost_program_options1.57' 1.57.0-1, source package name 'libboost_program_options1.57-src'
+No source package for 'libboost_random1.55' 1.55.0-1, source package name 'libboost_random1.55-src'
+No source package for 'libboost_random1.57' 1.57.0-1, source package name 'libboost_random1.57-src'
+No source package for 'libboost_regex1.55' 1.55.0-1, source package name 'libboost_regex1.55-src'
+No source package for 'libboost_regex1.57' 1.57.0-1, source package name 'libboost_regex1.57-src'
+No source package for 'libboost_serialization1.55' 1.55.0-1, source package name 'libboost_serialization1.55-src'
+No source package for 'libboost_serialization1.57' 1.57.0-1, source package name 'libboost_serialization1.57-src'
+No source package for 'libboost_signals1.55' 1.55.0-1, source package name 'libboost_signals1.55-src'
+No source package for 'libboost_signals1.57' 1.57.0-1, source package name 'libboost_signals1.57-src'
+No source package for 'libboost_system1.55' 1.55.0-1, source package name 'libboost_system1.55-src'
+No source package for 'libboost_system1.57' 1.57.0-1, source package name 'libboost_system1.57-src'
+No source package for 'libboost_test1.55' 1.55.0-1, source package name 'libboost_test1.55-src'
+No source package for 'libboost_test1.57' 1.57.0-1, source package name 'libboost_test1.57-src'
+No source package for 'libboost_thread1.55' 1.55.0-1, source package name 'libboost_thread1.55-src'
+No source package for 'libboost_thread1.57' 1.57.0-1, source package name 'libboost_thread1.57-src'
+No source package for 'libboost_timer1.55' 1.55.0-1, source package name 'libboost_timer1.55-src'
+No source package for 'libboost_timer1.57' 1.57.0-1, source package name 'libboost_timer1.57-src'
+No source package for 'libboost_wave1.55' 1.55.0-1, source package name 'libboost_wave1.55-src'
+No source package for 'libboost_wave1.57' 1.57.0-1, source package name 'libboost_wave1.57-src'
+No source package for 'libcloog-isl4' 0.18.0-2, source package name 'libcloog-isl4-src'
+No source package for 'libicu51' 51.2-1, source package name 'libicu51-src'
+No source package for 'libicu55' 55.1-1, source package name 'libicu55-src'
+No source package for 'libisl10' 0.11.1-2, source package name 'libisl10-src'
+No source package for 'perl-Carp' 1.3301-2, source package name 'perl-Carp-src'
+2018/11/03 23:20:30 solving: 0 tasks, update: yes, use test packages: no
+libsolv: solver started
+libsolv: dosplitprovides=0, noupdateprovide=0, noinfarchcheck=0
+libsolv: allowuninstall=0, allowdowngrade=0, allownamechange=1, allowarchchange=0, allowvendorchange=1
+libsolv: promoteepoch=0, forbidselfconflicts=0
+libsolv: obsoleteusesprovides=0, implicitobsoleteusesprovides=0, obsoleteusescolors=0, implicitobsoleteusescolors=0
+libsolv: dontinstallrecommended=0, addalreadyrecommended=0
+libsolv: number of solvables: 46832, memory used: 2561 K
+libsolv: number of ids: 25151 + 46629
+libsolv: string memory used: 98 K array + 431 K data,  rel memory used: 546 K array
+libsolv: string hash memory: 256 K, rel hash memory : 512 K
+libsolv: provide ids: 10744
+libsolv: provide space needed: 34583 + 93258
+libsolv: shrunk whatprovidesdata from 34583 to 34583
+libsolv: shrunk whatprovidesauxdata from 34583 to 23836
+libsolv: whatprovides memory used: 284 K id array, 499 K data
+libsolv: whatprovidesaux memory used: 98 K id array, 93 K data
+libsolv: WARNING: pool_addfileprovides was not called, this may result in slow operation
+libsolv: lazywhatprovidesq size: 0 entries
+libsolv: createwhatprovides took 3 ms
+libsolv: obsoletes data: 1 entries
+libsolv: added 2808 pkg rules for installed solvables
+libsolv: added 712 pkg rules for updaters of installed solvables
+libsolv: added 0 pkg rules for packages involved in a job
+libsolv: added 0 pkg rules because of weak dependencies
+libsolv: 785 of 23570 installable solvables considered for solving
+libsolv: pruned rules from 3521 to 3521
+libsolv:   binary: 953
+libsolv:   normal: 2567, 9343 literals
+libsolv: pkg rule memory used: 82 K
+libsolv: pkg rule creation took 1 ms
+libsolv: choice rule creation took 0 ms
+libsolv: 3520 pkg rules, 2 * 252 update rules, 0 job rules, 0 infarch rules, 0 dup rules, 0 choice rules, 0 best rules
+libsolv: overall rule memory used: 94 K
+libsolv: solving...
+libsolv: resolving job rules
+libsolv: resolving installed packages
+libsolv: deciding orphaned packages
+libsolv: solver statistics: 0 learned rules, 0 unsolvable, 0 minimization steps
+libsolv: done solving.
+libsolv: solver took 0 ms
+libsolv: final solver statistics: 0 problems, 0 learned rules, 0 unsolvable
+libsolv: solver_solve took 4 ms
+libsolv: 
+libsolv: transaction:
+libsolv: 
+libsolv: orphaned packages:
+libsolv:   base-0.0-0.any (kept)
+libsolv:   libboost1.53-1.53.0-2.any (kept)
+libsolv:   libboost_atomic1.55-1.55.0-1.any (kept)
+libsolv:   libboost_atomic1.57-1.57.0-1.any (kept)
+libsolv:   libboost_chrono1.55-1.55.0-1.any (kept)
+libsolv:   libboost_chrono1.57-1.57.0-1.any (kept)
+libsolv:   libboost_container1.57-1.57.0-1.any (kept)
+libsolv:   libboost_context1.55-1.55.0-1.any (kept)
+libsolv:   libboost_context1.57-1.57.0-1.any (kept)
+libsolv:   libboost_coroutine1.55-1.55.0-1.any (kept)
+libsolv:   libboost_coroutine1.57-1.57.0-1.any (kept)
+libsolv:   libboost_date_time1.55-1.55.0-1.any (kept)
+libsolv:   libboost_date_time1.57-1.57.0-1.any (kept)
+libsolv:   libboost_filesystem1.55-1.55.0-1.any (kept)
+libsolv:   libboost_filesystem1.57-1.57.0-1.any (kept)
+libsolv:   libboost_graph1.55-1.55.0-1.any (kept)
+libsolv:   libboost_graph1.57-1.57.0-1.any (kept)
+libsolv:   libboost_iostreams1.55-1.55.0-1.any (kept)
+libsolv:   libboost_iostreams1.57-1.57.0-1.any (kept)
+libsolv:   libboost_locale1.55-1.55.0-1.any (kept)
+libsolv:   libboost_locale1.57-1.57.0-1.any (kept)
+libsolv:   libboost_log1.55-1.55.0-1.any (kept)
+libsolv:   libboost_log1.57-1.57.0-1.any (kept)
+libsolv:   libboost_math1.55-1.55.0-1.any (kept)
+libsolv:   libboost_math1.57-1.57.0-1.any (kept)
+libsolv:   libboost_program_options1.55-1.55.0-1.any (kept)
+libsolv:   libboost_program_options1.57-1.57.0-1.any (kept)
+libsolv:   libboost_random1.55-1.55.0-1.any (kept)
+libsolv:   libboost_random1.57-1.57.0-1.any (kept)
+libsolv:   libboost_regex1.55-1.55.0-1.any (kept)
+libsolv:   libboost_regex1.57-1.57.0-1.any (kept)
+libsolv:   libboost_serialization1.55-1.55.0-1.any (kept)
+libsolv:   libboost_serialization1.57-1.57.0-1.any (kept)
+libsolv:   libboost_signals1.55-1.55.0-1.any (kept)
+libsolv:   libboost_signals1.57-1.57.0-1.any (kept)
+libsolv:   libboost_system1.55-1.55.0-1.any (kept)
+libsolv:   libboost_system1.57-1.57.0-1.any (kept)
+libsolv:   libboost_test1.55-1.55.0-1.any (kept)
+libsolv:   libboost_test1.57-1.57.0-1.any (kept)
+libsolv:   libboost_thread1.55-1.55.0-1.any (kept)
+libsolv:   libboost_thread1.57-1.57.0-1.any (kept)
+libsolv:   libboost_timer1.55-1.55.0-1.any (kept)
+libsolv:   libboost_timer1.57-1.57.0-1.any (kept)
+libsolv:   libboost_wave1.55-1.55.0-1.any (kept)
+libsolv:   libboost_wave1.57-1.57.0-1.any (kept)
+libsolv:   libcloog-isl4-0.18.0-2.any (kept)
+libsolv:   libicu51-51.2-1.any (kept)
+libsolv:   libicu55-55.1-1.any (kept)
+libsolv:   libisl10-0.11.1-2.any (kept)
+libsolv: 
+libsolv: ordering transaction
+libsolv: transaction elements: 0
+2018/11/03 23:20:30 Augmented Transaction List: is empty
+2018/11/03 23:21:10 Ending cygwin install

@@ -1,0 +1,72 @@
+sed 4.4-1
+------------------------------------------
+The GNU Sed (Stream EDitor) editor is a stream or batch
+(non-interactive) editor.  Sed takes text as input, performs an
+operation or set of operations on the text, and outputs the
+modified text.  The operations that sed performs (substitutions,
+deletions, insertions, etc.) can be specified in a script file
+or from the command line.
+
+Runtime requirements (these or newer):
+  cygwin-2.7.0-0.2
+  libintl8-0.19.8.1-2
+
+Additional build conditions (these or newer):
+  binutils-2.25-4
+  coreutils-8.26-1
+  cygport-0.23.1-1
+  gcc-core-5.4.0-1
+  gettext-devel-0.19.8.1-2
+  gnupg-1.4.21-1
+  windows-default-manifest-6.4-1
+  xz-5.2.2-1
+
+Canonical homepage:
+  https://gnu.org/software/sed
+
+Canonical download:
+  ftp://ftp.gnu.org/pub/gnu/sed/
+
+License:
+  GPLv3+
+
+Language:
+  C
+
+------------------------------------
+
+Build instructions:
+  unpack sed-4.4-1-src.tar.xz
+    if you use setup to install this src package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  cygport sed.cygport all
+
+This will create:
+  /usr/src/sed-4.4-1.tar.xz
+  /usr/src/sed-4.4-1-src.tar.xz
+  /usr/src/sed-debuginfo/sed-debuginfo-4.4-1.tar.xz
+
+Or use 'cygport sed.cygport prep' to get a patched source directory
+
+To find out the files included in the binary distribution, you can use
+"cygcheck -l sed", or browse the listing for the appropriate
+version at <http://cygwin.com/packages/>.
+
+------------------
+
+Port Notes:
+
+----------  sed-4.4-1 -- 2017-02-11 ---------
+New upstream release. New maintainer, Eric Blake.
+
+----- version 4.2.2-3 and earlier -----
+No per-build changelog was maintained; see the cygwin-announce archives
+for a history.
+
+----------------------
+For more information about this package, see the upstream documentation in
+/usr/share/doc/sed/.
+
+Cygwin port maintained by: Eric Blake <eblake@redhat.com>.
+Please address all questions to the Cygwin mailing list at <cygwin@cygwin.com>

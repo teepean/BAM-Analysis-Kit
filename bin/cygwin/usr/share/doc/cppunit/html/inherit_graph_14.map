@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_outputter.html" title="Abstract outputter to print test result summary. " alt="" coords="5,56,81,83"/>
+<area shape="rect" id="node2" href="$class_compiler_outputter.html" title="Outputs a TestResultCollector in a compiler compatible format.Printing the test results in a compiler..." alt="" coords="129,5,257,32"/>
+<area shape="rect" id="node3" href="$class_text_outputter.html" title="Prints a TestResultCollector to a text stream. " alt="" coords="142,56,245,83"/>
+<area shape="rect" id="node4" href="$class_xml_outputter.html" title="Outputs a TestResultCollector in XML format.Save the test result as a XML stream. ..." alt="" coords="144,107,243,133"/>
+</map>

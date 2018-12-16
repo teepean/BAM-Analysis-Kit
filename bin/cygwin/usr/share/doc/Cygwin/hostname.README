@@ -1,0 +1,55 @@
+hostname
+----------------------------------------------------------------------
+Show host name, domain name or network addresses
+
+This package provides the Debian version of the hostname command.
+It can be used to display the system's host name, DNS domain name or
+network addresses.
+
+Runtime requirements (these or newer):
+  cygwin-1.7.22-1
+  coreutils-8.15-3 (older versions include /usr/bin/hostname)
+
+Build requirements (these or newer):
+  binutils-2.23.51-1
+  coreutils-8.15-1
+  cygport-0.13.0-1
+  gcc4-core-4.7.3-1
+  make-3.82.90-1
+  tar-1.26-1
+
+Canonical homepage:
+  http://packages.debian.org/unstable/hostname
+
+Canonical download:
+  http://ftp.debian.org/debian/pool/main/h/hostname/
+
+Upstream contact:
+  Debian Hostname Team <hostname-devel@lists.alioth.debian.org>
+
+License:
+  GPLv2+
+
+Language:
+  C
+
+---------------------------------------------
+
+Port notes:
+
+
+--------  hostname-3.13-1 -- 2013-08-07 --------
+hostname 3.13  2013-06-08
+
+--------  hostname-3.12-1 -- 2013-04-10 --------
+Compilation fixes (missing set*name, NIS)
+hostname 3.12  2012-12-06
+
+
+For more information about this package, see the upstream documentation in
+/usr/share/doc/hostname.
+
+Cygwin port by: Christian Franke <chrfranke@users.sourceforge.net>
+
+Please address all questions to the Cygwin mailing list at <cygwin@cygwin.com>.
+

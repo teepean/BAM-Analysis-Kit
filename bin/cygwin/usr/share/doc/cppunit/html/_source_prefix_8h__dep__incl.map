@@ -1,0 +1,10 @@
+<map id="SourcePrefix.h" name="SourcePrefix.h">
+<area shape="rect" id="node2" href="$_compiler_outputter_8cpp.html" title="CompilerOutputter.cpp" alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node3" href="$_plug_in_manager_8cpp.html" title="PlugInManager.cpp" alt="" coords="183,80,317,107"/>
+<area shape="rect" id="node4" href="$_test_factory_registry_8cpp.html" title="TestFactoryRegistry.cpp" alt="" coords="341,80,508,107"/>
+<area shape="rect" id="node5" href="$_test_plug_in_default_impl_8cpp.html" title="TestPlugInDefaultImpl.cpp" alt="" coords="532,80,709,107"/>
+<area shape="rect" id="node6" href="$_test_runner_8cpp.html" title="TestRunner.cpp" alt="" coords="734,80,849,107"/>
+<area shape="rect" id="node7" href="$_test_suite_8cpp.html" title="TestSuite.cpp" alt="" coords="873,80,976,107"/>
+<area shape="rect" id="node8" href="$_text_test_runner_8cpp.html" title="TextTestRunner.cpp" alt="" coords="1001,80,1142,107"/>
+<area shape="rect" id="node9" href="$_xml_document_8cpp.html" title="XmlDocument.cpp" alt="" coords="1166,80,1297,107"/>
+</map>

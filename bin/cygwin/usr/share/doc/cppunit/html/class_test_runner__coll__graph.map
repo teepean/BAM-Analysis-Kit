@@ -1,0 +1,6 @@
+<map id="TestRunner" name="TestRunner">
+<area shape="rect" id="node2" href="$class_test_runner_1_1_wrapping_suite.html" title="(INTERNAL) Mutating test suite. " alt="" coords="5,233,188,260"/>
+<area shape="rect" id="node3" href="$class_test_suite.html" title="A Composite of Tests.It runs a collection of test cases. Here is an example. " alt="" coords="57,157,136,184"/>
+<area shape="rect" id="node4" href="$class_test_composite.html" title="A Composite of Tests. " alt="" coords="41,81,152,108"/>
+<area shape="rect" id="node5" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="73,5,121,32"/>
+</map>

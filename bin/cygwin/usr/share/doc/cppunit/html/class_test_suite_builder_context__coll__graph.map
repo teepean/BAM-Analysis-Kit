@@ -1,0 +1,8 @@
+<map id="TestSuiteBuilderContext&lt; Fixture &gt;" name="TestSuiteBuilderContext&lt; Fixture &gt;">
+<area shape="rect" id="node2" href="$class_test_suite_builder_context_base.html" title="Context used when creating test suite in HelperMacros. " alt="" coords="93,247,287,273"/>
+<area shape="rect" id="node3" href="$class_test_suite.html" title="A Composite of Tests.It runs a collection of test cases. Here is an example. " alt="" coords="21,157,100,184"/>
+<area shape="rect" id="node4" href="$class_test_composite.html" title="A Composite of Tests. " alt="" coords="5,81,116,108"/>
+<area shape="rect" id="node5" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="37,5,85,32"/>
+<area shape="rect" id="node6" href="$class_test_fixture_factory.html" title="Abstract TestFixture factory (Implementation). " alt="" coords="124,157,256,184"/>
+<area shape="rect" id="node7" href="$class_test_namer.html" title="Names a test or a fixture suite. " alt="" coords="280,157,367,184"/>
+</map>

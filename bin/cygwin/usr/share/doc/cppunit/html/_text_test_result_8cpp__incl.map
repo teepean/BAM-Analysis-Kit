@@ -1,0 +1,20 @@
+<map id="TextTestResult.cpp" name="TextTestResult.cpp">
+<area shape="rect" id="node2" href="$_exception_8h.html" title="cppunit/Exception.h" alt="" coords="222,162,359,189"/>
+<area shape="rect" id="node13" href="$_test_8h.html" title="cppunit/Test.h" alt="" coords="329,244,434,271"/>
+<area shape="rect" id="node14" href="$_test_failure_8h.html" title="cppunit/TestFailure.h" alt="" coords="459,244,603,271"/>
+<area shape="rect" id="node15" href="$_text_test_result_8h.html" title="cppunit/TextTestResult.h" alt="" coords="933,80,1102,107"/>
+<area shape="rect" id="node21" href="$_stream_8h.html" title="cppunit/portability\l/Stream.h" alt="" coords="1231,155,1355,196"/>
+<area shape="rect" id="node23" href="$_text_outputter_8h.html" title="cppunit/TextOutputter.h" alt="" coords="1274,80,1433,107"/>
+<area shape="rect" id="node3" href="$_portability_8h.html" title="cppunit/Portability.h" alt="" coords="738,408,875,435"/>
+<area shape="rect" id="node7" href="$_message_8h.html" title="cppunit/Message.h" alt="" coords="627,244,759,271"/>
+<area shape="rect" id="node11" href="$_source_line_8h.html" title="cppunit/SourceLine.h" alt="" coords="5,244,149,271"/>
+<area shape="rect" id="node5" href="$_cpp_unit_api_8h.html" title="cppunit/config/CppUnitApi.h" alt="" coords="714,490,899,517"/>
+<area shape="rect" id="node6" href="$_select_dll_loader_8h.html" title="cppunit/config/SelectDll\lLoader.h" alt="" coords="924,483,1084,524"/>
+<area shape="rect" id="node8" href="$_cpp_unit_deque_8h.html" title="cppunit/portability\l/CppUnitDeque.h" alt="" coords="634,319,758,360"/>
+<area shape="rect" id="node16" href="$_test_result_8h.html" title="cppunit/TestResult.h" alt="" coords="835,244,978,271"/>
+<area shape="rect" id="node18" href="$_test_result_collector_8h.html" title="cppunit/TestResultCollector.h" alt="" coords="981,162,1176,189"/>
+<area shape="rect" id="node17" href="$_synchronized_object_8h.html" title="cppunit/SynchronizedObject.h" alt="" coords="834,326,1030,353"/>
+<area shape="rect" id="node19" href="$_test_success_listener_8h.html" title="cppunit/TestSuccessListener.h" alt="" coords="1003,244,1205,271"/>
+<area shape="rect" id="node20" href="$_test_listener_8h.html" title="cppunit/TestListener.h" alt="" coords="1054,326,1205,353"/>
+<area shape="rect" id="node24" href="$_outputter_8h.html" title="cppunit/Outputter.h" alt="" coords="1477,162,1611,189"/>
+</map>

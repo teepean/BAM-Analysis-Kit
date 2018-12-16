@@ -1,0 +1,36 @@
+Gamin is a file and directory monitoring system defined to be
+a subset of the FAM (File Alteration Monitor) system.
+                                                                                
+ The main goals of the project are:
+ 1/ minimize the security model of FAM
+ 2/ simplify the code base
+ 3/ provide an API and ABI compatible replacement for FAM
+ 4/ try to fix some other issues like resource consumption
+                                                                                
+The project home page is (temporary) at:
+  http://www.gnome.org/~veillard/gamin/
+                                                                                
+A mailing list is also available to discuss about this project,
+see the following URL for subscription informations:
+  http://mail.gnome.org/mailman/listinfo/gamin-list
+
+and the on-line archives:
+  http://mail.gnome.org/archives/gamin-list/
+
+The CVS base is in the GNOME project CVS base at cvs.gnome.org, the
+module name is 'gamin'. See 
+  http://developer.gnome.org/tools/cvs.html
+										
+From an historical point of view, gamin builds from the marmot project
+authored by James Willcox and Corey Bowers and then heavilly modified
+to turn it into a minimalist FAM replacement (Francophones will
+appreciate the filiation from fam to marmot and gamin)
+
+This library is available under the terms of the GNU LIBRARY GENERAL
+PUBLIC LICENSE, and a copy of it should be found in the source under the
+COPYING file. 
+
+Daniel Veillard
+veillard@redhat.com
+
+$date$

@@ -1,0 +1,2123 @@
+Mon Oct 20 18:05:19 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* server/local_inotify.h server/local_inotify_syscalls.h: remove
+	  the local copies of the linux kernel inotify headers
+	* configure.in server/inotify-kernel.c server/inotify-helper.c
+	  server/gam_inotify.c server/inotify-path.c server/Makefile.am:
+	  associated cleanups, check for the presence of sys/inotify.h
+	  and use it, patch by  Adrian Bunk, solves #553158
+
+Mon Oct 20 17:39:28 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am configure.in: add configure switches to restrict
+	  building the server or the libs, as Gentoo had a dependancy
+	  problem, default behaviour of building both unchanged,
+	  patch from Rémi Cardona #530635
+
+Mon Oct 20 17:35:20 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am configure.in python/Makefile.am: simplify python
+	  bindings installation, patch from Rémi Cardona #530635
+
+Mon Oct 20 17:25:48 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: the glib dependency is not needed for libgamin,
+	  patch from Rémi Cardona #530635
+
+Mon Oct 20 17:19:01 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am: change daemon build flags, patch from Rémi Cardona
+
+2008-08-15  Matthias Clasen  <mclasen@redhat.com>
+
+	Bug 403158 - Leak reported by valgrind
+
+	* server/gam_fs.c (gam_fs_free_filesystems): Don't skip
+	every second list element when freeing.
+
+Wed Jun 11 12:27:02 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* acinclude.m4: add quotes for AC_STRUCT_ST_MTIM_NSEC, patch
+	  from Daichi Kawahata, fixes #319868
+
+Tue Jun  3 17:30:51 CEST 2008 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: patch from dodji seketeli to change configure.in
+	  to use AC_USE_SYSTEM_EXTENSIONS instead of AC_ISC_POSIX, otherwise
+	  struct ucred won't show up.
+
+2008-04-04  Ray Strode  <rstrode@redhat.com>
+
+	* server/inotify-path.c
+	(ip_watch_parent), (ip_start_watching), (ip_event_dispatch),
+	(ip_event_callback): If a file being watched doesn't exist
+	yet, then watch its parent to find out when it shows up
+	instead of polling (bug 476938).
+
+Mon Aug 27 12:22:40 CEST 2007 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h libgamin/gam_api.c: applied suggested changes
+	  from Ryan Underwood about missing (empty) entry point in the
+	  API and ABI, should close 398405.
+
+Mon Aug  6 10:39:13 CEST 2007 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: applied patch from Daniel Drake to fix the way
+	  optimizatio and debug flags are handled, fixes #450262
+
+Fri Jul 27 16:50:02 CEST 2007 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in doc//*: prepare release of 0.1.9 rebuild the docs
+
+Wed Jul  4 15:37:23 CEST 2007 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_kqueue.c server/gam_poll_basic.c: changes from
+	  Brendan Cully to compile on OS X
+
+2007-07-03  Ray Strode  <rstrode@redhat.com>
+
+	* server/gam_service.c:
+	* server/gam_fs.c:
+	* server/gam_fs.h: always poll if --disable-inotify and
+	--disable-dnotify are passed (bug 335411).
+
+2007-04-11  Alexander Larsson  <alexl@redhat.com>
+
+        * server/inotify-helper.c:
+        * server/inotify-kernel.c:
+        * server/inotify-path.c:
+	Handle inotify initialization failing better by
+	only setting initialized to TRUE if initialization
+	succeeded.
+	Patch from Robert Clark (robert3@ratty.org.uk)
+
+2007-03-07  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_poll_basic.c (gam_poll_basic_poll_file):
+	Don't run polling idle handler if not needed.
+
+Mon Nov 20 18:01:03 CET 2006 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c: applied patches based on Michael Banck
+	  suggestions to build on Hurd and kFreeBSD, should fix #377050
+	  and #377066
+
+2006-11-20  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_inotify.c: (gam_inotify_init):
+	Enable the basic polling code for the inotify
+	backend so e.g. polling on NFS works.
+
+Tue Oct 31 15:33:28 CET 2006 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in doc//*: prepare release of 0.1.8 rebuild the docs
+
+Wed Oct 25 18:14:11 CEST 2006 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: applied atch from James Andrewartha fixing
+	  compilation with Sun's compiler c.f. #365029
+
+2006-09-08  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_inotify.c: (gam_inotify_send_initial_events):
+	Send correct initial events for missing files
+
+2006-09-08  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_connection.c: (gam_connection_close):
+	Don't remove 0 source (from connection flush timeout fix)
+	
+	* server/gam_inotify.c: (gam_inotify_add_subscription):
+	Add the sub to the listener so it will get freed with it
+	
+	* server/inotify-helper.c: (ih_sub_foreach_worker):
+	Don't free sub_list items twice
+	
+	* server/inotify-sub.c: (ih_sub_get_filename):
+	Actually get the filename
+
+2006-09-05  Alexander Larsson  <alexl@redhat.com>
+
+	* lib/gam_error.c:
+	* libgamin/gam_api.c:
+	* server/gam_connection.[ch]:
+	* server/gam_server.[ch]:
+	Don't use running timers for server idle timeout
+	and debug signal handler.
+
+2006-09-05  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_connection.c: 
+	* server/gam_eq.[ch]:
+	Only run connection flush timeout when needed.
+
+2006-09-05  Alexander Larsson  <alexl@redhat.com>
+
+	* server/gam_inotify.c: (gam_inotify_init):
+	Install kernel monitoring hooks to fix previous commit.
+
+2006-09-04  John McCutchan  <john@johnmccutchan.com>
+
+	* server/Makefile.am:
+	* server/gam_inotify.c: Ported to inotify-helper.
+	* server/inotify-diag.c: inotify-helper debug output
+	* server/inotify-helper.c: easy interface to inotify
+	* server/inotify-kernel.c: kernel part of inotify-helper
+	* server/inotify-missing.c: missing list part of inotify-helper
+	* server/inotify-path.c: path based interface for inotify-kernel
+	* server/inotify-sub.c: inotify-helper subscription
+	* server/local_inotify.h: Updated to latest version
+	* server/local_inotify_syscalls.h: Updated to latest version
+
+	The above amounts to a complete replacement of gamin's inotify
+	backend with the current gnome-vfs backend.
+
+2006-08-28  Alexander Larsson  <alexl@redhat.com>
+
+	* libgamin/gam_data.c: (gamin_data_reset):
+	Empty read-buffer on connection reset.
+	Patch from Ariel T. Glenn
+
+2006-08-22  Alexander Larsson  <alexl@redhat.com>
+
+	* libgamin/gam_fork.c: (gamin_fork_server):
+	Open fd 0-2 to /dev/null to avoid possible problems if things
+	write to them.
+
+2006-08-16  Alexander Larsson  <alexl@redhat.com>
+
+	* libgamin/gam_api.c: (gamin_check_cred), (gamin_try_reconnect):
+	Never close the connection fd until FAMClose. That can easily
+	cause clients to use 100% cpu with a closed fd getting into
+	the main loop. (#351633)
+
+Fri Aug 11 12:52:34 CEST 2006 Daniel Veillard <veillard@redhat.com>
+
+	* python/Makefile.am: applied patch from Loïc Minier to allow install
+	  when built out of tree.
+	* configure.in: fix python detection code, updated with libxml2 one.
+
+Fri Aug 11 11:35:50 CEST 2006 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c: applied patch from Loïc Minier/Petr Salinger
+	  to build on GNU/kFreeBSD
+
+Tue Apr 25 16:40:31 CEST 2006 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: applied patch from Joseph Sacco for python detection
+	  should close bug #338524
+	* configure.in server/gam_inotify.c server/local_inotify_syscalls.h:
+	  get the damn thing to compile again on Fedora Core 5
+	* libgamin/gam_data.c: cleanup
+
+2006-04-19  Bastien Nocera  <hadess@hadess.net>
+
+	* lib/gam_error.c: (gam_error_init): avoid changing the signal at all
+	as it would break applications if they setup their signal handlers
+	with sigaction, and used the SA_SIGINFO flag (which would change
+	the number of arguments to the handler)
+
+Mon Mar  6 13:52:40 CET 2006 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.pc.in: fix cflags for pkg-config as raised by
+	  Claudio Fontana in the mailing-list
+
+Thu Nov 24 17:15:49 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/gam_inotify.c: inotify.h may be found
+	  under <sys/inotify.h> too
+
+Thu Oct 27 15:28:14 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in NEWS doc/*: release of 0.1.7
+
+Thu Oct 27 13:00:25 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_listener.c: applied patch from Ed Catmur fixing 
+	  gam_server segfaulting on inotify backend, should fix #319697
+
+Thu Oct 27 12:51:17 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/gam_fork.c tests/testing.c: applied patch
+	  from Daichi Kawahata to compile on systems without setenv()
+
+Tue Oct 25 2005  Christopher Aillon  <caillon@redhat.com>
+
+	* server/gam_dnotify.c:
+	* server/gam_hurd_mach_notify.c:
+	* server/gam_inotify.c:
+	Fix up minor leaks of GSource*
+
+Thu Sep 22 10:07:30 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c: reproduced RH bug #168744, one need to
+	  force nfs mounts to use poll and run from nfs. Seems to have a
+	  fix for it.
+
+Thu Sep 22 08:54:55 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* tests/Makefile.am: cleanups for make valgrind
+
+Tue Sep 20 17:12:28 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c: trying to fix RH bug #168744
+
+Sat Sep 10 12:46:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c: fixed a portability problem raised by
+	  Sjoerd Simons
+
+Fri Sep  9 13:08:09 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c: portability fix for non glibc systems
+	  fixes bug #315615 by Diego Pettenò
+
+Fri Sep  9 12:43:53 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: I lost one of the changes for #315368 as pointed by
+	  Joseph Sacco
+
+Thu Sep  8 14:55:07 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS doc/gamin.html doc/news.html: release of 0.1.6
+	* configure.in: release of 0.1.6 and python detection fix #315368
+	* Makefile.am tests/Makefile.am: adding make valgrind now that
+	  3.0.1 works fine.
+
+Thu Sep  8 08:10:15 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_listener.c server/gam_connection.c: removing the 
+	  subscriptions memory leaks when running under inotify
+	* server/gam_server.c: need to make a pass over all C files to
+	  fix the headers and Copyrights
+
+Thu Sep  8 10:01:15 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* lib/gam_error.c: restore stderr debug on GAM_DEBUG
+
+Fri Sep  2 11:17:17 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* tests/testing.c: applied patch from TomPh adding link and chown
+	  commands.
+	* tests/scenario/10.tst: patch from TomPh fixing the number of
+	  events to expect
+
+Fri Sep  2 10:57:12 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: applied the 3 patches from TomPh plus a bit of
+	  tweaking to not enable the debug api by default
+
+2005-08-24  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_is_link): Revert my last change.
+
+2005-08-23  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_is_link): Use IFLNK instead of ISLNK.
+
+2005-08-22  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* configure.in: White noise.
+	* python/tests/dnotify2.py: Print some debug output.
+	* server/gam_debugging.h: Remove the inotify definitions (they were never
+	used).
+	* server/gam_poll_basic.c: (gam_poll_basic_poll_file): Fix a poll limiter
+	bug.
+	* server/gam_poll_generic.c: (gam_poll_generic_remove_missing): Remove an
+	assertion that was causing a crash.
+	(gam_poll_generic_scan_directory_internal): Fix a poll limiter bug
+
+2005-08-19  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll_dnotify.c: (gam_poll_dnotify_scan_callback): Sprinkle in
+	some asserts.
+
+2005-08-19  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll_basic.c: (gam_poll_basic_poll_file),
+	(gam_poll_basic_scan_callback): Fix another crasher.
+
+2005-08-19  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* TODO: Clarify a TODO item.
+	* lib/gam_error.c: (gam_error_handle_signal), (gam_error_signal),
+	(gam_error_init), (gam_error_check), (gam_errno), (gam_error),
+	(gam_debug): Fix a bug in starting up /tmp/gamin debug stream.
+	* server/gam_poll_generic.c:
+	(gam_poll_generic_scan_directory_internal): Fix crasher.
+
+2005-08-19  John McCutchan  <ttb@tentacle.dhs.org>
+
+	Patch from TomPh <tpgww@onepost.net>
+
+	* configure.in: Properly define HAVE_LINUX when configured with
+	--disable-kernel. Clear up build options. debug & debug-api disabled by
+	default unless CVS directory exists. Use -Ox optimization only when -g is not
+	used.
+	* server/Makefile.am: make some _SOURCES conditional on ENABLE_INOTIFY &
+	ENABLE_DNOTIFY.
+
+2005-08-18  John McCutchan <ttb@tentacle.dhs.org>
+
+	* python/tests/basic4.py: show callback debug
+	* server/gam_inotify.c: (gam_inotify_init): Enable the basic poll
+	backend. The basic backend will be used for paths/filesystems marked
+	as poll when inotify is enabled
+	* server/gam_poll_basic.c: (gam_poll_basic_init),
+	(gam_poll_basic_poll_file), (gam_poll_basic_scan_callback):
+	* server/gam_poll_generic.c:
+	(gam_poll_generic_scan_directory_internal): Bug fixes to poll
+	backends. 
+
+2005-08-17  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_add_subscription),
+	(gam_inotify_remove_subscription), (gam_inotify_nolonger_missing),
+	(gam_inotify_nolonger_link), (gam_inotify_add_link),
+	(gam_inotify_scan_links), (gam_inotify_stat_changed),
+	(gam_inotify_poll_link): Redo link handling. This should work around the
+	race. Also fixed some real bugs in the last iteration.
+
+2005-08-16  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_data_new),
+	(gam_inotify_process_event), (gam_inotify_send_initial_events),
+	(gam_inotify_add_subscription), (gam_inotify_remove_subscription),
+	(gam_inotify_init), (gam_inotify_is_missing),
+	(gam_inotify_add_missing), (gam_inotify_rm_missing),
+	(gam_inotify_nolonger_missing), (gam_inotify_scan_missing),
+	(gam_inotify_is_link), (gam_inotify_nolonger_link),
+	(links_list_compare), (gam_inotify_add_link),
+	(gam_inotify_rm_link), (gam_inotify_scan_links): Attempt to handle links
+	according to the FAM specification. Racey as hell.
+	* server/gam_subscription.c: (gam_subscription_shutdown):
+	* server/gam_subscription.h: Add shutdown function -- not used though.
+
+2005-08-16  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/Makefile.am:
+	* server/gam_poll_basic.c: (gam_poll_basic_init),
+	(gam_poll_basic_add_subscription),
+	(node_remove_directory_subscription),
+	(gam_poll_basic_remove_subscription),
+	(gam_poll_basic_remove_all_for), (gam_poll_generic_node_changed),
+	(gam_poll_basic_poll_file), (gam_poll_basic_scan_callback):
+	* server/gam_poll_basic.h: Add a basic poll backend that does pretty much
+	what the dnotify poll backend does, but without any kernel support.
+	* server/gam_server.h: Fix typo.
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_process_event): Change debug output
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_dnotify.c: (gam_dnotify_directory_handler_internal):
+	* server/gam_poll_dnotify.c: (gam_poll_dnotify_delist_node),
+	(node_remove_subscription):
+	* server/gam_poll_generic.c:
+	(gam_poll_generic_trigger_file_handler):
+	* server/gam_server.h: s/DESACTIVATE/DEACTIVATE
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (mask_to_gam_event),
+	(gam_inotify_mask_to_gam_file_event),
+	(gam_inotify_mask_to_gam_dir_event), (gam_inotify_process_event): Treat
+	IN_MOVE_SELF the same as IN_DELETE_SELF
+	* server/local_inotify.h: Updated
+	* server/local_inotify_syscalls.h: Updated
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll_dnotify.c: (gam_poll_dnotify_poll_file),
+	(gam_poll_dnotify_scan_callback): Fix compilation when #define
+	POLL_VERBOSE is set.
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll.c:
+	* server/gam_poll.h: Remove old files
+
+2005-08-15  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* lib/gam_error.c: (gam_error), (gam_errno):
+	* lib/gam_error.h: Move gam_errno here (was in gam_poll)
+	* server/Makefile.am:
+	* server/gam_dnotify.c: (gam_dnotify_pipe_handler),
+	(gam_dnotify_init):
+	* server/gam_dnotify.h: Adapt to gam_poll_generic/gam_poll_dnotify.
+	* server/gam_inotify.c: (gam_inotify_init):
+	* server/gam_inotify.h: Adapt to gam_poll_generic/gam_poll_dnotify.
+	* server/gam_node.c: (gam_node_emit_event):
+	* server/gam_node.h: Rename gam_poll_emit_event to gam_node_emit_event.
+	* server/gam_poll_dnotify.c: (gam_poll_dnotify_init),
+	(gam_poll_dnotify_delist_node), (gam_poll_dnotify_relist_node),
+	(gam_poll_dnotify_flowon_node), (gam_poll_dnotify_flowoff_node),
+	(gam_poll_dnotify_poll_file), (node_add_subscription),
+	(node_remove_subscription), (node_remove_directory_subscription),
+	(gam_poll_dnotify_add_subscription),
+	(gam_poll_dnotify_remove_subscription_real),
+	(gam_poll_dnotify_remove_subscription),
+	(gam_poll_dnotify_remove_all_for),
+	(gam_poll_dnotify_scan_callback):
+	* server/gam_poll_dnotify.h: Dnotify specific portions of gam_poll.[ch]
+	* server/gam_poll_generic.c: (gam_poll_generic_init),
+	(gam_poll_debug_node), (gam_poll_generic_debug),
+	(gam_poll_generic_add_missing), (gam_poll_generic_remove_missing),
+	(gam_poll_generic_add_busy), (gam_poll_generic_remove_busy),
+	(gam_poll_generic_add), (gam_poll_generic_remove),
+	(gam_poll_generic_get_time), (gam_poll_generic_update_time),
+	(gam_poll_generic_get_delta_time),
+	(gam_poll_generic_trigger_file_handler),
+	(gam_poll_generic_trigger_dir_handler),
+	(gam_poll_generic_trigger_handler),
+	(gam_poll_generic_scan_directory_internal),
+	(gam_poll_generic_scan_directory),
+	(gam_poll_generic_first_scan_dir), (gam_poll_generic_get_tree),
+	(gam_poll_generic_get_missing_list),
+	(gam_poll_generic_get_busy_list), (gam_poll_generic_get_all_list),
+	(gam_poll_generic_get_dead_list),
+	(gam_poll_generic_unregister_node), (gam_poll_generic_prune_tree):
+	* server/gam_poll_generic.h: Generic portions of gam_poll.[ch]
+	* server/gam_server.c: (gam_show_debug), (gam_init_subscriptions),
+	(gam_server_install_poll_hooks), (gam_poll_remove_all_for),
+	(gam_poll_file):
+	* server/gam_server.h: Adapt to poll changes. Add poll_file callback for
+	poll backend.
+
+2005-08-11  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* lib/gam_error.c: (gam_error_init): 
+	* server/gam_node.c: (gam_node_set_pflag), (gam_node_unset_pflag),
+	(gam_node_has_pflag), (gam_node_set_pflags), (gam_node_has_pflags):
+	* server/gam_node.h: Move MON_* pflags into gam_node. Add access/mutators
+	for pflags. 
+	* server/gam_poll.c: (trigger_file_handler),
+	(node_remove_subscription), (poll_file),
+	(gam_poll_scan_directory_internal), (gam_poll_scan_callback),
+	(gam_poll_scan_all_callback), (gam_poll_init),
+	(gam_default_poll_add_subscription), (gam_poll_first_scan_dir),
+	(gam_poll_debug_node), (gam_poll_debug): Convert all code touching
+	->pflags to use the access/mutators from gam_node. Indentation fixes.
+
+2005-08-11  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_server.c: (gam_init_subscriptions): If the environment
+	variable GAM_TEST_DNOTIFY is set, inotify won't be used.
+
+Thu Aug 11 10:57:19 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_server.c: fixed compilation when inotify support
+	  is not configured in.
+
+Wed Aug 10 23:59:02 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c server/gam_kqueue.c server/gam_pidname.c
+	  server/gam_server.c: applied portability patch from Johnny Lam
+	  for NetBSD.
+
+2005-08-10  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_dnotify.c: (gam_dnotify_add_subscription),
+	(gam_dnotify_remove_subscription), (gam_dnotify_remove_all_for): Remove
+	the consume_subscription garbage.
+	* server/gam_listener.c:
+	* server/gam_poll.c: (gam_poll_scan_all_callback),
+	(gam_default_poll_add_subscription),
+	(gam_default_poll_remove_subscription), (gam_poll_first_scan_dir): Remove
+	consume subscription garbage
+	* server/gam_poll.h: Again.
+	* server/gam_subscription.c: Typo
+
+	Both test suites pass under dnotify with these changes.
+
+2005-08-10  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_dnotify.c: (gam_dnotify_init): Use the new
+	gam_server_install_kernel_hooks.
+	* server/gam_inotify.c: (gam_inotify_init): Here to
+	* server/gam_poll.c: (trigger_dir_handler), (trigger_file_handler),
+	(gam_poll_init_full), (gam_default_poll_add_subscription),
+	(gam_default_poll_remove_subscription_real),
+	(gam_default_poll_remove_subscription),
+	(gam_default_poll_remove_all_for): Use the gam_kernel_dir/file_handler
+	from gam_server.h instead of dir/file_handler.
+	* server/gam_poll.h: Move a bunch of functions to gam_server.h
+	* server/gam_server.c: (gam_exit), (gam_init_subscriptions),
+	(gam_add_subscription), (gam_remove_subscription),
+	(gam_server_install_kernel_hooks), (gam_server_install_poll_hooks),
+	(gam_server_get_kernel_handler), (gam_server_get_poll_handler),
+	(gam_kernel_add_subscription), (gam_kernel_remove_subscription),
+	(gam_kernel_remove_all_for), (gam_kernel_dir_handler),
+	(gam_kernel_file_handler), (gam_poll_add_subscription),
+	(gam_poll_remove_subscription), (gam_poll_remove_all_for): Provide
+	a set of generic kernel/poll backend functions. Now poll backends are pluggable.
+	Code now uses these instead of the backend_ variables.
+	* server/gam_server.h: Function prototypes.
+
+	Both test suites pass under dnotify with these changes.
+
+Tue Aug  9 21:27:24 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in NEWS doc/config.html doc/gamin.html doc/news.html
+	  gamin.spec.*: real release of gamin-0.1.5
+
+2005-08-09  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_emit_one_event): Free pathname on
+	error.
+
+Tue Aug  9 21:10:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in NEWS doc/config.html doc/gamin.html doc/news.html:
+	  doc update and release of gamin-0.1.4
+
+2005-08-09  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_server.c: (gam_init_subscriptions): Revert part of last
+	commit that disabled inotify all the time.
+
+2005-08-09  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll.c: (gam_poll_scan_callback),
+	(gam_poll_scan_all_callback), (gam_poll_init_full),
+	(gam_poll_consume_subscriptions): More debug output
+	* server/gam_server.c: (gam_init_subscriptions),
+	(gam_add_subscription), (gam_remove_subscription): Fix bug with dnotify
+	backend and a subscription that is on the exclude list. What was happening
+	was that we were calling gam_poll_add_subscription in that case, but when
+	the dnotify backend is enabled the poll backend is in a different mode. So
+	these subscriptions was never consumed. I special cased for when inotify
+	is not running to call the backend_add_subscription even when the item is
+	on the exclude list. The dnotify backend has code to deal with excluded
+	subscriptions.
+
+Tue Aug  9 18:18:13 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_channel.c: fixed some problem if debugging is enabled
+	* server/gam_poll.c server/gam_poll.h server/gam_server.c: added 
+	  poll debugging informations
+
+2005-08-09  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_node.c: (gam_node_new): Add some debug messages
+	* server/gam_server.c: (gam_add_subscription): Here to
+
+2005-08-08  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_event_pair_with),
+	(gam_inotify_read_handler): Don't process internal queue after reading
+	from the device. Change some debug options.
+
+2005-08-08  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_event_new),
+	(gam_inotify_process_internal), (gam_inotify_process_event_queue),
+	(gam_inotify_init): Fix stupid bug in move pairing code that was slowing 
+	things down big time. Make timings #defines, process the event queue @ 30
+	Hz. Process the internal event queue @ 30 Hz and when events are read from
+	the device fd.
+
+2005-08-08  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_event_new),
+	(gam_inotify_event_pair_with),
+	(gam_inotify_event_add_microseconds), (gam_inotify_event_ready),
+	(gam_inotify_process_event), (gam_inotify_pair_moves),
+	(gam_inotify_process_internal), (gam_inotify_process_event_queue),
+	(gam_inotify_read_handler), (gam_inotify_init), (g_timeval_eq):
+	Implemented pairing of MOVED_FROM and MOVED_TO events. Waiting for gamin
+	to support this event, but it will be trivial to hook up in inotify now.
+	* server/local_inotify_syscalls.h: Added ia64 and s390 system call
+	numbers. Added a couple aliases for ppc.
+	* tests/testing.c: (processCommand): Added "move" command.
+
+Mon Aug  8 23:15:45 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/local_inotify_syscalls.h: applied patch fixing compilation
+	  on ppc, alpha and sparc, fixes bug #312934 though incomplete list
+
+2005-08-08  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_mask_to_gam_file_event),
+	(gam_inotify_mask_to_gam_dir_event),
+	(gam_inotify_process_event_queue), (gam_inotify_remove_all_for): Add some
+	comments and refactor some code.
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_conf.c: (gam_conf_read): Fix build.
+	* server/gam_inotify.c: (gam_inotify_process_event_queue),
+	(gam_inotify_read_handler), (gam_inotify_init), (g_timeval_lt),
+	(t_timeval_eq): Process the inotify event queue in a timer. Add GTimeVal
+	comparision predicates. This is the beginning of pairing move events
+	together.
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_connection.c: (gam_connection_new): Change event queue flush
+	to 100 ms.
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* doc/config.html:
+	* doc/gamin.html: Update documentation
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll.c: (node_add_subscription),
+	(node_remove_subscription), (gam_poll_delist_node),
+	(gam_poll_relist_node), (gam_poll_flowon_node),
+	(gam_poll_flowoff_node), (poll_file), (gam_poll_scan_callback),
+	(gam_poll_first_scan_dir):
+	* server/gam_server.c: (gam_add_subscription),
+	(gam_remove_subscription):
+
+	Consider fsset options when deciding between kernel/poll/none
+	subscription options.
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_conf.c: (gam_conf_string_to_mon_type),
+	(gam_conf_read_internal), (gam_conf_read):
+	Make poll timeout value optional, read in /etc/gamin/gaminrc, then
+	~/.gaminrc, finally /etc/gamin/mandatory_gaminrc.
+	* server/gam_fs.c: (gam_fs_set): Use GAMIN_POLL_DEFAULT when passed -1 for
+	poll_timeout.
+
+2005-08-05  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* libgamin/gam_api.c: (gamin_check_cred):
+	* server/gam_channel.c: (gam_client_conn_check_cred),
+	(gam_client_create):
+	* server/gam_dnotify.c: (gam_dnotify_debug):
+	* server/gam_tree.c: (gam_tree_add_at_path): Clean up gcc warnings
+
+Fri Aug  5 14:07:24 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* lib/gam_error.h libgamin/gam_api.c libgamin/gam_fork.c python/gamin.c
+	  server/gam_debugging.c server/gam_dnotify.c server/gam_eq.c
+	  server/gam_fs.c server/gam_inotify.c server/gam_server.c
+	  server/gam_server.h server/gam_tree.c tests/testing.c: code cleanups
+	  for reports from gcc and sparse.
+
+Fri Aug  5 11:52:56 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: tiny fix for the python package
+
+2005-08-04  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_eq.c: (gam_eq_queue), (gam_eq_flush): Fix a segfault when the
+	event queue is empty. Add some GAM_DEBUG's supressed by GAM_EQ_VERBOSE.
+
+2005-08-04  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_inotify.c: (gam_inotify_is_running):
+	* server/gam_inotify.h: Add gam_inotify_is_running. Returns TRUE when
+	the inotify backend is being used.
+	* server/gam_server.c: (gam_server_emit_one_event): Use gam_queue_event
+	when gam_inotify_is_running() == TRUE. This should not effect the dnotify
+	behaviour.
+
+2005-08-04  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/Makefile.am: Compile gam_eq.c
+	* server/gam_connection.c: (gam_connection_close),
+	(gam_connection_eq_flush), (gam_connection_new), (gam_queue_event):
+	* server/gam_connection.h: Hookup the event queue. BUT, It's not used yet.
+	* server/gam_eq.c: (gam_eq_event_new), (gam_eq_event_free),
+	(gam_eq_new), (gam_eq_free), (gam_eq_queue), (gam_eq_size),
+	(gam_eq_flush_callback), (gam_eq_flush):
+	* server/gam_eq.h:
+	An event queue that will be per-connection when finished. Provides limited
+	but effective flow control. 
+	* server/gam_poll.c: (poll_file): Enable poll limiter now that we have
+	proper defaults for local filesystems.
+
+2005-08-03  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_fs.c: (gam_fs_init): Tweak defaults yet again.
+
+2005-08-03  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/Makefile.am:
+	* server/gam_conf.c: (gam_conf_string_to_mon_type),
+	(gam_conf_read_internal), (gam_conf_read): Move gaminrc parsing code here
+	* server/gam_conf.h: Move gaminrc parsing code here
+	* server/gam_excludes.c: (gam_exclude_init), (gam_exclude_check),
+	(gam_exclude_debug): Make gam_exclude_add public. Add gam_exclude_debug.
+	Removed config parsing code from here.
+	* server/gam_excludes.h: Make gam_exclude_add public.
+	* server/gam_fs.c: Adjust default poll timeout to be 0.
+	* server/gam_server.c: (gam_show_debug), (gam_init_subscriptions): call
+	gam_exclude_debug() in show_debug() and call gam_conf_read at beginning of
+	server initialization.
+
+2005-08-02  John McCutchan <jmc@cvs.gnome.org>
+
+	* server/gam_fs.c: (gam_fs_init): Change some defaults
+	* server/gam_inotify.c: (gam_inotify_data_debug),
+	(gam_inotify_debug), (mask_to_string), (mask_to_gam_event),
+	(gam_inotify_data_new), (gam_inotify_data_free),
+	(gam_inotify_event_new), (gam_inotify_event_free),
+	(gam_inotify_mask_to_gam_file_event),
+	(gam_inotify_mask_to_gam_dir_event), (gam_inotify_emit_one_event),
+	(gam_inotify_emit_events), (gam_inotify_process_event),
+	(gam_inotify_process_event_queue), (gam_inotify_read_handler),
+	(gam_inotify_send_initial_events),
+	(gam_inotify_send_initial_events_all),
+	(gam_inotify_add_subscription), (gam_inotify_remove_subscription),
+	(gam_inotify_remove_all_for), (gam_inotify_init),
+	(gam_inotify_add_watch), (gam_inotify_read_events),
+	(gam_inotify_is_missing), (missing_list_compare),
+	(gam_inotify_add_missing), (gam_inotify_rm_missing),
+	(gam_inotify_nolonger_missing), (gam_inotify_scan_missing),
+	(gam_inotify_wd_check), (gam_inotify_wd_hash_sanity_check),
+	(gam_inotify_missing_check),
+	(gam_inotify_missing_list_sanity_check),
+	(gam_inotify_sanity_check): Complete re-write of inotify backend. This
+	new backend does not use the poll backend at all. It passes all the
+	test suite tests except for dnotify15, and flood* because they make
+	use of falling back to the poll backend. Because it doesn't use the
+	poll backend anymore, memory & CPU usage has been greatly reduced.
+	* server/gam_node.c: (gam_node_new): Zero the checks field
+	* server/gam_poll.c: (poll_file): Change to poll limiter -- still
+	disabled.
+	* server/gam_poll.h: Add GAMIN_K_INOTIFY2 backend definition
+	* server/gam_server.c: (gam_add_subscription),
+	(gam_remove_subscription), (gam_server_emit_one_event): Fix backend
+	selection logic.
+
+Tue Aug  2 17:44:53 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in doc/gamin.html doc/news.html: 
+	  prepare release of 0.1.3
+
+2005-08-01  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* server/gam_poll.c: (poll_file): Disable poll limiter so that regression
+	tests pass.
+
+2005-08-01  John McCutchan  <ttb@tentacle.dhs.org>
+
+	* lib/gam_error.c: (gam_error_handle_signal): fflush the error stream
+	* server/Makefile.am: Add gam_fs and gam_pidname to build
+	* server/gam_channel.c: (gam_check_secure_dir):
+	* server/gam_connection.c: (gam_reqtype_to_string),
+	(gam_connection_set_pid), (gam_connection_request):
+	* server/gam_fs.c: (gam_fs_free_filesystems), (gam_fs_find_fs),
+	(gam_fs_find_fs_props), (gam_fs_filesystem_sort_cb),
+	(gam_fs_scan_mtab), (gam_fs_init), (gam_fs_get_mon_type),
+	(gam_fs_get_poll_timeout), (gam_fs_set), (gam_fs_unset),
+	(gam_fs_debug):
+	* server/gam_fs.h: Persistant storage of what filesystems are mounted and
+	where. Adds 2 preferences to each filesystem type, poll interval &
+	kernel/poll/none option.
+	* server/gam_listener.c: (gam_listener_new), (gam_listener_free),
+	(gam_listener_add_subscription),
+	(gam_listener_remove_subscription):
+	* server/gam_listener.h: Add pidname to debug output
+	* server/gam_node.c: (gam_node_new),
+	(gam_node_remove_subscription): Fix long standing bug of watches being
+	removed at the kernel level while the subscription level thinks they still
+	exist. 
+	* server/gam_node.h:
+	* server/gam_pidname.c: (gam_get_pidname):
+	* server/gam_pidname.h: Retrieves the process name for a given pid.
+	* server/gam_poll.c: (trigger_dir_handler), (trigger_file_handler),
+	(poll_file), (gam_poll_scan_directory_internal),
+	(gam_poll_scan_all_callback), (gam_poll_init_full),
+	(gam_poll_remove_subscription): Incorporate gam_fs options into logic.
+	* server/gam_server.c: (gam_show_debug), (gam_add_subscription),
+	(gam_remove_subscription):
+	* server/gam_subscription.c: (gam_subscription_new),
+	(gam_subscription_free), (gam_subscription_set_listener),
+	(gam_subscription_cancel): Debug output changes
+
+2005-08-01  John McCutchan  <jmc@cvs.gnome.org>
+
+	* server/gam_channel.c: (gam_client_conn_send_cred),
+	(gam_client_conn_read), (gam_client_conn_write):
+	* server/gam_connection.c: (gam_connection_set_pid):
+	* server/gam_inotify.c: (gam_inotify_data_free),
+	(gam_inotify_directory_handler), (gam_inotify_file_handler),
+	(gam_inotify_read_handler),
+	(gam_inotify_consume_subscriptions_real),
+	(gam_inotify_consume_subscriptions),
+	(gam_inotify_add_subscription), (gam_inotify_remove_subscription):
+	* server/gam_listener.c: (gam_listener_new), (gam_listener_free),
+	(gam_listener_get_pidname), (gam_listener_debug):
+	* server/gam_listener.h:
+	* server/gam_poll.c: (gam_poll_scan_directory_internal):
+	* server/gam_subscription.c: (gam_subscription_set_listener),
+	(gam_subscription_cancel): Debug output cleanups
+
+Mon Aug  1 11:46:56 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/Makefile.am server/gam_debug_lists.c: keeping the debug
+	  copy around doesn not make sense anymore, removing, fixes #312113
+
+2005-07-21  John McCutchan  <jmc@cvs.gnome.org>
+
+	* server/gam_connection.c: (gam_connection_set_pid): It's fclose not
+	f_close ...
+
+2005-07-21  John McCutchan  <jmc@cvs.gnome.org>
+
+	* python/tests/flood.py: Enable debug output while I work at fixing
+	inotify bug.
+	* server/gam_connection.c: (gam_connection_close),
+	(gam_connection_get_pidname), (gam_connection_set_pid),
+	(gam_connection_request), (gam_send_event), (gam_send_ack),
+	(gam_connections_debug): Output process name instead of pid on Linux.
+	Everyone else still gets pid.
+	* server/gam_connection.h:
+	* server/gam_poll.c: (gam_poll_emit_event), (poll_file),
+	(gam_poll_scan_directory_internal): Move more debug output under
+	GAM_VERBOSE_POLL define.
+
+2005-07-21  John McCutchan  <jmc@cvs.gnome.org>
+
+	* server/gam_inotify.c: (gam_inotify_directory_handler_internal): Fix
+	locking bug.
+
+2005-07-21  John McCutchan  <jmc@cvs.gnome.org>
+
+	* server/gam_inotify.c: (gam_inotify_read_handler),
+	(gam_inotify_rm_watch), (gam_inotify_read_events): New function that
+	tries hard to read events from inotify in large chunks. Big
+	CPU usage decrease with dd if=/dev/zero of=test!
+
+2005-07-21  John McCutchan  <jmc@cvs.gnome.org>
+
+	* python/tests/basic4.py:
+	* python/tests/basic6.py:
+	* python/tests/multiple2.py:
+	* python/tests/noexists.py:
+	* python/tests/nokernel.py:
+	* python/tests/readonly.py: Cleanup debug output
+	* server/gam_inotify.c: (gam_inotify_directory_handler_internal),
+	(gam_inotify_read_handler), (gam_inotify_init),
+	(gam_inotify_remove_all_for), (gam_inotify_add_watch),
+	(gam_inotify_rm_watch):  More inotify backend cleanups
+	* server/local_inotify_syscalls.h: Local header that defines the
+	inotify system calls for x86 and x86-64 architectures. Other
+	architectures get dummy functions.
+
+Wed Jul 13 18:51:44 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c: applied patch from Jean-Yves Lefort
+	  for compilation on gcc < 3.0
+
+Wed Jul 13 13:15:37 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in doc/* gamin.spec.in NEWS: preparing release of 
+	  version 0.1.2
+
+Tue Jul 12 23:19:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: the inotify API
+	  changed from file based to syscall, patch from John McCutchan
+	* server/gam_node.c: one of the assert from Neal seems to be 
+	  crashing gam_server when using the gtk+ file selector, fix
+	  from John McCutchan too to avoid the assert() but not the cause
+
+Wed Jun 15 19:04:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/tests/Makefile.am: add make tests to make check target
+	  fixes #307786 Neal H. Walfield
+
+Wed Jun 15 14:40:56 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: another cleanup of poll only support from 
+	  Neal H. Walfield which should not affect the dnotify back-end,
+	  should fix #307745
+
+Wed Jun 15 13:01:11 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c server/gam_channel.c: reverted patch from
+	  #306706 as this broke authentication and debugging.
+	* server/gam_server.c: removed warnings.
+
+Tue Jun 14 14:30:54 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c: another cleanup patch from Neal H. Walfield
+
+Mon Jun 13 18:35:29 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_hurd_mach_notify.c server/gam_kqueue.c
+	  server/gam_listener.c server/gam_listener.h server/gam_poll.c: 
+	  another cleanup patch from Neal H. Walfield
+
+Mon Jun 13 16:57:35 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_node.c server/gam_poll.c: applied 2 cleanup patches
+	  from Neal H. Walfield
+
+Mon Jun 13 11:11:43 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_dnotify.h server/gam_inotify.c
+	  server/gam_inotify.h server/gam_poll.c server/gam_server.c: applied
+	  patch from  John McCutchan for the inotify back-end #171201 and more
+	  debugging informations. Had to fix gam_poll_init_full() too.
+
+Mon Jun 13 10:40:13 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: updated the Changelog
+
+Fri Jun 10 17:15:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in doc/gamin.html doc/news.html: prepared release
+	  0.1.1
+
+Fri Jun 10 16:30:04 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_excludes.c: removed an extra variable
+	* server/gam_poll.c: fixed problem raised by dnotify4.py, watching
+	  a directory and getting a file should send back Deleted.
+
+Fri Jun 10 11:44:27 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_excludes.c: allowed ~ at the beginning of a path to
+	  indicate the user home directory
+
+Thu Jun  9 00:01:26 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_hurd_mach_notify.c: fixed an open() turned in concat()
+	  due to privoxy filtering closes #306915.
+	* server/gam_server.c: applied cleanup from Neal H. Walfield removing
+	  duplicate code #306913
+	* server/gam_hurd_mach_notify.c: bugfix for the Hurd backend from
+	  Neal H. Walfield #306916
+
+Wed Jun  8 23:45:28 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c server/gam_channel.c: patch from
+	  Neal H. Walfield support for OSes that do not support LOCAL_CRED
+	  closes bug #306706
+	* server/Makefile.am: tidying
+	* libgamin/gam_api.c: fixed a missing const #306909 (Neal H. Walfield)
+
+Wed Jun  8 19:20:08 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c server/gam_channel.c: Applied patch from
+	  Neal H. Walfield about non atomicity of write(), this should close
+	  bug #306912
+
+Wed Jun  8 18:30:03 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/Makefile.am: Hurd/Mach patch broke make dist
+
+Wed Jun  8 15:55:20 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_poll.c server/gam_tree.c: moving
+	  the dnotify file <-> directory mapping outside of the dnotify
+	  module which doesn't have enough context.
+	* python/gamin.py: fixed a bug on error cases
+	* python/tests/Makefile.am python/tests/dnotify15.py: added a specific
+	  test case for monitoring multiple files in busy directories
+
+Wed Jun  8 11:34:13 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_hurd_mach_notify.c
+	 server/gam_inotify.c server/gam_kqueue.c server/gam_poll.c
+	 server/gam_poll.h: changed the way the kernel monitoring registration
+	 is done to try to cope later with troubles with dnotify directly from
+	 the gam_poll.c code.
+
+Tue Jun  7 10:17:17 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/Makefile.am server/gam_hurd_mach_notify.c
+	  server/gam_hurd_mach_notify.h server/gam_server.c: applied patch from
+	  Neal H. Walfield to add native Mach/Hurd support, closes #306707
+
+Tue Jun  7 09:50:07 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/Makefile.am server/Makefile.am: applied patch from
+	  Neal H. Walfield to build outside of the source directory,
+	  closes #306702
+
+Thu May 26 15:53:19 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c: applied patch from John McCutchan fixing
+	  bug #171201 of inotify and mounted media.
+
+2005-05-20  Frederic Crozat  <fcrozat@mandriva.com>
+
+	* server/gam_poll.c: (unregister_node),
+	(remove_directory_subscription), (prune_tree),
+	(gam_poll_remove_subscription_real):
+	factorize code and make sure node are unregistered
+	correctly. Fix crash from bug #303932.
+
+Thu May 19 22:57:25 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: updated changelog section
+	* server/gam_kqueue.c server/gam_kqueue.h: applied patch for BSD
+	  kqueue code from Jean-Yves Lefort
+
+2005-05-18  Mark McLoughlin  <mark@skynet.ie>
+
+	* libgamin/gam_data.c: (gamin_data_conn_event): Fix
+	req->state vs req->type thinko.
+
+Thu May 12 15:55:07 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS doc/gamin.html doc/news.html: preparing release 0.1.0
+
+Thu May 12 14:51:21 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: preparing for 0.1.0
+	* gamin.spec.in: don't ship the .la
+	* libgamin/gam_fork.c: tried to fix #300088, I hope it's okay.
+
+Thu May 12 13:33:52 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c libgamin/gam_data.[ch] server/gam_connection.[ch]:
+	  applied patch from #300028 FAMCancelMonitor should get back a
+	  FAMAcknowledge event, plus some fixups. The real question was
+	  should the full round-trip to the server be needed or not,
+	  expectation are that it should be done, though it's heavier,
+	  kept as is so far but this might be changed in the future.
+	* tests/result/10 tests/scenario/10.tst: this impacts one of the
+	  simpler tests
+	* python/gamin.py python/tests/*.py: this severely impacted the
+	  Python bindings, and most tests had to be fixed, working now.
+
+Tue May 10 11:29:40 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: applied patch
+	  inotify 0.23-6 from Daniel Drake for inotify support in
+	  bug #303615
+
+Tue May 10 11:25:42 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/Makefile.am: oops forgot to add to source as pointed
+	  by Daniel Drake in #303612
+
+Mon May  9 15:45:22 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/server_config.h server/*.c: force compilation with
+	  big file support, some cleanups too, fixes bug #167898
+	* python/tests/Makefile.am python/tests/bigfile.py: added a 
+	  specific regression test.
+
+Mon May  9 12:49:36 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: found bug #302737 from Frederic Crozat,
+	  creating a node duplicate, broke the unicity of node <->path
+
+Mon May  9 12:15:35 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/tests/dnotify12.py python/tests/dnotify13.py: tests
+	  trying to chase the Desktop nautilus refresh bug tracked with alex
+
+Mon May  9 12:11:49 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c: added more debugging
+	* server/gam_node.c server/gam_node.h server/gam_poll.c:
+	  simplification removing an extra indirection of GamNodeData
+	  keeping them directly in GamNode
+	* server/gam_server.c: removed a warning
+
+Mon May  2 16:15:22 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/Makefile.am libgamin/gam_api.c
+	  libgamin/gam_data.[ch]: applied patch from Nicholas Miell in
+	  RH bug #154785 to make the client side thread-safe, also used
+	  gcc weak symbol support on Linux to not force pthread library
+	  onto the programs using the library.
+
+Mon May  2 10:10:05 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: applied patch 2 from
+	  John McCutchan for inotify 0.23
+
+Fri Apr 15 14:18:53 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_debugging.h server/gam_inotify.c server/gam_inotify.h:
+	  applied patch from John McCutchan to align inotify and dnotify 
+	  back-end behaviours.
+
+
+Fri Apr  8 08:05:30 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: more fixes
+	* python/tests/Makefile.am python/tests/dnotify1[01].py: more
+	  regression tests
+
+Thu Apr  7 11:10:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c: applied patch gamin_inotify_recursive2 from
+	  Andrei Lahun provided on bug #171201
+
+Tue Apr  5 16:48:31 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: found a problem when demonitoring a directory
+	  which is the child of a monitored directory related to #172596
+	* python/tests/Makefile.am python/tests/dnotify8.py
+	  python/tests/dnotify9.py: added a couple of regression tests for this
+
+Mon Apr  4 13:47:57 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: applied patch from Nickolay Shmyrev to fix
+	  a problem on unreadable directories.
+	  Seems to break python/tests/dnotify4.py though ... need more checking.
+	* python/tests/Makefile.am python/tests/readonly.py
+	  tests/testing.c tests/result/11 tests/scenario/11.tst: also 
+	  included the regression tests for the feature
+
+Sun Apr  3 17:35:37 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c: applied patch from Todor Penev to fix a
+	  problem on the inotify back-end
+
+Sat Apr  2 17:41:15 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/Makefile.am server/gam_channel.c
+	  server/gam_kqueue.c server/gam_kqueue.h server/gam_server.c:
+	  applied patch from Joe Marcus Clarke, adding a kqueue based
+	  kernel backend for the BSD abd MacOS X platforms.
+
+Wed Mar 30 12:55:38 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.pc.in: removing the Requires: glib-2.0 gthread-2.0 per
+	  Red Hat bug #152486
+
+Tue Mar 29 08:16:55 CEST 2005 Daniel Veillard <veillard@redhat.com>
+
+	* tests/Makefile.am: cleanup result files left from make tests
+
+Fri Mar 25 11:04:16 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/gam_api.c server/gam_channel.c: bug fixes
+	  and portability patches from Joe Marcus Clarke when porting to
+	  FreeBSD.
+
+Wed Mar 23 16:16:38 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/tests/Makefile.am python/tests/flood4.py: one more flooding
+	  handling regression test.
+
+Wed Mar 23 11:59:20 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: make 100% sure we will not use kernel monitoring
+	  for excluded resources, c.f. bug #151774
+	* python/tests/Makefile.am python/tests/flood3.py: added a third flood
+	  regression test
+
+Wed Mar 23 10:45:20 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_poll.c: more work on the flow
+	  control especially when multiple monitors use the same dnotify
+	  watcher
+	* python/tests/Makefile.am python/tests/flood2.py: added a
+	  second regression test for it.
+
+Tue Mar 22 17:21:01 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_debugging.c server/gam_debugging.h server/gam_dnotify.c
+	  server/gam_poll.c: implemented the DNotify side of the flow
+	  control processing, and the associated debug.
+	* python/tests/Makefile.am python/tests/flood.py: added a 
+	  first regression test for it.
+
+Tue Mar 22 15:22:05 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c server/gam_poll.h: more cleanup, prepare for
+	  mode usage in kernel backend instead of just an added boolean.
+	* server/gam_dnotify.c server/gam_inotify.c: converting the 
+	  backends to the new modes
+
+Tue Mar 22 14:39:38 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_poll.c server/gam_poll.h: cleanups,
+	  a bit of code reorganization, adding function comments.
+
+Wed Mar 16 23:01:36 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: new patch from
+	  John McCutchan to adapt to the latest change in kernel interface
+	  hopefully the last one.
+
+Tue Mar 15 14:15:58 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c server/gam_channel.c: portability patch for
+	  Mac OS X, add #include <sys/uio.h> bug gnome #170404
+
+Tue Mar 15 13:46:44 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in doc/gamin.html doc/news.html:
+	  preparing release of 0.0.26
+
+Tue Mar 15 13:05:54 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* doc/gamin.html doc/news.html: typo
+	* libgamin/fam.h: removed an incompatibility with SGI FAM #149822
+
+Tue Mar 15 12:49:21 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: revisited the patch a bit.
+
+Tue Mar 15 12:32:02 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_tree.c: a bit of cleanup, and avoiding potentially
+	  expensive call g_node_n_children() when the operation should 
+	  really be O(1)
+
+Tue Mar 15 12:24:06 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: fixed the crash on failed tree assert bug #150471
+	  based on the patch from Dean Brettle
+	* tests/testing.c tests/result/10 tests/scenario/10.tst: integrated the
+	  regression test provided by Dean Brettle
+
+Fri Mar 11 10:30:46 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* README doc/gamin.html doc/overview.html: typo fix in the
+	  documentation by Jean-Marc Coursimault
+
+Mon Mar  7 11:16:10 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h: gcc4 now breaks with #include "limits.h" from
+	  FAM include, fixing #150169.
+
+Tue Mar  1 18:53:58 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in doc/gamin.html doc/news.html:
+	  prepared release of 0.0.25
+
+Tue Mar  1 18:17:06 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: fixed a problem with monitoring directories
+	  without using the kernel
+	* python/tests/Makefile.am python/tests/nokernel.py: adding a specific
+	  regression test
+
+Tue Mar  1 16:42:41 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: found out the bug blocking unmounting 
+	  of temporary media filesystems in 0.0.24, it wasn't dnotify.
+
+Wed Feb 23 23:28:18 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: small patch about debugging being always enabled
+	  by Martin Schlemmer
+
+Wed Feb 23 17:44:54 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: try to avoid the /media/ mount problem
+	  in 0.0.24
+
+Fri Feb 18 15:25:23 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in doc/gamin.html doc/news.html:
+	  updated and preparing release of 0.0.24
+
+Fri Feb 18 14:36:38 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/tests/Makefile.am python/tests/dnotify[67].py: added
+	  more complex dnotify tests
+
+Fri Feb 18 12:59:16 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: more cleanup, bug fix on monitoring
+	  missing files.
+	* python/tests/Makefile.am python/tests/dnotify5.py: added
+	  a specific test.
+	  
+Thu Feb 17 17:15:31 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_poll.c: removing bugs,
+	  did I say that I hate DNotify ?
+	* python/tests/Makefile.am python/tests/dnotify*.py: more
+	  tests and fixes
+
+Thu Feb 17 12:46:06 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/gam_api.c libgamin/gam_data.c
+	  libgamin/gam_protocol.h libgamin/gamin_sym.version
+	  server/gam_debugging.[ch] server/Makefile.am: adding a
+	  debugging infrastructure where some server internal events
+	  can be reported to the client. This is only compiled if 
+	  configured with --enable-debug-api, cleaned bup some configure.in
+	  bugs
+	* server/gam_dnotify.c: plugged DNotify in the debugging framework
+	* python/gamin.c python/gamin.py: added python support for the
+	  debugging framework
+	* python/tests/Makefile.am python/tests/dnotify.py 
+	  python/tests/dnotify2.py: started to add regression testing
+	  for checking DNotify behaviour when debugging framework is activated.
+
+Wed Feb 16 15:26:08 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/tests/level.py: reproduced the damn "Desktop doesn't refresh"
+	  bug
+	* server/gam_poll.c: fix fo the bug
+
+Tue Feb 15 15:40:31 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/gamin.py: allow multiple monitoring of the same
+	  file or dir in a given monitor
+	* python/tests/Makefile.am python/tests/level.py
+	  python/tests/multiple3.py: more tests
+
+Tue Feb 15 12:57:05 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c server/gam_subscription.[ch]: cleaning up
+	  the server code, a number of bug fixes
+	* python/tests/Makefile.am python/tests/*.py: adding a bunch of
+	  new tests
+
+Fri Feb 11 14:39:16 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in python/Makefile.am python/gamin.c python/gamin.py:
+	  fixed #167064 renaming gaminmod to _gamin
+	* python/tests/Makefile.am: make sure the PYTHONPATH includes
+	  libgamin subdirs
+
+Fri Feb 11 12:34:39 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/gamin.py: fixing a bug in the bindings
+	* python/tests/Makefile.am python/tests/multiple.py: added a test
+	  for multiple monitors watching the same resource.
+
+Thu Feb 10 23:49:42 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: applied 
+	  inotify-0.19 patch from John McCutchan 
+
+Tue Feb  8 14:40:49 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* doc/*: added a new page differences.html giving details
+	  about the differences and extensions between FAM and gamin.
+
+Tue Feb  8 11:24:00 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS doc/gamin.html doc/news.html gamin.spec.in: finishing
+	  release of 0.0.23
+	* python/gamin.py: rolling back the chnge to the bindings,
+	  since it made python bindings semantic diverge from the C
+	  level with risk of recursion problems.
+
+Mon Feb  7 18:34:25 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: preparing 0.0.23
+	* libgamin/fam.h libgamin/gam_api.c libgamin/gam_data.c 
+	  libgamin/gam_data.h libgamin/gam_protocol.h
+	  libgamin/gamin_sym.version: adding defines and an API to
+	  avoid Exists and EndExists events being generated,
+	  also avoid pushing those in case of reconnect
+	* server/gam_connection.c server/gam_subscription.[ch]:
+	  this impacts also the server part a bit
+	* python/gamin.c python/gamin.py: added the API at the
+	  server level.
+	* python/tests/Makefile.am python/tests/basic.py 
+	  python/tests/noexists.py tests/Makefile.am: added a specific
+	  test and some cleanups.
+
+Fri Feb  4 15:34:29 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* python/gamin.py: adding self.handle_events() in watch_file and
+	  watch_directory to avoid deadlocks.
+
+2005-02-01  Mark McLoughlin  <mark@skynet.ie>
+
+	* python/gamin.c: (get_connection), (get_request): memset
+	the newly re-alloced memory rather than the previous memory.
+
+Mon Jan 31 09:07:19 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in doc/*.html: made release
+	  0.0.22, updated the docs.
+
+Sat Jan 29 20:28:36 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c: another patch from John McCutchan
+
+Fri Jan 28 23:04:47 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c: inotify 0.18 patch from John McCutchan
+
+Fri Jan 28 16:51:46 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am python/Makefile.am python/tests/Makefile.am
+	  python/tests/basic*.py: added python tests to regression tests
+	* libgamin/gam_api.c: fixed a connection bug on the clien side
+	* server/gam_poll.c: fixed a bug where some changes in a directory
+	  may not be caught
+
+Thu Jan 27 23:58:00 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c: cleanup
+	* python/gamin.py: added a disconnect() method
+	* server/gam_channel.c: fixed a serious bug in some disconnection
+	  cases
+	* server/gam_dnotify.c server/gam_poll.c server/gam_poll.h: cleanup
+	  gam_poll_scan_directory() and worked out debug messages
+
+Wed Jan 26 12:39:08 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in NEWS doc/* gamin.spec.in: preparing release 0.0.21
+	* python/tests/Makefile.am python/tests/basic.py : added first example
+
+Wed Jan 26 11:59:11 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* doc/*: added a page for the python bindings, updated the 
+	  stylesheet and rebuilt the docs.
+
+Wed Jan 26 10:26:15 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: applied patch
+	  from Philipp Zabel to follow the evolution of the inotify 
+	  protocol in 0.18
+
+Tue Jan 25 18:39:34 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in Makefile.am gamin.spec.in python/Makefile.am
+	  python/gamin.c python/gamin.py: added python bindings
+
+Fri Jan 21 10:27:10 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c: markmc pointed out a doc mismatch
+
+Thu Jan 13 18:29:30 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_channel.c: removing a compiler warning.
+
+Thu Jan  6 16:10:20 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS configure.in gamin.spec.in: preparing release 0.0.20
+	* doc/gamin.html doc/news.html: update to the web pages
+	* server/gam_poll.c: trying to fix gnome bug #161792 compilation
+	  problem.
+
+Wed Jan  5 18:40:50 CET 2005 Frederic Crozat  <fcrozat@mandrakesoft.com>
+
+	* server/gam_poll.c: (remove_directory_subscription), (prune_tree):
+	Fix crash when removing files (bug #161902).
+
+Wed Jan  5 18:32:45 CET 2005 Frederic Crozat  <fcrozat@mandrakesoft.com>
+
+	* server/gam_poll.c: (prune_tree), (gam_poll_scan_all_callback):
+	Update poll only mode to a working, non-crashing version.
+
+Wed Jan  5 16:46:15 CET 2005 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: patch from Frederic Crozat to add poll only
+	  support (helps with valgrind debugging).
+
+Tue Dec 21 17:15:24 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_tree.c: try to fix #143342 in gam_tree_get_children if
+	  tree and root are NULL.
+
+Mon Dec  6 13:54:11 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS doc/gamin.html doc/news.html: updated and rebuilt pages.
+
+Fri Dec  3 16:39:35 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.19
+
+Fri Dec  3 16:10:03 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/Makefile.am server/gam_debug_lists.c: adding our own
+	  reduced version of glib glist.c with simplified memory allocation
+	  and poisonning of deleted list nodes to chase #132354.
+	* server/gam_connection.c server/gam_node.c server/gam_poll.c:
+	  more review and simplifiction of the use of GList APIs.
+
+Fri Dec  3 12:10:50 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c server/gam_node.c server/gam_poll.c
+	  server/gam_tree.c: avoid gam_node_append as it is O(n)
+
+Thu Dec  2 18:46:09 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_connection.c server/gam_listener.c server/gam_server.c
+	  server/gam_subscription.c: fixed compilation without debug
+
+Thu Dec  2 01:17:09 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* autogen.sh: removed reference to old m4 subdir
+	* server/gam_connection.c server/gam_listener.[ch]
+	  server/gam_subscription.[ch]: extend debugging to add listeners
+	  and all subscription states from a given connection.
+
+Wed Dec  1 15:26:20 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO: updated
+	* configure.in: minor change for compiler options
+	* lib/gam_error.[ch] libgamin/gam_api.c server/gam_connection.[ch]
+	  server/gam_server.[ch]: trying to improve debugging
+
+Fri Nov 26 11:01:19 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: real release of 0.0.18
+	* libgamin/gam_api.c: (FAMPending): only select/read
+	  when we don't have a complete event in the buffer.
+	  patch from Mark McLoughlin  <mark@skynet.ie>
+
+Thu Nov 25 16:07:04 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c: fixed a const pbm
+
+Thu Nov 25 15:59:45 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: 0.0.18 sounds better than 0.1.0 really
+	  making sure that debug support is compiled in
+	* libgamin/gam_api.c libgamin/gam_fork.c server/gam_channel.c
+	  server/gam_connection.c server/gam_dnotify.c server/gam_inotify.c
+	  server/gam_listener.c server/gam_poll.c server/gam_server.c
+	  server/gam_subscription.c: switched all usage of gam_debug to
+	  the GAM_DEBUG macro to avoid paying for debug calls when not
+	  asked for.
+
+Thu Nov 25 13:59:34 CET 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in TODO gamin.pc.in gamin.spec.in: updated, will 
+	  release a 0.1.0 RC1 today
+	* lib/gam_error.c lib/gam_error.h: first step toward avoiding
+	  debug handling costs when not debugging
+	* server/gam_connection.c server/gam_listener.c server/gam_node.[ch]
+	  server/gam_poll.c server/gam_tree.[ch]: checked all GList uses
+	  in the server, try to make 100% sure there is no double free of
+	  list items or reuse of freed list item which could explain the
+	  loops found in bug #132354 , cleanups, remove use of g_list_foreach.
+
+Thu Oct 28 15:32:16 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: fixed a packaging bug Red Hat #135417
+
+Wed Oct 20 19:02:22 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release 0.0.16 with latest code
+	  to try to get rid of #132354
+
+Wed Oct 20 18:46:32 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c: minimize calls to getpwuid()
+	* server/gam_inotify.c server/gam_poll.c server/gam_server.c
+	  server/gam_server.h server/gam_subscription.c
+	  server/gam_subscription.h: made some changes in the quest to remove
+	  bug #132354, lot of checking debugging, valgrinding, refactored
+	  event filtering as a result, potentially fixed a tree freeing
+	  problem.
+	* tests/Makefile.am: alway reset the test directory between tests
+
+Tue Oct 19 15:50:05 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c server/gam_subscription.c: valgrinding
+	  a session raised a couple of problems.
+
+Sat Oct 16 18:11:39 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: workaround to detect loops and avoid the nasty
+	  effects, see RedHat bug #132354 . Getting a loop still look
+	  impossible but well it happens in practice so this should avoid
+	  most of the problems in practice until the problem is found.
+
+Wed Oct 13 00:40:32 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_node.c server/gam_node.h: adding a new API
+	* server/gam_subscription.c: fixed gnome bug #153531 when monitoring
+	  a directory as a file.
+	* tests/result/9 tests/scenario/9.tst: added a specific regression
+	  test.
+
+Sun Oct 10 19:45:48 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO tests/Makefile.am tests/result/* tests/scenario/*: fixing
+	  "make tests" so it's not tied to my own directories paths.
+
+Wed Oct  6 23:20:11 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/local_inotify.h: applied patch for inotify-0.13 from
+	  John McCutchan.
+
+Tue Oct  5 18:50:57 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: added BuildRequires: glib2-devel , bug #134689
+
+Sun Oct  3 19:43:23 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.14
+	* server/gam_excludes.c: added /dev/ and /proc/ in the list of the
+	  excludes.
+	* doc/Makefile.am: fixed the Makefile for new images and html.
+
+Sun Oct  3 19:05:14 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* doc/debug.html doc/gamin.html doc/internals.html doc/security.html:
+	  more documentation cleanup, includes how to switch a running
+	  application to debugging.
+
+Sun Oct  3 17:55:17 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* doc/* doc/internals.html doc/client_server.gif doc/server_structs.gif:
+	  added documentation about the internals, regenerated the docs.
+
+Sun Oct  3 16:11:01 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c: extra debug on client API
+
+Sun Oct  3 16:03:56 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c server/gam_subscription.c: cleanup, debug
+	  and probable fix for #132429, #133665 and #134413
+
+Sat Oct  2 14:57:58 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_server.c: code cleanup
+	* lib/gam_error.[ch] libgamin/gam_api.c: added a dynamic debugging
+	  capability using SIGUSR2
+
+Fri Oct  1 18:15:05 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release 0.0.13
+
+Fri Oct  1 12:01:39 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h server/gam_poll.c: portability cleanups w.r.t.
+	  PATH_MAX not in limits.h reported by Michael Banck
+
+Fri Oct  1 11:47:55 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c libgamin/gam_protocol.h server/gam_connection.c:
+	  applied patch from Sergio Garcia to fix a packet size problem
+	  on some platforms.
+
+Fri Oct  1 01:13:52 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_node.[hc] server/gam_poll.c server/gam_subscription.[ch]:
+	  cleanup and be more defensive.
+
+Thu Sep 30 15:34:19 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release 0.0.12
+
+Tue Sep 28 01:31:52 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: adding missing locks around a list
+	  update. Though gam_server is single threaded maybe this
+	  is the cause of a list corruption generating a loop.
+
+Mon Sep 27 12:47:20 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in server/Makefile.am: release 0.0.11
+
+Mon Sep 27 11:53:01 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_inotify.c server/local_inotify.h: applied patch
+	  for inotify 0.10 from John McCutchan
+
+Sun Sep 26 21:21:05 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c: added unimplemented entry points 
+	  FAMSuspendMonitor and FAMResumeMonitor, c.f. #133162
+	* doc/gamin-api.xml doc/gamin-refs.xml: rebuild 
+
+Fri Sep 24 15:15:08 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/gam_inotify.c server/local_inotify.h: always
+	  compile in the inotify support and fallback to dnotify if we cannot
+	  find kernel support at runtime. Patch from Martin Schlemmer.
+	* server/gam_inotify.c: avoid the glib warning and use gam_debug
+
+Wed Sep 22 00:20:20 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/gam_excludes.c server/gam_server.c: applied
+	  a patch to cleanup dnotify and inotify duality from Martin Schlemmer
+
+Tue Sep 21 13:30:11 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.10
+	* libgamin/fam.h libgamin/gam_api.c: fixing an API/ABI incompatibility
+	  between FAM and gamin about FAMErrno and FamErrlist, which though
+	  in fam-2.6.10 are documented as not used, should close bug #132944
+
+Mon Sep 20 17:18:23 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* doc/config.html doc/*: added documentation for the config file.
+
+Mon Sep 20 16:21:24 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/Makefile.am server/gam_poll.c: applied a
+	  portability patch from Michael Banck
+	* server/gam_excludes.c server/gam_poll.c: added support for
+	  a per-user configuration file $HOME/.gaminrc , and some 
+	  fprintf cleanups
+
+Fri Sep  3 23:33:57 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* doc/*.html: providing more documentation.
+
+Fri Sep  3 15:29:47 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* NEWS TODO doc/gamin.html doc/news.html: updating for the recent
+	  releases and rebuilt.
+
+Wed Sep  1 17:22:16 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: released 0.0.9
+
+Wed Sep  1 15:50:49 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/Makefile.am server/gam_excludes.c server/gam_excludes.h
+	  server/gam_poll.c server/gam_server.c: starting to add exclude
+	  support where given path do no get kernel monitoring. Currently
+	  statically excludes /mnt//* /media//* . Something more dynamic
+	  might be needed.
+
+Wed Sep  1 10:27:49 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c libgamin/gam_data.c: try to fix crashes with
+	  konqueror, Red Hat bug #130967
+
+Mon Aug 30 11:25:04 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: oops apparently I forgot to commit
+	  the 0.0.8 release changes.
+
+Thu Aug 26 17:28:57 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_poll.c server/gam_server.c: 
+	  lot of debugging, the server was crashing, and the poll/kernel
+	  switching was not done properly. Can still be improved for 
+	  Changed events flood, but at least it does not crash anymore.
+
+Wed Aug 25 21:35:36 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_inotify.c server/gam_poll.c
+	  server/gam_server.c server/gam_server.h: applied patch from 
+	  Martin Schlemmer to allow fallback to dnotify if inotify
+	  back-end failed to initialize.
+
+Wed Aug 25 16:38:54 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am NEWS configure.in doc/Makefile.am doc/contacts.html
+	  doc/devel.html doc/downloads.html doc/gamin.html doc/index.html
+	  doc/news.html doc/news.xsl doc/overview.html doc/site.xsl: building
+	  the web site, borrowing most of the XSLT code from libxml2 project
+
+Wed Aug 25 15:39:45 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* README doc/gamin.html: updating the documentation
+
+Wed Aug 25 10:19:00 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_server.c: applied patch from Martin Schlemmer to
+	  activate the INotify backend if configured in.
+
+Tue Aug 24 13:52:12 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.7
+
+Tue Aug 24 12:05:29 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO: updated reflecting new step, added reminder about 
+	  annoying cases to test
+	* server/gam_dnotify.c server/gam_poll.c: if a monitored
+	  resource generate too much kernel events switch back automatically
+	  to polling on that resources, and once things have calmed down
+	  go back to kernel monitoring after 10 seconds.
+
+Mon Aug 23 14:48:51 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO: updated with fixed stuff and new problems
+	* server/gam_poll.c server/gam_server.c: handling of initially
+	  missing directories. Try to improve detection of modifications.
+	* tests/scenario/8.tst tests/result/8: added a new test
+
+Fri Aug 20 23:31:04 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: monitoring of files appearing and disapearing
+	  should now work as expected.
+	* tests/result/7 tests/scenario/7.tst: added a specific test
+
+Thu Aug 19 23:46:13 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c: fix a problem for monitoring missing
+	  files
+	* tests/result/6 tests/scenario/6.tst: added a regression test
+	  for it.
+
+Thu Aug 19 15:38:55 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am configure.in gamin.spec.in: release of 0.0.6
+	* doc/gamin-api.xml doc/gamin-refs.xml: rebuilt
+
+Thu Aug 19 14:40:58 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_poll.c: fixing dnotify and FAM events sequences when
+	  monitoring an existing file.
+	* tests/result/5 tests/scenario/5.tst: added a specific test
+	* TODO: tests need fixing to avoid paths problems
+
+Thu Aug 19 13:54:36 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c server/gam_node.h server/gam_server.c
+	  server/gam_server.h server/gam_subscription.c: work toward fixing the
+	  file dnotify back-end and FAM like-processing
+
+Wed Aug 18 14:48:33 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: fix path
+	* doc/debugging.txt: add .gdbinit hint
+
+Wed Aug 18 13:07:03 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO: updated
+	* doc/debugging.txt: added doc on how to debug gamin
+	* libgamin/Makefile.am libgamin/gam_fork.c server/Makefile.am:
+	  moved gam_server to /usr/libexec instead of /usr/bin following
+	  Mark suggestion
+
+Tue Aug 17 17:48:05 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_dnotify.c: working on fixing file checking notification
+	* server/gam_poll.c server/gam_poll.h: start on integrating polling
+
+Tue Aug 17 16:57:58 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_server.c: a bit of framework which looks safe too
+
+Tue Aug 17 16:55:16 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gam_tree.c: cleanup while chasing regression in make tests
+
+Thu Aug 12 19:44:02 EDT 2004 Daniel Veillard <veillard@redhat.com>
+
+	* tests/Makefile.am: use $GAMIN_DEBUG_SERVER so that regression
+	  tests can be run in a clean environment.
+
+Thu Aug 12 13:42:22 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/Makefile.am: fix build on x86_64. Auto* is excessively
+	  arcane and buggy, end-up copying the files on the libgamin dir.
+	* server/gam_connection.c server/gam_poll.c server/gam_subscription.c
+	  server/gam_subscription.h tests/testing.c: more testing more debug
+	  messages.
+
+Wed Aug 11 13:18:04 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in lib/Makefile.am libgamin/Makefile.am libgamin/gam_fork.c
+	  server/Makefile.am server/gam_dnotify.c server/gam_inotify.c 
+	  server/gam_node.c server/gam_node.hserver/gam_poll.c server/gam_tree.c
+	  server/gam_server.c: cleanup patch from John McCutchan removing
+	  comented out thread code, modularization of makefiles, and
+	  use of $GAMIN_DEBUG_SERVER for debug or test when the client forks
+	  a new server.
+
+Tue Aug 10 10:56:49 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* Makefile.am TODO configure.in libgamin/Makefile.am libgamin/TODO
+	  server/Makefile.am lib/*: applied cleanup patch from John McCutchan
+	  then rebuilt the lib/ subdir providing shared code between the
+	  client lib and the server (gam_error and gam_event).
+	* server/gam_inotify.c: update as part of John McCutchan patch.
+
+Fri Aug  6 17:09:53 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in: to not link with glib threads, not needed anymore
+	* libgamin/gam_api.c: fixed timeouts values
+	* tests/Makefile.am tests/testing.c tests/result/4 tests/scenario/4.tst:
+	  adding more tests, especially transparent restart when the server
+	  is killed.
+
+Fri Aug  6 14:29:47 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_fork.c: avoid generating zombies
+
+Thu Aug  5 16:51:33 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.5
+	* doc/gamin-api.xml doc/gamin-refs.xml: rebuilt
+
+Thu Aug  5 16:23:18 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* server/gam_event.h server/gam_inotify.c server/gam_server.c:
+	  patches from John McCutchan, inotify back-end update and 
+	  bugfixes on error conditions in gam_server.c
+
+Thu Aug  5 11:55:59 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_fork.c: markmc pointed at a problem when forking
+	  a daemon and exiting, the exit(0) called the ORBit atexit 
+	  handlers in the child.
+
+Thu Aug  4 16:55:38 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in: release of 0.0.4
+
+Wed Aug  4 14:34:27 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO: update
+	* libgamin/gam_error.c libgamin/gam_error.h server/gam_error.c
+	  server/gam_error.h: cleanup some warnings when compiling
+	  on Fedora Core
+	* server/gam_poll.c: unused variable
+	* tests/Makefile.am: cleanup before running "make tests"
+
+Wed Aug  4 13:14:02 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h: fix a bug compiling KDE reported by than
+	* server/gam_poll.c: some code cleanup
+	* tests/testing.c: adding an expect command way better than wait
+	* tests/result/[1-3] tests/scenario/[1-3].tst tests/Makefile.am:
+	  started setting up reliable regression testing, discovered a 
+	  strange timeout problem with gam_server to be investigated
+	  left as a comment on 3.tst
+
+Tue Aug  3 14:55:49 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* tests/testing.c: do not exit on parse if interactive
+	* server/gam_poll.c: fix a bug for removed resources
+	* libgamin/gam_api.c: try to work around some timeout/connection
+	  issues when multiple process try to for a server.
+
+Mon Aug  2 14:11:18 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: spelling fix (thanks fcrozat)
+	* libgamin/gam_api.clibgamin/gam_data.c libgamin/gam_data.h:
+	  fix a problem of setting/checking that the client did actually
+	  authenticate with the server.
+	* tests/testing.c: make a better interactive debugging mode
+	  using "testgam -" more powerful than pure static file tests.
+
+Fri Jul 30 15:01:17 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in gamin.spec.in libgamin/Makefile.am: release 0.0.3,
+	  with makefile and spec fixups from Frederic Crozat
+
+Thu Jul 29 16:31:20 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/gam_api.c server/gam_channel.c
+	  server/gam_channel.h server/gam_connection.c server/gam_server.c
+	  server/gam_server.h: reactivated support for OSes without 
+	  abstract sockets using a /tmp subdir per user to avoid problems
+	* doc/socket.txt: small text describing the socket handling
+	* doc/gamin-api.xml: rebuilt
+
+Wed Jul 28 22:29:57 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in libgamin/gam_api.c server/gam_channel.c: desactivating
+	  code if abstract sockets are not found following security problem
+	  http://mail.gnome.org/archives/gamin-list/2004-July/msg00017.html
+
+Tue Jul 27 12:23:52 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* configure.in server/Makefile.am server/gam_inotify.c
+	  server/gam_inotify.h server/gam_server.c: Applied patches
+	  from John McCutchan for inotify the potential dnotify
+	  kernel API replacement on Linux.
+
+Tue Jul 27 11:52:58 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h: fix a compilation problem with latest patch.
+	* libgamin/gam_api.c server/gam_connection.c server/gam_listener.c
+	  server/gam_listener.h: applied patch from Carlos Romero to fix
+	  FAMCancelMonitor.
+
+Sat Jul 17 19:40:25 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* doc/apibuild.py doc/gamin-api.xml doc/gamin-refs.xml: some
+	  doc extraction processing based on libxml2 tool
+	* libgamin/fam.h libgamin/gam_api.c libgamin/gam_data.c
+	  libgamin/gam_error.h libgamin/gam_protocol.h: cleanup in the
+	  process of generating the XML description.
+
+Fri Jul 16 13:42:37 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in configure.in: preparing 0.0.2 release
+	* libgamin/gam_api.c libgamin/gam_data.c libgamin/gam_data.h:
+	  made the client side restartable, i.e. if the server exists
+	  a new connection is made and monitors are reestablished
+	  seems to work more or less okay.
+	* TODO: updated.
+
+Tue Jul 13 15:41:24 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_data.c libgamin/gam_api.c: fixed FAMMonitorDirectory2()
+	  and FAMMonitorFile2() they should now implement the correct behaviour
+	* server/gam_dnotify.c server/gam_node.c server/gam_node.h
+	  server/gam_poll.c server/gam_server.c server/gam_tree.c: removed
+	  threading and locking, this should still work for the current
+	  constraints
+	* tests/testing.c: adding wait and updated to allow
+	  FAMMonitorDirectory2 testing with an extra arg to mondir
+	* TODO: updated
+
+Fri Jun 18 15:28:32 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/fam.h libgamin/gam_api.c: the new version of the
+	  FAMCONNECTION_GETFD macro was buggy. Applied patch from
+	  hadess.
+
+Fri Jun 18 14:25:04 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* autogen.sh: drop special dependancies a given version of the
+	  autotools
+
+Fri Jun 18 14:12:59 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_protocol.h server/gam_connection.h: workaround
+	  gtk-doc parsing limitations
+	* configure.in Makefile.am gamin.spec.in libgamin/Makefile.am:
+	  emulation of libfam wasn't sufficient to compile fam-dependant
+	  code as pointed by hadess
+
+Fri Jun 18 09:42:47 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* gamin.spec.in: preparing first release of 0.0.1
+	* tests/Makefile.am tests/testing.c: a bit more work on the
+	  testing framework
+
+Thu Jun 17 14:32:07 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/Makefile.am libgamin/testing.c tests/Makefile.am
+	  tests/testing.c: setup the test environment
+	* tests/scenario/tst1 tests/result/tst1: add first test
+
+Thu Jun 17 00:38:33 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c libgamin/gam_fork.c libgamin/gamin.c
+	  libgamin/testing.c server/gam_channel.c: renamed the ID
+	  environment variable to GAM_CLIENT_ID
+
+Wed Jun 16 23:35:13 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* libgamin/gam_api.c libgamin/gam_data.c libgamin/gam_data.h
+	  server/gam_channel.c server/gam_connection.c TODO: Changed
+	  the protocol to add an authentication byte from the server
+	  to the client at the beginning of the stream and authentication
+	  code on the client to check that the server is running under
+	  the same user.
+	* gamin.spec: generated by configure, removed.
+
+Wed Jun 16 11:55:59 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* TODO libgamin/Makefile.am libgamin/gamin_sym.version: block
+	  non-FAM symbols export from shared lib
+	* Copyright: reference the AUTHORS and COPYING files.
+
+Tue Jun 15 23:45:50 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* AUTHORS COPYING README: update to reflect the LGPL licence
+	  and the inheritance from the marmot code base.
+
+Tue Jun 15 23:25:03 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* README gamin.spec.in: added mail archive URL, 0.0.1-pre1
+
+Tue Jun 15 21:45:20 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* README TODO: I was sure I updated the README before the
+	  import... updated the TODO to reflect the current state
+
+Tue Jun 15 21:33:55 CEST 2004 Daniel Veillard <veillard@redhat.com>
+
+	* m4/gthread-supported.m4: still needed for configure.in until
+	  one got rid of any thread handling in the server code.

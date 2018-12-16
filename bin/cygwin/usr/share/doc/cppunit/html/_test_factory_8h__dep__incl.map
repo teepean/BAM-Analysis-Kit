@@ -1,0 +1,9 @@
+<map id="TestFactory.h" name="TestFactory.h">
+<area shape="rect" id="node2" href="$_test_factory_registry_8h.html" title="TestFactoryRegistry.h" alt="" coords="165,80,317,107"/>
+<area shape="rect" id="node8" href="$_test_suite_factory_8h.html" title="TestSuiteFactory.h" alt="" coords="8,80,141,107"/>
+<area shape="rect" id="node3" href="$_auto_register_suite_8h.html" title="AutoRegisterSuite.h" alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node5" href="$_plug_in_manager_8cpp.html" title="PlugInManager.cpp" alt="" coords="169,155,303,181"/>
+<area shape="rect" id="node6" href="$_test_factory_registry_8cpp.html" title="TestFactoryRegistry.cpp" alt="" coords="327,155,494,181"/>
+<area shape="rect" id="node7" href="$_test_plug_in_default_impl_8cpp.html" title="TestPlugInDefaultImpl.cpp" alt="" coords="518,155,695,181"/>
+<area shape="rect" id="node4" href="$_helper_macros_8h.html" title="Macros intended to ease the definition of test suites. " alt="" coords="17,229,132,256"/>
+</map>

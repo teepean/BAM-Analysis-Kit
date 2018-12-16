@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_protector.html" title="Protects one or more test case run. " alt="" coords="5,31,80,57"/>
+<area shape="rect" id="node2" href="$class_default_protector.html" title="Default protector that catch all exceptions (Implementation). " alt="" coords="128,5,245,32"/>
+<area shape="rect" id="node3" href="$class_protector_chain.html" title="Protector chain (Implementation). Implementation detail. " alt="" coords="132,56,241,83"/>
+</map>

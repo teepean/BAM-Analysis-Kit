@@ -1,0 +1,50 @@
+autoconf
+========================================================================
+Wrapper script for autoconf commands.
+
+Build requirements:
+  cygport-0.12.2-1
+  cygwin-1.7.20-1
+
+Canonical website:
+  http://www.gentoo.org/
+
+Canonical download:
+  http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/sys-devel/autoconf-wrapper/files/ac-wrapper-13.sh
+
+========================================================================
+
+Port Notes:
+----- autoconf-13-1 -- 2013 Jul 08 -----
+* Update to latest gentoo release, which adds support for "development"
+  versions of autoconf as version "9999". Also improves detection speed.
+* Rely on cygport to autogenerate setup.hint file
+* First cygwin64 build
+
+----- autoconf-10-1 -- 2011 Jan 15 -----
+* Update to latest gentoo release, which adds support for
+  autoconf-2.xx up to .99
+
+----- autoconf-9-1 -- 2010 Sep 23 -----
+* Update to latest gentoo release, which adds support for autoconf-2.66/2.67
+
+----- autoconf-8-1 -- 2009 Dec 23 -----
+* Update to latest gentoo release, which adds support for autoconf-2.65
+
+----- autoconf-7-10 -- 2009 Aug 19 -----
+* Update to latest gentoo release, which adds support for autoconf-2.64
+
+----- autoconf-6-10 -- 2008 Oct 19 -----
+* Update to latest gentoo release, which adds support for autoconf-2.63
+* This autoconf- marks the beginning of cygwin-1.7 specific
+  ports. Releases 6-1 thru 6-9 are reserved for
+  cygwin-1.5.
+
+----- autoconf-4-1 -----
+* Update to latest gentoo release, which adds support for autoconf-2.61
+
+----- autoconf-3.3-1 -----
+* First official release based on gentoo sources
+  (Thanks to the cygports guys for the hard work)
+
+Cygwin port maintained by:  Charles Wilson <cygwin@cygwin.com>

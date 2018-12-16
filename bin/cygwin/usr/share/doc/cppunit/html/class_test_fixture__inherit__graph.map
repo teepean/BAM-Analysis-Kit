@@ -1,0 +1,7 @@
+<map id="TestFixture" name="TestFixture">
+<area shape="rect" id="node2" href="$class_test_case.html" title="A single test object. " alt="" coords="258,80,337,107"/>
+<area shape="rect" id="node3" href="$class_orthodox.html" title="Orthodox\&lt; ClassUnderTest \&gt;" alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node4" href="$class_test_caller.html" title="Generate a test case from a fixture method.A test caller provides access to a test case method on a t..." alt="" coords="224,155,371,181"/>
+<area shape="rect" id="node5" href="$class_test_case_decorator.html" title="Decorator for Test cases. " alt="" coords="395,155,531,181"/>
+<area shape="rect" id="node6" href="$class_exception_test_case_decorator.html" title="Expected exception test case decorator. " alt="" coords="365,229,560,271"/>
+</map>

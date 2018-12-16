@@ -1,0 +1,16 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_test.html" title="Base class for all test objects.All test objects should be a subclass of Test. Some test objects..." alt="" coords="5,56,53,83"/>
+<area shape="rect" id="node2" href="$class_test_composite.html" title="A Composite of Tests. " alt="" coords="101,5,212,32"/>
+<area shape="rect" id="node5" href="$class_test_decorator.html" title="Decorator for Tests. " alt="" coords="104,56,209,83"/>
+<area shape="rect" id="node8" href="$class_test_leaf.html" title="A single test object. " alt="" coords="120,107,193,133"/>
+<area shape="rect" id="node3" href="$class_test_suite.html" title="A Composite of Tests.It runs a collection of test cases. Here is an example. " alt="" coords="273,5,351,32"/>
+<area shape="rect" id="node4" href="$class_test_runner_1_1_wrapping_suite.html" title="(INTERNAL) Mutating test suite. " alt="" coords="418,5,601,32"/>
+<area shape="rect" id="node6" href="$class_repeated_test.html" title="Decorator that runs a test repeatedly. " alt="" coords="260,56,364,83"/>
+<area shape="rect" id="node7" href="$class_test_set_up.html" title="Decorates a test by providing a specific setUp() and tearDown(). " alt="" coords="269,107,355,133"/>
+<area shape="rect" id="node9" href="$class_test_case.html" title="A single test object. " alt="" coords="273,157,351,184"/>
+<area shape="rect" id="node10" href="$class_orthodox.html" title="Orthodox\&lt; ClassUnderTest \&gt;" alt="" coords="412,107,607,133"/>
+<area shape="rect" id="node11" href="$class_test_caller.html" title="Generate a test case from a fixture method.A test caller provides access to a test case method on a t..." alt="" coords="436,157,583,184"/>
+<area shape="rect" id="node12" href="$class_test_case_decorator.html" title="Decorator for Test cases. " alt="" coords="441,208,577,235"/>
+<area shape="rect" id="node13" href="$class_exception_test_case_decorator.html" title="Expected exception test case decorator. " alt="" coords="655,201,849,242"/>
+<area shape="rect" id="node14" href="$class_test_fixture.html" title="Wraps a test case with setUp and tearDown methods.A TestFixture is used to provide a common environme..." alt="" coords="113,157,201,184"/>
+</map>

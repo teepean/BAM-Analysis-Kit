@@ -1,0 +1,4 @@
+<map id="Protector" name="Protector">
+<area shape="rect" id="node2" href="$class_default_protector.html" title="Default protector that catch all exceptions (Implementation). " alt="" coords="5,80,123,107"/>
+<area shape="rect" id="node3" href="$class_protector_chain.html" title="Protector chain (Implementation). Implementation detail. " alt="" coords="147,80,256,107"/>
+</map>

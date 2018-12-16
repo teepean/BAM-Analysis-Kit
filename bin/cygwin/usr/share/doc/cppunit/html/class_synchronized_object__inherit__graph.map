@@ -1,0 +1,6 @@
+<map id="SynchronizedObject" name="SynchronizedObject">
+<area shape="rect" id="node2" href="$class_test_result.html" title="Manages TestListener.A single instance of this class is used when running the test. It is usually created by the test runner (TestRunner). " alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node4" href="$class_test_success_listener.html" title="TestListener that checks if any test case failed. " alt="" coords="107,80,252,107"/>
+<area shape="rect" id="node3" href="$class_text_test_result.html" title="Holds printable test result (DEPRECATED).deprecated Use class TextTestProgressListener and TextOutput..." alt="" coords="61,229,173,256"/>
+<area shape="rect" id="node5" href="$class_test_result_collector.html" title="Collects test result.A TestResultCollector is a TestListener which collects the results of executing ..." alt="" coords="117,155,255,181"/>
+</map>

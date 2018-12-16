@@ -1,0 +1,10 @@
+<map id="TextTestResult" name="TextTestResult">
+<area shape="rect" id="node2" href="$class_test_result.html" title="Manages TestListener.A single instance of this class is used when running the test. It is usually created by the test runner (TestRunner). " alt="" coords="211,199,297,225"/>
+<area shape="rect" id="node3" href="$class_synchronized_object.html" title="Base class for synchronized object. " alt="" coords="125,109,263,136"/>
+<area shape="rect" id="node8" href="$class_test_success_listener.html" title="TestListener that checks if any test case failed. " alt="" coords="41,199,187,225"/>
+<area shape="rect" id="node4" href="$class_synchronized_object_1_1_synchronization_object.html" title="Abstract synchronization object (mutex) " alt="" coords="113,5,275,47"/>
+<area shape="rect" id="node5" href="$class_protector_chain.html" title="Protector chain (Implementation). Implementation detail. " alt="" coords="287,109,397,136"/>
+<area shape="rect" id="node6" href="$class_protector.html" title="Protects one or more test case run. " alt="" coords="305,13,379,39"/>
+<area shape="rect" id="node7" href="$class_test_result_collector.html" title="Collects test result.A TestResultCollector is a TestListener which collects the results of executing ..." alt="" coords="69,275,207,301"/>
+<area shape="rect" id="node9" href="$class_test_listener.html" title="Listener for test progress and result.Implementing the Observer pattern a TestListener may be registe..." alt="" coords="5,109,100,136"/>
+</map>

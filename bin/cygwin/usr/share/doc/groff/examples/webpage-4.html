@@ -1,0 +1,100 @@
+<!-- Creator     : groff version 1.22.3 -->
+<!-- CreationDate: Wed Feb 18 17:52:20 2015 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>webpage-4.html</title>
+
+ <link rel="stylesheet" type="text/css" href="groff.css" >
+</head>
+[ <a href="webpage.html">top</a> ]
+
+
+<h2>Groff dependencies
+<a name="heading4"></a>
+</h2>
+ <hr><table><tr><td valign="top" width="30%" bgcolor="#eeeeee">
+<a href="webpage-1.html#heading1">License</a><br>
+<a href="webpage-2.html#heading2">README</a><br>
+<a href="webpage-3.html#heading3">Repository and FTP access</a><br>
+<a href="webpage-4.html#heading4">Groff dependencies</a><br>
+<a href="webpage-5.html#heading5">Bug reports</a><br>
+<a href="webpage-6.html#heading6">Mailing lists</a><br>
+<a href="webpage-7.html#heading7">NEWS VERSION 1.22.3</a><br>
+<a href="webpage-8.html#heading8">NEWS VERSION 1.22.2</a><br>
+<a href="webpage-9.html#heading9">NEWS VERSION 1.22.1</a><br>
+<a href="webpage-10.html#heading10">NEWS VERSION 1.21</a><br>
+<a href="webpage-11.html#heading11">NEWS VERSION 1.20.1</a><br>
+<a href="webpage-12.html#heading12">NEWS VERSION 1.20</a><br>
+<a href="webpage-13.html#heading13">NEWS VERSION 1.19.2</a><br>
+<a href="webpage-14.html#heading14">NEWS VERSION 1.19.1</a><br>
+<a href="webpage-15.html#heading15">NEWS VERSION 1.19</a><br>
+<a href="webpage-16.html#heading16">NEWS VERSION 1.18.1</a><br>
+<a href="webpage-17.html#heading17">NEWS VERSION 1.18</a><br>
+
+</td><td valign="top" width="70%">
+
+<p>Depending on your requirements, you may need at least
+some of the following tools to build &lsquo;groff&rsquo;
+directly from its source:</p>
+
+<p style="margin-left:3%; margin-top: 1em">perl &gt;=
+v5.6.1 (see macro GROFF_PERL in file
+&lsquo;m4/groff.m4&rsquo;) <br>
+ghostscript <br>
+the psutils package <br>
+the netpbm package <br>
+texinfo 4.8 <br>
+bison &ge; 1.875b or byacc</p>
+
+<p style="margin-top: 1em">Note that &lsquo;texinfo&rsquo;
+and &lsquo;bison&rsquo; or &lsquo;byacc&rsquo; are required
+only for building from repository sources (either a checked
+out working copy, or a commit snapshot). They are not
+required for building from a stable release tarball. Also
+note that the version numbers stated are the minimum
+supported. No version of &lsquo;texinfo&rsquo; &lt; 4.8
+works, and the original release of &lsquo;bison&rsquo; 1.875
+is known not to work; you <i>may</i> find that
+&lsquo;bison&rsquo; releases &lt; 1.875 work, but in case of
+difficulty, please update to a later version <i>before</i>
+posting a bug report. For <i>all</i> sources, you need
+&lsquo;ghostscript&rsquo; for creation of either
+&lsquo;PDF&rsquo; or &lsquo;HTML&rsquo; output; the
+&lsquo;netpbm&rsquo; and &lsquo;psutils&rsquo; packages are
+required only for &lsquo;HTML&rsquo; output. If you
+don&rsquo;t intend to produce output in either of these
+formats, then these packages are unnecessary.</p>
+
+<p style="margin-top: 1em">Additionally, producing
+&lsquo;PDF&rsquo; output directly with the
+&lsquo;gropdf&rsquo; device needs a working installation of
+&lsquo;perl&rsquo;. The same is true for some other
+preprocessors like &lsquo;chem&rsquo;.</p>
+
+<p style="margin-top: 1em">In Linux Debian, the
+installation of &lsquo;texinfo&rsquo; is dangerous, for it
+creates a file &lsquo;install-info&rsquo; that blocks the
+system installation. So the created
+&lsquo;/usr/local/bin/install-info&rsquo; must be
+renamed.</p>
+
+<p style="margin-top: 1em">The &lsquo;groff&rsquo;
+configure script searches for the X11 headers and libraries
+&lsquo;Xaw&rsquo; and &lsquo;Xmu&rsquo;. So the
+corresponding developer packages of your system must be
+installed, otherwise &lsquo;groff&rsquo; does not install
+&lsquo;gxditview&rsquo; and the &lsquo;-TX*&rsquo; devices.
+In Debian, the developer packages are
+&lsquo;libxaw7-dev&rsquo; and &lsquo;libxmu-dev&rsquo;.</p></td></tr></table><hr>
+[ <a href="webpage.html">top</a> ]

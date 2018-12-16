@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Cygwin Terminal
+Exec=mintty
+TryExec=mintty
+Type=Application
+Icon=mintty
+Categories=System;TerminalEmulator;
+OnlyShowIn=X-Cygwin;

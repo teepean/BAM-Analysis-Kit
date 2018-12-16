@@ -1,0 +1,11 @@
+<map id="TextTestRunner" name="TextTestRunner">
+<area shape="rect" id="node3" href="$class_test_result_collector.html" title="Collects test result.A TestResultCollector is a TestListener which collects the results of executing ..." alt="" coords="213,275,352,301"/>
+<area shape="rect" id="node4" href="$class_test_success_listener.html" title="TestListener that checks if any test case failed. " alt="" coords="194,199,339,225"/>
+<area shape="rect" id="node5" href="$class_test_listener.html" title="Listener for test progress and result.Implementing the Observer pattern a TestListener may be registe..." alt="" coords="155,109,250,136"/>
+<area shape="rect" id="node6" href="$class_synchronized_object.html" title="Base class for synchronized object. " alt="" coords="275,109,413,136"/>
+<area shape="rect" id="node8" href="$class_test_result.html" title="Manages TestListener.A single instance of this class is used when running the test. It is usually created by the test runner (TestRunner). " alt="" coords="363,199,450,225"/>
+<area shape="rect" id="node7" href="$class_synchronized_object_1_1_synchronization_object.html" title="Abstract synchronization object (mutex) " alt="" coords="263,5,425,47"/>
+<area shape="rect" id="node9" href="$class_protector_chain.html" title="Protector chain (Implementation). Implementation detail. " alt="" coords="437,109,547,136"/>
+<area shape="rect" id="node10" href="$class_protector.html" title="Protects one or more test case run. " alt="" coords="455,13,529,39"/>
+<area shape="rect" id="node11" href="$class_outputter.html" title="Abstract outputter to print test result summary. " alt="" coords="530,275,606,301"/>
+</map>

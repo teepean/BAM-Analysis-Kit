@@ -1,0 +1,32 @@
+sdesc: "Terminal emulator with native Windows look and feel"
+category: Shells Base
+requires:
+ldesc: "Mintty is a terminal emulator for Cygwin. It is based on code 
+from PuTTY 0.60 by Simon Tatham and team.
+
+Terminal display features
+* Xterm-compatible terminal emulation, up to DEC VT300 series features.
+* Full Unicode support.
+* 256 colours and True-Colour support.
+* Full character attributes support, including italic, underline styles, alternative fonts.
+* SIXEL graphics display and Emoji support.
+
+Terminal input and interaction features
+* Character composition support includes dead keys, Compose key, Windows IME.
+* Extensive mouse support.
+* Easy copy & paste. Drag & drop of text, files and folders.
+* Ability to open files and URLs with Ctrl+click.
+* Fast rendering and scrolling.
+
+Window handling features and desktop integration
+* Colour schemes / Theme file support. Background texture and image support.
+* Virtual Tabs / session switcher and launcher.
+* Screen and scrollback buffer search.
+* Multiple monitor support, changing DPI support.
+* Window transparency.
+
+Configuration features and system support
+* Native Windows user interface with a lean options dialog.
+* User interface language localization support.
+* Flexible configuration and resource folder options.
+* Options stored in a text file. No registry entries."

@@ -1,0 +1,53 @@
+ - merge GAMIN_EVENT_ with FAMEvents ?
+ - try to use getlogin and $USER to get the user name
+ - doc extraction and reformatting of comments in gtk-doc style
+ - handling of directory removal (need to poll on monitored empty dirs).
+ - check handling of mismatched resources i.e. mondir on file
+   and monfile on directories and what happen when file type change.
+ - mount --bind will certainly create infinitely deep directory trees
+   surely you are doing loop detection for this, for NFS and the like ? (Alan)
+ - on SIGUSR2 first output the list of clients connected and try to
+   force the glib2 main loop to output the informations at the time
+   the event are received.
+ - try to work around the fact the stat() info precision is only 1 sec
+   on ext2/ext3, especially for directories.
+ - avoid deadlock on reconnect due to event piling up in both directions.
+   probably need a protocol upgrade.
+ - handling of symlinks with dnotify.
+                                                                                
+Regression tests:
+ - try all the file length on the client till error.
+ - try the fragmented/multirequests tests on the client side
+
+Postponed:
+ - "make valgrind" regression tests for both client and server.
+   -> valgrind doesn't work okay with dnotify
+
+Done:
+ - fix "make tests" to use /tmp to avoid $pwd in the paths of the output
+ - automatic switch from dnotify to poll for resources generating too much
+   kernel events.
+ - handling of missing monitored resources where dnotify() won't work
+ - <markmc> DV, gam_server should prolly be in /usr/libexec
+ - path flexibility for the remote server in gam_fork.c (needed for
+   make tests)
+ - code merge between client and server, e.g. libgamin/gam_error.[ch]
+   and server/gam_error.[ch] ?
+ - test for availability of setsid(), usleep()
+ - code and file cleanup, indenting
+ - removed old common dependancy
+ - autostart/stop of the server side
+ - cleanup deps w.r.t. libmarmot
+ - add a flag for server to not exit on idle: --notimeout
+ - block exports of all symbols not from fam.h : done for the shared library
+   the static one still exports gamin_* symbols though
+ - code 'cb' processing cleanup
+ - make Copyright file for LGPL
+ - check both ways of identification, not just server checking client.
+ - on the client handle numbers provided by the caller.
+ - removed threading and locking, checked with snorp that's not really
+   needed now that there is no DBus plug nor recursion, still use a pipe
+   to handle event synchronously.
+ - restart the connection and monitor on the client side if the
+   server exits
+ - special case where dnotify is not a good idea (temporary storage)

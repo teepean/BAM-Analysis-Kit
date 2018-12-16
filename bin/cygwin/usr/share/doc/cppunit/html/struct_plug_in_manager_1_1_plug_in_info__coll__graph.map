@@ -1,0 +1,4 @@
+<map id="PlugInManager::PlugInInfo" name="PlugInManager::PlugInInfo">
+<area shape="rect" id="node2" href="$struct_cpp_unit_test_plug_in.html" title="Test plug&#45;in interface.This class define the interface implemented by test plug&#45;in. A pointer to that interface is returned by the function exported by the test plug&#45;in. " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node3" href="$class_dynamic_library_manager.html" title="Manages dynamic libraries. " alt="" coords="163,5,325,32"/>
+</map>

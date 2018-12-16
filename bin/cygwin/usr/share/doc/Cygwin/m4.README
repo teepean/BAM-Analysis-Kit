@@ -1,0 +1,131 @@
+m4 1.4.18-1
+------------------------------------------
+An implementation of the traditional Unix macro processor. It is
+mostly SVR4 compatible although it has some extensions (for example,
+handling more than 9 positional parameters to macros). GNU m4 also has
+built-in functions for including files, running shell commands, doing
+arithmetic, etc.
+
+Runtime requirements (these or newer):
+  bash-4.4.5-1
+  cygwin-2.6.1-1
+  libgcc1-5.4.0-1 [only on 32-bit]
+  libsigsegv2-2.10-2
+
+Additional build conditions (these or newer):
+  binutils-2.25-4
+  coreutils-8.26-1
+  cygport-0.23.0-1
+  gcc-4.7.3-1
+  gcc-core-5.4.0-1
+  libsigsegv-2.10-2
+  windows-default-manifest-6.4-1
+  xz-5.2.2-1
+
+Canonical homepage:
+  http://www.gnu.org/software/m4/
+  https://savannah.gnu.org/projects/m4
+
+Canonical download:
+  ftp://ftp.gnu.org/gnu/m4/
+
+License:
+  GPLv3+
+
+Language:
+  C
+
+------------------------------------
+
+Build instructions:
+  unpack m4-1.4.18-1-src.tar.xz
+    if you use setup to install this src package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  cygport m4-1.4.18-1 all
+
+This will create:
+  /usr/src/m4-1.4.18-1.tar.xz
+  /usr/src/m4-1.4.18-1-src.tar.xz
+  /usr/src/m4-debuginfo/m4-debuginfo-1.4.18-1.tar.xz
+
+Or use 'cygport m4-1.4.18-1 prep' to get a patched source directory
+
+To find out the files included in the binary distribution, you can use
+"cygcheck -l m4", or browse the listing for the appropriate version at
+<http://cygwin.com/packages/>.
+
+------------------
+
+Port Notes:
+
+----------  m4-1.4.18-1 -- 2017-01-03 ---------
+New upstream release.
+
+----------  m4-1.4.17-2 -- 2015-07-18 ---------
+Rebuild to take advantage of new stack overflow detection in cygwin.
+
+----------  m4-1.4.17-1 -- 2013-09-24 ---------
+New upstream release.  First build for 64-bit cygwin (although lacking
+support for stack overflow detection until libsigsegv is also ported).
+
+----------  m4-1.4.16-1 -- 2011-03-01 ---------
+New upstream release.
+
+----------  m4-1.4.15-1 -- 2010-08-31 ---------
+New upstream release.
+
+----------  m4-1.4.14-1 -- 2010-02-25 ---------
+New upstream release.
+
+----------  m4-1.4.13-2 -- 2009-07-22 ---------
+Apply upstream fix to work around libsigsegv bug.
+
+----------  m4-1.4.13-1 -- 2009-04-02 ---------
+New upstream release.
+
+----------  m4-1.4.10b-2 -- 2008-03-19 ---------
+Apply upstream fix for assertion failure on some configure.ac files.
+
+----------  m4-1.4.10b-1 -- 2008-02-25 ---------
+New upstream release.
+
+----------  m4-1.4.10-1 -- 2007-07-10 ---------
+New upstream release.  Converts to GPLv3.
+
+----------  m4-1.4.9-1 -- 2007-03-24 ---------
+New upstream release.
+
+----------  m4-1.4.8-1 -- 2006-11-20 ---------
+New upstream release.
+
+----------  m4-1.4.7-1 -- 2006-09-25 ---------
+New upstream release.
+
+----------  m4-1.4.6-1 -- 2006-08-25 ---------
+New upstream release.
+
+----------  m4-1.4.5-1 -- 2006-07-16 ---------
+New upstream release.
+
+----------  m4-1.4.4-1 -- 2005-10-21 ---------
+New upstream release, fixing exit status on nonexistant input.
+
+----------  m4-1.4.3-1 -- 2005-04-05 ---------
+New upstream release, incorporating cygwin fix for frozen files, build
+fixes, and a speedup in the common usage as part of autoconf.
+
+----------  m4-1.4.2-1 -- 2004-11-17 ---------
+First release with Eric Blake as maintainer.  Only difference from
+official 1.4.2 package is adding $DESTDIR support in the makefiles for
+staged installs.
+
+----------  m4-1.4-1 -----------
+Unknown maintainer.  Only difference from official 1.4 package is
+rebuilding with autoconf 1.13 and fixing a broken #include.
+
+For more information about this package, see the upstream documentation in
+/usr/share/doc/m4/.
+
+Cygwin port maintained by: Eric Blake <eblake@redhat.com>
+Please address all questions to the Cygwin mailing list at <cygwin@cygwin.com>
