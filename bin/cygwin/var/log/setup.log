@@ -2735,3 +2735,84 @@ Solution 2/2 (default)
 2018/12/16 18:03:34 Changing gid to Administrators
 2018/12/16 18:03:36 note: Uninstalls complete.
 2018/12/16 18:03:36 Ending cygwin install
+2018/12/16 19:07:34 Starting cygwin install, version 2.893
+2018/12/16 19:07:34 User has backup/restore rights
+2018/12/16 19:07:34 Current Directory: G:\cyglataus
+2018/12/16 19:07:34 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2018/12/16 19:07:35 source: network install
+2018/12/16 19:07:36 root: D:\BAM-Analysis-Kit\bin\cygwin system
+2018/12/16 19:07:37 Selected local directory: G:\cyglataus
+2018/12/16 19:07:37 net: Preconfig
+2018/12/16 19:07:39 site: http://cygwin.mirror.constant.com/
+2018/12/16 19:07:41 solving: 0 tasks, update: yes, use test packages: no
+2018/12/16 19:07:41 Augmented Transaction List:
+2018/12/16 19:07:41    0 install                                          cygwin            2.11.2-1
+2018/12/16 19:07:41    1   erase                                          cygwin            2.11.1-1
+2018/12/16 19:07:41    2 install                                    cygwin-devel            2.11.2-1
+2018/12/16 19:07:41    3   erase                                    cygwin-devel            2.11.1-1
+2018/12/16 19:07:41    4 install                                          mintty             2.9.5-0
+2018/12/16 19:07:41    5   erase                                          mintty             2.9.3-0
+2018/12/16 19:07:41    6 install                                 perl_autorebase            5.26.3-1
+2018/12/16 19:07:41    7   erase                                 perl_autorebase            5.26.2-1
+2018/12/16 19:07:41    8 install                                       perl_base            5.26.3-1
+2018/12/16 19:07:41    9   erase                                       perl_base            5.26.2-1
+2018/12/16 19:07:41   10 install                                     libopenblas             0.3.4-1
+2018/12/16 19:07:41   11   erase                                     libopenblas             0.3.3-1
+2018/12/16 19:07:41   12 install                                            perl            5.26.3-1
+2018/12/16 19:07:41   13   erase                                            perl            5.26.2-1
+2018/12/16 19:07:51 solving: 7 tasks, update: no, use test packages: no
+2018/12/16 19:07:51 Augmented Transaction List:
+2018/12/16 19:07:51    0 install                                          cygwin            2.11.2-1
+2018/12/16 19:07:51    1   erase                                          cygwin            2.11.1-1
+2018/12/16 19:07:51    2 install                                    cygwin-devel            2.11.2-1
+2018/12/16 19:07:51    3   erase                                    cygwin-devel            2.11.1-1
+2018/12/16 19:07:51    4 install                                          mintty             2.9.5-0
+2018/12/16 19:07:51    5   erase                                          mintty             2.9.3-0
+2018/12/16 19:07:51    6 install                                 perl_autorebase            5.26.3-1
+2018/12/16 19:07:51    7   erase                                 perl_autorebase            5.26.2-1
+2018/12/16 19:07:51    8 install                                       perl_base            5.26.3-1
+2018/12/16 19:07:51    9   erase                                       perl_base            5.26.2-1
+2018/12/16 19:07:51   10 install                                     libopenblas             0.3.4-1
+2018/12/16 19:07:51   11   erase                                     libopenblas             0.3.3-1
+2018/12/16 19:07:51   12 install                                            perl            5.26.3-1
+2018/12/16 19:07:51   13   erase                                            perl            5.26.2-1
+2018/12/16 19:07:51 Augmented Transaction List:
+2018/12/16 19:07:51    0 install                                          cygwin            2.11.2-1
+2018/12/16 19:07:51    1   erase                                          cygwin            2.11.1-1
+2018/12/16 19:07:51    2 install                                    cygwin-devel            2.11.2-1
+2018/12/16 19:07:51    3   erase                                    cygwin-devel            2.11.1-1
+2018/12/16 19:07:51    4 install                                          mintty             2.9.5-0
+2018/12/16 19:07:51    5   erase                                          mintty             2.9.3-0
+2018/12/16 19:07:51    6 install                                 perl_autorebase            5.26.3-1
+2018/12/16 19:07:51    7   erase                                 perl_autorebase            5.26.2-1
+2018/12/16 19:07:51    8 install                                       perl_base            5.26.3-1
+2018/12/16 19:07:51    9   erase                                       perl_base            5.26.2-1
+2018/12/16 19:07:51   10 install                                     libopenblas             0.3.4-1
+2018/12/16 19:07:51   11   erase                                     libopenblas             0.3.3-1
+2018/12/16 19:07:51   12 install                                            perl            5.26.3-1
+2018/12/16 19:07:51   13   erase                                            perl            5.26.2-1
+2018/12/16 19:07:56 Uninstalling cygwin
+2018/12/16 19:07:56 Uninstalling cygwin-devel
+2018/12/16 19:07:56 Uninstalling mintty
+2018/12/16 19:07:56 Uninstalling perl_autorebase
+2018/12/16 19:07:56 Uninstalling perl_base
+2018/12/16 19:07:56 Uninstalling libopenblas
+2018/12/16 19:07:56 Uninstalling perl
+2018/12/16 19:07:56 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-2.11.2-1.tar.xz
+2018/12/16 19:07:57 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-devel/cygwin-devel-2.11.2-1.tar.xz
+2018/12/16 19:07:57 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mintty/mintty-2.9.5-0.tar.xz
+2018/12/16 19:07:57 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/perl/perl_autorebase/perl_autorebase-5.26.3-1.tar.xz
+2018/12/16 19:07:57 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/perl/perl_base/perl_base-5.26.3-1.tar.xz
+2018/12/16 19:07:58 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openblas/libopenblas/libopenblas-0.3.4-1.tar.xz
+2018/12/16 19:07:58 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/perl/perl-5.26.3-1.tar.xz
+2018/12/16 19:08:00 Changing gid back to original
+2018/12/16 19:08:00 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2018/12/16 19:08:08 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2018/12/16 19:08:08 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2018/12/16 19:08:08 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2018/12/16 19:08:09 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2018/12/16 19:08:09 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2018/12/16 19:08:09 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2018/12/16 19:08:09 Changing gid to Administrators
+2018/12/16 19:08:14 note: Installation Complete
+2018/12/16 19:08:14 Ending cygwin install

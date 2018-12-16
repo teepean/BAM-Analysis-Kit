@@ -8,10 +8,10 @@
  */
 
 /* Package name      : perl5
- * Source directory  : /mnt/share/maint/perl.x86_64/src/perl-5.26.2
- * Configuration time: Mon Apr 16 19:45:26 CEST 2018
+ * Source directory  : /mnt/share/maint/perl.x86_64/src/perl-5.26.3
+ * Configuration time: Sat Dec  1 08:14:42 CET 2018
  * Configured by     : ASSI
- * Target system     : cygwin_nt-6.3 cygwin 2.10.0(0.32553) 2018-02-02 15:16 x86_64 cygwin 
+ * Target system     : cygwin_nt-6.3 cygwin 2.11.2(0.32953) 2018-11-08 14:34 x86_64 cygwin 
  */
 
 #ifndef _config_h_
@@ -1538,7 +1538,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "cygwin"		/**/
-#define OSVERS "2.10.0(0.32553)"		/**/
+#define OSVERS "2.11.2(0.32953)"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -2578,7 +2578,7 @@
  *	This symbol, if defined, indicates that the clearenv () routine is
  *	available for use.
  */
-/*#define HAS_CLEARENV		/ **/
+#define HAS_CLEARENV		/**/
 
 /* HAS_STRUCT_CMSGHDR:
  *	This symbol, if defined, indicates that the struct cmsghdr
