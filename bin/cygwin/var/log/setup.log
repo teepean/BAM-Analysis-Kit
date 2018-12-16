@@ -2420,3 +2420,318 @@
 2018/11/03 23:20:30 solving: 0 tasks, update: yes, use test packages: no
 2018/11/03 23:20:30 Augmented Transaction List: is empty
 2018/11/03 23:21:10 Ending cygwin install
+2018/12/16 17:57:30 Starting cygwin install, version 2.893
+2018/12/16 17:57:30 User has backup/restore rights
+2018/12/16 17:57:30 Current Directory: G:\cyglataus
+2018/12/16 17:57:30 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2018/12/16 17:57:38 source: network install
+2018/12/16 17:57:50 root: D:\BAM-Analysis-Kit\bin\cygwin system
+2018/12/16 17:57:50 Selected local directory: G:\cyglataus
+2018/12/16 17:57:51 net: Preconfig
+2018/12/16 17:57:53 site: http://cygwin.mirror.constant.com/
+2018/12/16 17:57:58 solving: 0 tasks, update: yes, use test packages: no
+2018/12/16 17:57:58 Augmented Transaction List:
+2018/12/16 17:57:58    0 install                                          cygwin            2.11.2-1
+2018/12/16 17:57:58    1   erase                                          cygwin            2.11.1-1
+2018/12/16 17:57:58    2 install                                    cygwin-devel            2.11.2-1
+2018/12/16 17:57:58    3   erase                                    cygwin-devel            2.11.1-1
+2018/12/16 17:57:58    4 install                                          mintty             2.9.5-0
+2018/12/16 17:57:58    5   erase                                          mintty             2.9.3-0
+2018/12/16 17:57:58    6 install                                 perl_autorebase            5.26.3-1
+2018/12/16 17:57:58    7   erase                                 perl_autorebase            5.26.2-1
+2018/12/16 17:57:58    8 install                                       perl_base            5.26.3-1
+2018/12/16 17:57:58    9   erase                                       perl_base            5.26.2-1
+2018/12/16 17:57:58   10 install                                     libopenblas             0.3.4-1
+2018/12/16 17:57:58   11   erase                                     libopenblas             0.3.3-1
+2018/12/16 17:57:58   12 install                                            perl            5.26.3-1
+2018/12/16 17:57:58   13   erase                                            perl            5.26.2-1
+2018/12/16 18:02:08 solving: 66 tasks, update: no, use test packages: no
+2018/12/16 18:02:08 Augmented Transaction List:
+2018/12/16 18:02:08    0   erase                                        2048-cli             0.9.1-1
+2018/12/16 18:02:08    1   erase                                       gsl-devel               2.3-2
+2018/12/16 18:02:08    2   erase                                  libboost-devel            1.66.0-1
+2018/12/16 18:02:08    3   erase                                    libboost1.53            1.53.0-2
+2018/12/16 18:02:08    4   erase                             libboost_atomic1.55            1.55.0-1
+2018/12/16 18:02:08    5   erase                             libboost_atomic1.57            1.57.0-1
+2018/12/16 18:02:08    6   erase                             libboost_chrono1.55            1.55.0-1
+2018/12/16 18:02:08    7   erase                             libboost_chrono1.57            1.57.0-1
+2018/12/16 18:02:08    8   erase                          libboost_container1.57            1.57.0-1
+2018/12/16 18:02:08    9   erase                            libboost_context1.55            1.55.0-1
+2018/12/16 18:02:08   10   erase                            libboost_context1.57            1.57.0-1
+2018/12/16 18:02:08   11   erase                          libboost_coroutine1.55            1.55.0-1
+2018/12/16 18:02:08   12   erase                          libboost_coroutine1.57            1.57.0-1
+2018/12/16 18:02:08   13   erase                          libboost_date_time1.55            1.55.0-1
+2018/12/16 18:02:08   14   erase                          libboost_date_time1.57            1.57.0-1
+2018/12/16 18:02:08   15   erase                         libboost_filesystem1.55            1.55.0-1
+2018/12/16 18:02:08   16   erase                         libboost_filesystem1.57            1.57.0-1
+2018/12/16 18:02:08   17   erase                              libboost_graph1.55            1.55.0-1
+2018/12/16 18:02:08   18   erase                              libboost_graph1.57            1.57.0-1
+2018/12/16 18:02:08   19   erase                          libboost_iostreams1.55            1.55.0-1
+2018/12/16 18:02:08   20   erase                          libboost_iostreams1.57            1.57.0-1
+2018/12/16 18:02:08   21   erase                             libboost_locale1.55            1.55.0-1
+2018/12/16 18:02:08   22   erase                             libboost_locale1.57            1.57.0-1
+2018/12/16 18:02:08   23   erase                                libboost_log1.55            1.55.0-1
+2018/12/16 18:02:08   24   erase                                libboost_log1.57            1.57.0-1
+2018/12/16 18:02:08   25   erase                               libboost_math1.55            1.55.0-1
+2018/12/16 18:02:08   26   erase                               libboost_math1.57            1.57.0-1
+2018/12/16 18:02:08   27   erase                    libboost_program_options1.55            1.55.0-1
+2018/12/16 18:02:08   28   erase                    libboost_program_options1.57            1.57.0-1
+2018/12/16 18:02:08   29   erase                             libboost_random1.55            1.55.0-1
+2018/12/16 18:02:08   30   erase                             libboost_random1.57            1.57.0-1
+2018/12/16 18:02:08   31   erase                              libboost_regex1.55            1.55.0-1
+2018/12/16 18:02:08   32   erase                              libboost_regex1.57            1.57.0-1
+2018/12/16 18:02:08   33   erase                      libboost_serialization1.55            1.55.0-1
+2018/12/16 18:02:08   34   erase                      libboost_serialization1.57            1.57.0-1
+2018/12/16 18:02:08   35   erase                            libboost_signals1.55            1.55.0-1
+2018/12/16 18:02:08   36   erase                            libboost_signals1.57            1.57.0-1
+2018/12/16 18:02:08   37   erase                             libboost_system1.55            1.55.0-1
+2018/12/16 18:02:08   38   erase                             libboost_system1.57            1.57.0-1
+2018/12/16 18:02:08   39   erase                               libboost_test1.55            1.55.0-1
+2018/12/16 18:02:08   40   erase                               libboost_test1.57            1.57.0-1
+2018/12/16 18:02:08   41   erase                             libboost_thread1.55            1.55.0-1
+2018/12/16 18:02:08   42   erase                             libboost_thread1.57            1.57.0-1
+2018/12/16 18:02:08   43   erase                              libboost_timer1.55            1.55.0-1
+2018/12/16 18:02:08   44   erase                              libboost_timer1.57            1.57.0-1
+2018/12/16 18:02:08   45   erase                               libboost_wave1.55            1.55.0-1
+2018/12/16 18:02:08   46   erase                               libboost_wave1.57            1.57.0-1
+2018/12/16 18:02:08   47   erase                                   libcloog-isl4            0.18.0-2
+2018/12/16 18:02:08   48   erase                                   libcurl-devel            7.59.0-1
+2018/12/16 18:02:08   49   erase                                  libfftw3-devel             3.3.8-1
+2018/12/16 18:02:08   50   erase                                libncurses-devel     6.0-12.20171125
+2018/12/16 18:02:08   51   erase                                      zlib-devel            1.2.11-1
+2018/12/16 18:02:08   52   erase                                    libgsl-devel               2.3-2
+2018/12/16 18:02:08   53   erase                                    libicu-devel              63.1-1
+2018/12/16 18:02:08   54   erase                                 liblapack-devel             3.8.0-1
+2018/12/16 18:02:08 Problem 1/6
+package libglib2.0_0-2.54.3-1 requires gsettings-desktop-schemas, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of libglib2.0_0-2.54.3-1
+  - allow deinstallation of pkg-config-0.29.1-1
+  - allow deinstallation of gamin-0.1.10-15
+  - allow deinstallation of desktop-file-utils-0.23-1
+  - allow replacement of cppunit-1.13.2-1 with cppunit-1.12.1-2
+Solution 2/2 (default)
+  - do not ask to deinstall gsettings-desktop-schemas-3.24.1-1
+Problem 2/6
+package gsl-devel-2.3-2 requires libgsl-devel, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of gsl-devel-2.3-2
+Solution 2/2 (default)
+  - do not ask to deinstall libgsl-devel-2.3-2
+Problem 3/6
+package python2-2.7.14-1 requires libuuid-devel, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of python2-2.7.14-1
+  - allow deinstallation of python2-six-1.10.0-1
+  - allow deinstallation of python2-setuptools-34.3.2-1
+  - allow deinstallation of python2-pyparsing-2.1.10-1
+  - allow deinstallation of python2-packaging-16.8-1
+  - allow deinstallation of python2-numpy-1.11.2-1
+  - allow deinstallation of python2-appdirs-1.4.3-1
+  - allow deinstallation of libboost_python1.66-1.66.0-1
+  - allow deinstallation of libboost_numpy1.66-1.66.0-1
+Solution 2/2 (default)
+  - do not ask to deinstall libuuid-devel-2.25.2-2
+Problem 4/6
+package gcc-core-7.3.0-3 requires w32api-headers, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of gcc-core-7.3.0-3
+  - allow deinstallation of gcc-fortran-7.3.0-3
+Solution 2/2 (default)
+  - do not ask to deinstall w32api-headers-5.0.4-1
+Problem 5/6
+package libglib2.0_0-2.54.3-1 requires libfam0, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of shared-mime-info-1.8-1
+  - allow deinstallation of pkg-config-0.29.1-1
+  - allow deinstallation of gamin-0.1.10-15
+  - allow deinstallation of desktop-file-utils-0.23-1
+  - allow replacement of cppunit-1.13.2-1 with cppunit-1.12.1-2
+Solution 2/2 (default)
+  - do not ask to deinstall libfam0-0.1.10-15
+Problem 6/6
+package gcc-core-7.3.0-3 requires w32api-runtime, but none of the providers can be installed
+Solution 1/2
+  - allow deinstallation of gcc-g++-7.3.0-3
+  - allow deinstallation of gcc-fortran-7.3.0-3
+Solution 2/2 (default)
+  - do not ask to deinstall w32api-runtime-5.0.4-1
+2018/12/16 18:03:08 solving: 55 tasks, update: no, use test packages: no
+2018/12/16 18:03:08 Augmented Transaction List:
+2018/12/16 18:03:08    0   erase                                        2048-cli             0.9.1-1
+2018/12/16 18:03:08    1   erase                                       gsl-devel               2.3-2
+2018/12/16 18:03:08    2   erase                                  libboost-devel            1.66.0-1
+2018/12/16 18:03:08    3   erase                                    libboost1.53            1.53.0-2
+2018/12/16 18:03:08    4   erase                             libboost_atomic1.55            1.55.0-1
+2018/12/16 18:03:08    5   erase                             libboost_atomic1.57            1.57.0-1
+2018/12/16 18:03:08    6   erase                             libboost_chrono1.55            1.55.0-1
+2018/12/16 18:03:08    7   erase                             libboost_chrono1.57            1.57.0-1
+2018/12/16 18:03:08    8   erase                          libboost_container1.57            1.57.0-1
+2018/12/16 18:03:08    9   erase                            libboost_context1.55            1.55.0-1
+2018/12/16 18:03:08   10   erase                            libboost_context1.57            1.57.0-1
+2018/12/16 18:03:08   11   erase                          libboost_coroutine1.55            1.55.0-1
+2018/12/16 18:03:08   12   erase                          libboost_coroutine1.57            1.57.0-1
+2018/12/16 18:03:08   13   erase                          libboost_date_time1.55            1.55.0-1
+2018/12/16 18:03:08   14   erase                          libboost_date_time1.57            1.57.0-1
+2018/12/16 18:03:08   15   erase                         libboost_filesystem1.55            1.55.0-1
+2018/12/16 18:03:08   16   erase                         libboost_filesystem1.57            1.57.0-1
+2018/12/16 18:03:08   17   erase                              libboost_graph1.55            1.55.0-1
+2018/12/16 18:03:08   18   erase                              libboost_graph1.57            1.57.0-1
+2018/12/16 18:03:08   19   erase                          libboost_iostreams1.55            1.55.0-1
+2018/12/16 18:03:08   20   erase                          libboost_iostreams1.57            1.57.0-1
+2018/12/16 18:03:08   21   erase                             libboost_locale1.55            1.55.0-1
+2018/12/16 18:03:08   22   erase                             libboost_locale1.57            1.57.0-1
+2018/12/16 18:03:08   23   erase                                libboost_log1.55            1.55.0-1
+2018/12/16 18:03:08   24   erase                                libboost_log1.57            1.57.0-1
+2018/12/16 18:03:08   25   erase                               libboost_math1.55            1.55.0-1
+2018/12/16 18:03:08   26   erase                               libboost_math1.57            1.57.0-1
+2018/12/16 18:03:08   27   erase                    libboost_program_options1.55            1.55.0-1
+2018/12/16 18:03:08   28   erase                    libboost_program_options1.57            1.57.0-1
+2018/12/16 18:03:08   29   erase                             libboost_random1.55            1.55.0-1
+2018/12/16 18:03:08   30   erase                             libboost_random1.57            1.57.0-1
+2018/12/16 18:03:08   31   erase                              libboost_regex1.55            1.55.0-1
+2018/12/16 18:03:08   32   erase                              libboost_regex1.57            1.57.0-1
+2018/12/16 18:03:08   33   erase                      libboost_serialization1.55            1.55.0-1
+2018/12/16 18:03:08   34   erase                      libboost_serialization1.57            1.57.0-1
+2018/12/16 18:03:08   35   erase                            libboost_signals1.55            1.55.0-1
+2018/12/16 18:03:08   36   erase                            libboost_signals1.57            1.57.0-1
+2018/12/16 18:03:08   37   erase                             libboost_system1.55            1.55.0-1
+2018/12/16 18:03:08   38   erase                             libboost_system1.57            1.57.0-1
+2018/12/16 18:03:08   39   erase                               libboost_test1.55            1.55.0-1
+2018/12/16 18:03:08   40   erase                               libboost_test1.57            1.57.0-1
+2018/12/16 18:03:08   41   erase                             libboost_thread1.55            1.55.0-1
+2018/12/16 18:03:08   42   erase                             libboost_thread1.57            1.57.0-1
+2018/12/16 18:03:08   43   erase                              libboost_timer1.55            1.55.0-1
+2018/12/16 18:03:08   44   erase                              libboost_timer1.57            1.57.0-1
+2018/12/16 18:03:08   45   erase                               libboost_wave1.55            1.55.0-1
+2018/12/16 18:03:08   46   erase                               libboost_wave1.57            1.57.0-1
+2018/12/16 18:03:08   47   erase                                   libcloog-isl4            0.18.0-2
+2018/12/16 18:03:08   48   erase                                   libcurl-devel            7.59.0-1
+2018/12/16 18:03:08   49   erase                                  libfftw3-devel             3.3.8-1
+2018/12/16 18:03:08   50   erase                                libncurses-devel     6.0-12.20171125
+2018/12/16 18:03:08   51   erase                                      zlib-devel            1.2.11-1
+2018/12/16 18:03:08   52   erase                                    libgsl-devel               2.3-2
+2018/12/16 18:03:08   53   erase                                    libicu-devel              63.1-1
+2018/12/16 18:03:08   54   erase                                 liblapack-devel             3.8.0-1
+2018/12/16 18:03:08 Augmented Transaction List:
+2018/12/16 18:03:08    0   erase                                        2048-cli             0.9.1-1
+2018/12/16 18:03:08    1   erase                                       gsl-devel               2.3-2
+2018/12/16 18:03:08    2   erase                                  libboost-devel            1.66.0-1
+2018/12/16 18:03:08    3   erase                                    libboost1.53            1.53.0-2
+2018/12/16 18:03:08    4   erase                             libboost_atomic1.55            1.55.0-1
+2018/12/16 18:03:08    5   erase                             libboost_atomic1.57            1.57.0-1
+2018/12/16 18:03:08    6   erase                             libboost_chrono1.55            1.55.0-1
+2018/12/16 18:03:08    7   erase                             libboost_chrono1.57            1.57.0-1
+2018/12/16 18:03:08    8   erase                          libboost_container1.57            1.57.0-1
+2018/12/16 18:03:08    9   erase                            libboost_context1.55            1.55.0-1
+2018/12/16 18:03:08   10   erase                            libboost_context1.57            1.57.0-1
+2018/12/16 18:03:08   11   erase                          libboost_coroutine1.55            1.55.0-1
+2018/12/16 18:03:08   12   erase                          libboost_coroutine1.57            1.57.0-1
+2018/12/16 18:03:08   13   erase                          libboost_date_time1.55            1.55.0-1
+2018/12/16 18:03:08   14   erase                          libboost_date_time1.57            1.57.0-1
+2018/12/16 18:03:08   15   erase                         libboost_filesystem1.55            1.55.0-1
+2018/12/16 18:03:08   16   erase                         libboost_filesystem1.57            1.57.0-1
+2018/12/16 18:03:08   17   erase                              libboost_graph1.55            1.55.0-1
+2018/12/16 18:03:08   18   erase                              libboost_graph1.57            1.57.0-1
+2018/12/16 18:03:08   19   erase                          libboost_iostreams1.55            1.55.0-1
+2018/12/16 18:03:08   20   erase                          libboost_iostreams1.57            1.57.0-1
+2018/12/16 18:03:08   21   erase                             libboost_locale1.55            1.55.0-1
+2018/12/16 18:03:08   22   erase                             libboost_locale1.57            1.57.0-1
+2018/12/16 18:03:08   23   erase                                libboost_log1.55            1.55.0-1
+2018/12/16 18:03:08   24   erase                                libboost_log1.57            1.57.0-1
+2018/12/16 18:03:08   25   erase                               libboost_math1.55            1.55.0-1
+2018/12/16 18:03:08   26   erase                               libboost_math1.57            1.57.0-1
+2018/12/16 18:03:08   27   erase                    libboost_program_options1.55            1.55.0-1
+2018/12/16 18:03:08   28   erase                    libboost_program_options1.57            1.57.0-1
+2018/12/16 18:03:08   29   erase                             libboost_random1.55            1.55.0-1
+2018/12/16 18:03:08   30   erase                             libboost_random1.57            1.57.0-1
+2018/12/16 18:03:08   31   erase                              libboost_regex1.55            1.55.0-1
+2018/12/16 18:03:08   32   erase                              libboost_regex1.57            1.57.0-1
+2018/12/16 18:03:08   33   erase                      libboost_serialization1.55            1.55.0-1
+2018/12/16 18:03:08   34   erase                      libboost_serialization1.57            1.57.0-1
+2018/12/16 18:03:08   35   erase                            libboost_signals1.55            1.55.0-1
+2018/12/16 18:03:08   36   erase                            libboost_signals1.57            1.57.0-1
+2018/12/16 18:03:08   37   erase                             libboost_system1.55            1.55.0-1
+2018/12/16 18:03:08   38   erase                             libboost_system1.57            1.57.0-1
+2018/12/16 18:03:08   39   erase                               libboost_test1.55            1.55.0-1
+2018/12/16 18:03:08   40   erase                               libboost_test1.57            1.57.0-1
+2018/12/16 18:03:08   41   erase                             libboost_thread1.55            1.55.0-1
+2018/12/16 18:03:08   42   erase                             libboost_thread1.57            1.57.0-1
+2018/12/16 18:03:08   43   erase                              libboost_timer1.55            1.55.0-1
+2018/12/16 18:03:08   44   erase                              libboost_timer1.57            1.57.0-1
+2018/12/16 18:03:08   45   erase                               libboost_wave1.55            1.55.0-1
+2018/12/16 18:03:08   46   erase                               libboost_wave1.57            1.57.0-1
+2018/12/16 18:03:08   47   erase                                   libcloog-isl4            0.18.0-2
+2018/12/16 18:03:08   48   erase                                   libcurl-devel            7.59.0-1
+2018/12/16 18:03:08   49   erase                                  libfftw3-devel             3.3.8-1
+2018/12/16 18:03:08   50   erase                                libncurses-devel     6.0-12.20171125
+2018/12/16 18:03:08   51   erase                                      zlib-devel            1.2.11-1
+2018/12/16 18:03:08   52   erase                                    libgsl-devel               2.3-2
+2018/12/16 18:03:08   53   erase                                    libicu-devel              63.1-1
+2018/12/16 18:03:08   54   erase                                 liblapack-devel             3.8.0-1
+2018/12/16 18:03:16 Uninstalling 2048-cli
+2018/12/16 18:03:16 Uninstalling gsl-devel
+2018/12/16 18:03:16 io_stream_cygfile: fopen(/etc/setup/gsl-devel.lst.gz) failed 2 No such file or directory
+2018/12/16 18:03:16 Uninstalling libboost-devel
+2018/12/16 18:03:19 Uninstalling libboost1.53
+2018/12/16 18:03:19 Uninstalling libboost_atomic1.55
+2018/12/16 18:03:19 Uninstalling libboost_atomic1.57
+2018/12/16 18:03:19 Uninstalling libboost_chrono1.55
+2018/12/16 18:03:19 Uninstalling libboost_chrono1.57
+2018/12/16 18:03:19 Uninstalling libboost_container1.57
+2018/12/16 18:03:19 Uninstalling libboost_context1.55
+2018/12/16 18:03:19 Uninstalling libboost_context1.57
+2018/12/16 18:03:19 Uninstalling libboost_coroutine1.55
+2018/12/16 18:03:19 Uninstalling libboost_coroutine1.57
+2018/12/16 18:03:19 Uninstalling libboost_date_time1.55
+2018/12/16 18:03:19 Uninstalling libboost_date_time1.57
+2018/12/16 18:03:19 Uninstalling libboost_filesystem1.55
+2018/12/16 18:03:19 Uninstalling libboost_filesystem1.57
+2018/12/16 18:03:19 Uninstalling libboost_graph1.55
+2018/12/16 18:03:19 Uninstalling libboost_graph1.57
+2018/12/16 18:03:19 Uninstalling libboost_iostreams1.55
+2018/12/16 18:03:19 Uninstalling libboost_iostreams1.57
+2018/12/16 18:03:19 Uninstalling libboost_locale1.55
+2018/12/16 18:03:19 Uninstalling libboost_locale1.57
+2018/12/16 18:03:19 Uninstalling libboost_log1.55
+2018/12/16 18:03:19 Uninstalling libboost_log1.57
+2018/12/16 18:03:19 Uninstalling libboost_math1.55
+2018/12/16 18:03:19 Uninstalling libboost_math1.57
+2018/12/16 18:03:19 Uninstalling libboost_program_options1.55
+2018/12/16 18:03:19 Uninstalling libboost_program_options1.57
+2018/12/16 18:03:20 Uninstalling libboost_random1.55
+2018/12/16 18:03:20 Uninstalling libboost_random1.57
+2018/12/16 18:03:20 Uninstalling libboost_regex1.55
+2018/12/16 18:03:20 Uninstalling libboost_regex1.57
+2018/12/16 18:03:20 Uninstalling libboost_serialization1.55
+2018/12/16 18:03:20 Uninstalling libboost_serialization1.57
+2018/12/16 18:03:20 Uninstalling libboost_signals1.55
+2018/12/16 18:03:20 Uninstalling libboost_signals1.57
+2018/12/16 18:03:20 Uninstalling libboost_system1.55
+2018/12/16 18:03:20 Uninstalling libboost_system1.57
+2018/12/16 18:03:20 Uninstalling libboost_test1.55
+2018/12/16 18:03:20 Uninstalling libboost_test1.57
+2018/12/16 18:03:20 Uninstalling libboost_thread1.55
+2018/12/16 18:03:20 Uninstalling libboost_thread1.57
+2018/12/16 18:03:20 Uninstalling libboost_timer1.55
+2018/12/16 18:03:20 Uninstalling libboost_timer1.57
+2018/12/16 18:03:20 Uninstalling libboost_wave1.55
+2018/12/16 18:03:20 Uninstalling libboost_wave1.57
+2018/12/16 18:03:20 Uninstalling libcloog-isl4
+2018/12/16 18:03:20 Uninstalling libcurl-devel
+2018/12/16 18:03:20 Uninstalling libfftw3-devel
+2018/12/16 18:03:20 Uninstalling libncurses-devel
+2018/12/16 18:03:20 Uninstalling zlib-devel
+2018/12/16 18:03:20 Uninstalling libgsl-devel
+2018/12/16 18:03:20 Uninstalling libicu-devel
+2018/12/16 18:03:20 Uninstalling liblapack-devel
+2018/12/16 18:03:20 Changing gid back to original
+2018/12/16 18:03:20 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2018/12/16 18:03:29 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2018/12/16 18:03:32 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2018/12/16 18:03:33 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2018/12/16 18:03:34 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2018/12/16 18:03:34 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2018/12/16 18:03:34 Changing gid to Administrators
+2018/12/16 18:03:36 note: Uninstalls complete.
+2018/12/16 18:03:36 Ending cygwin install

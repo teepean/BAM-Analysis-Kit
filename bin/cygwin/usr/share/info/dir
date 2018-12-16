@@ -262,9 +262,6 @@ Software development
 * gfortran: (gfortran).         The GNU Fortran Compiler.
 * gprof: (gprof).               Profiling your program's execution
 
-Software libraries
-* gsl-ref: (gsl-ref).           GNU Scientific Library - Reference
-
 System administration
 * Which: (which).               Show full path of commands.
 

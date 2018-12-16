@@ -6,15 +6,12 @@ mirrors-lst
 	http://mirrors.koehn.com/cygwin/cygwin-ftp/;mirrors.koehn.com;United States;Missouri
 	http://mirrors.metapeer.com/cygwin/;mirrors.metapeer.com;United States;Washington
 	http://www.pirbot.com/mirrors/cygwin/;www.pirbot.com;Europe;Switzerland
-	https://www.singleboersen.com/mirror/cygwin/;www.singleboersen.com;Europe;Germany
 	http://mirror.team-cymru.com/cygwin/;mirror.team-cymru.com;United States;Illinois
 	ftp://mirrors.xmission.com/cygwin/;mirrors.xmission.com;United States;Utah
 	http://mirrors.xmission.com/cygwin/;mirrors.xmission.com;United States;Utah
 	http://mirror.clarkson.edu/cygwin/;mirror.clarkson.edu;United States;New York
-	http://mirror.rit.edu/cygwin/;mirror.rit.edu;United States;New York
 	http://mirror.cs.vt.edu/pub/cygwin/cygwin/;mirror.cs.vt.edu;United States;Virginia
 	http://mirror.koddos.net/cygwin/;mirror.koddos.net;Europe;Netherlands
-	http://mirror-hk.koddos.net/cygwin/;mirror-hk.koddos.net;Asia;Hong Kong
 	ftp://mirrors.netix.net/cygwin/;mirrors.netix.net;Europe;Bulgaria
 	http://mirrors.netix.net/cygwin/;mirrors.netix.net;Europe;Bulgaria
 	ftp://mirror.internode.on.net/pub/cygwin/;mirror.internode.on.net;Australasia;Australia
@@ -48,8 +45,6 @@ mirrors-lst
 	http://cygwin.mirror.rafal.ca/;cygwin.mirror.rafal.ca;Canada;Ontario
 	ftp://mirror.csclub.uwaterloo.ca/cygwin/;mirror.csclub.uwaterloo.ca;Canada;Ontario
 	http://mirror.csclub.uwaterloo.ca/cygwin/;mirror.csclub.uwaterloo.ca;Canada;Ontario
-	ftp://mirror.switch.ch/mirror/cygwin/;mirror.switch.ch;Europe;Switzerland
-	http://mirror.switch.ch/ftp/mirror/cygwin/;mirror.switch.ch;Europe;Switzerland
 	ftp://mirror.checkdomain.de/cygwin/;mirror.checkdomain.de;Europe;Germany
 	http://mirror.checkdomain.de/cygwin/;mirror.checkdomain.de;Europe;Germany
 	ftp://ftp.fau.de/cygwin/;ftp.fau.de;Europe;Germany
@@ -67,7 +62,6 @@ mirrors-lst
 	http://mirror.isoc.org.il/pub/cygwin/;mirror.isoc.org.il;Asia;Israel
 	http://mirror.pkill.info/cygwin/;mirror.pkill.info;Asia;Hong Kong
 	http://cygwin.asis.io/;cygwin.asis.io;Asia;Iran
-	http://bo.mirror.garr.it/mirrors/sourceware.org/cygwin/;bo.mirror.garr.it;Europe;Italy
 	ftp://ftp.jaist.ac.jp/pub/cygwin/;ftp.jaist.ac.jp;Asia;Japan
 	http://ftp.jaist.ac.jp/pub/cygwin/;ftp.jaist.ac.jp;Asia;Japan
 	ftp://ftp.yz.yamagata-u.ac.jp/pub/cygwin/;ftp.yz.yamagata-u.ac.jp;Asia;Japan
