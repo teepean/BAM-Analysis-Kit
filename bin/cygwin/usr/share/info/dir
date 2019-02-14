@@ -68,12 +68,12 @@ Individual utilities
                                                   backbone
 * automake-invocation: (automake)automake Invocation.
                                                 Generating Makefile.in.
-* autoreconf: (autoconf)autoreconf Invocation.  Remaking multiple `configure' 
+* autoreconf: (autoconf)autoreconf Invocation.  Remaking multiple 'configure' 
                                                   scripts
-* autoscan: (autoconf)autoscan Invocation.      Semi-automatic `configure.ac' 
+* autoscan: (autoconf)autoscan Invocation.      Semi-automatic 'configure.ac' 
                                                   writing
 * autoupdate: (autoconf)autoupdate Invocation.  Automatic update of 
-                                                  `configure.ac'
+                                                  'configure.ac'
 * awk: (gawk)Invoking Gawk.                     Text scanning and processing.
 * b2sum: (coreutils)b2sum invocation.           Print or check BLAKE2 digests.
 * base32: (coreutils)base32 invocation.         Base32 encode/decode data.

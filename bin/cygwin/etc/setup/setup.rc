@@ -12,6 +12,7 @@ mirrors-lst
 	http://mirror.clarkson.edu/cygwin/;mirror.clarkson.edu;United States;New York
 	http://mirror.cs.vt.edu/pub/cygwin/cygwin/;mirror.cs.vt.edu;United States;Virginia
 	http://mirror.koddos.net/cygwin/;mirror.koddos.net;Europe;Netherlands
+	http://mirror-hk.koddos.net/cygwin/;mirror-hk.koddos.net;Asia;Hong Kong
 	ftp://mirrors.netix.net/cygwin/;mirrors.netix.net;Europe;Bulgaria
 	http://mirrors.netix.net/cygwin/;mirrors.netix.net;Europe;Bulgaria
 	ftp://mirror.internode.on.net/pub/cygwin/;mirror.internode.on.net;Australasia;Australia
@@ -60,7 +61,6 @@ mirrors-lst
 	ftp://ftp.fsn.hu/pub/cygwin/;ftp.fsn.hu;Europe;Hungary
 	http://ftp.fsn.hu/pub/cygwin/;ftp.fsn.hu;Europe;Hungary
 	http://mirror.isoc.org.il/pub/cygwin/;mirror.isoc.org.il;Asia;Israel
-	http://mirror.pkill.info/cygwin/;mirror.pkill.info;Asia;Hong Kong
 	http://cygwin.asis.io/;cygwin.asis.io;Asia;Iran
 	ftp://ftp.jaist.ac.jp/pub/cygwin/;ftp.jaist.ac.jp;Asia;Japan
 	http://ftp.jaist.ac.jp/pub/cygwin/;ftp.jaist.ac.jp;Asia;Japan
@@ -68,8 +68,6 @@ mirrors-lst
 	http://ftp.yz.yamagata-u.ac.jp/pub/cygwin/;ftp.yz.yamagata-u.ac.jp;Asia;Japan
 	ftp://ftp.iij.ad.jp/pub/cygwin/;ftp.iij.ad.jp;Asia;Japan
 	http://ftp.iij.ad.jp/pub/cygwin/;ftp.iij.ad.jp;Asia;Japan
-	ftp://mirror.lagoon.nc/pub/cygwin/;mirror.lagoon.nc;Australasia;New Caledonia
-	http://mirror.lagoon.nc/pub/cygwin/;mirror.lagoon.nc;Australasia;New Caledonia
 	ftp://ftp.snt.utwente.nl/pub/software/cygwin/;ftp.snt.utwente.nl;Europe;Netherlands
 	http://ftp.snt.utwente.nl/pub/software/cygwin/;ftp.snt.utwente.nl;Europe;Netherlands
 	http://mirror.homelab.no/cygwin/;mirror.homelab.no;Europe;Norway

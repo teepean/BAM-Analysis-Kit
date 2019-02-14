@@ -2816,3 +2816,146 @@ Solution 2/2 (default)
 2018/12/16 19:08:09 Changing gid to Administrators
 2018/12/16 19:08:14 note: Installation Complete
 2018/12/16 19:08:14 Ending cygwin install
+2019/02/14 06:14:49 Starting cygwin install, version 2.895
+2019/02/14 06:14:49 User has backup/restore rights
+2019/02/14 06:14:49 Current Directory: G:\cyglataus
+2019/02/14 06:14:49 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2019/02/14 06:15:19 source: network install
+2019/02/14 06:15:44 root: D:\BAM-Analysis-Kit\bin\cygwin system
+2019/02/14 06:15:45 Selected local directory: G:\cyglataus
+2019/02/14 06:15:46 net: Preconfig
+2019/02/14 06:15:48 site: http://cygwin.mirror.constant.com/
+2019/02/14 06:15:49 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst.sig
+2019/02/14 06:15:49 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst
+2019/02/14 06:15:52 solving: 0 tasks, update: yes, use test packages: no
+2019/02/14 06:16:16 solving: 24 tasks, update: no, use test packages: no
+2019/02/14 06:16:16 Augmented Transaction List:
+2019/02/14 06:16:16    0 install                                     autoconf2.5              2.69-4
+2019/02/14 06:16:16    1   erase                                     autoconf2.5              2.69-3
+2019/02/14 06:16:16    2 install                                      libatomic1             7.4.0-1
+2019/02/14 06:16:16    3   erase                                      libatomic1             7.3.0-3
+2019/02/14 06:16:16    4 install                                        libattr1            2.4.48-2
+2019/02/14 06:16:16    5   erase                                        libattr1            2.4.46-1
+2019/02/14 06:16:16    6 install                                         libgcc1             7.4.0-1
+2019/02/14 06:16:16    7   erase                                         libgcc1             7.3.0-3
+2019/02/14 06:16:16    8 install                                   libsmartcols1            2.32.1-1
+2019/02/14 06:16:16    9   erase                                   libsmartcols1            2.25.2-2
+2019/02/14 06:16:16   10 install                                          mintty             2.9.6-0
+2019/02/14 06:16:16   11   erase                                          mintty             2.9.5-0
+2019/02/14 06:16:16   12 install                                          tzdata             2018i-1
+2019/02/14 06:16:16   13   erase                                          tzdata             2018e-1
+2019/02/14 06:16:16   14 install                                        libuuid1            2.32.1-1
+2019/02/14 06:16:16   15   erase                                        libuuid1            2.25.2-2
+2019/02/14 06:16:16   16 install                                      libstdc++6             7.4.0-1
+2019/02/14 06:16:16   17   erase                                      libstdc++6             7.3.0-3
+2019/02/14 06:16:16   18 install                                    libquadmath0             7.4.0-1
+2019/02/14 06:16:16   19   erase                                    libquadmath0             7.3.0-3
+2019/02/14 06:16:16   20 install                                     libopenblas             0.3.5-1
+2019/02/14 06:16:16   21   erase                                     libopenblas             0.3.4-1
+2019/02/14 06:16:16   22 install                                        libmpfr6             4.0.2-1
+2019/02/14 06:16:16   23   erase                                        libmpfr6          4.0.1-4p11
+2019/02/14 06:16:16   24 install                                        libgomp1             7.4.0-1
+2019/02/14 06:16:16   25   erase                                        libgomp1             7.3.0-3
+2019/02/14 06:16:16   26 install                                          libgc1            7.6.10-1
+2019/02/14 06:16:16   27   erase                                          libgc1             7.6.8-1
+2019/02/14 06:16:16   28 install                                     libcom_err2            1.44.5-1
+2019/02/14 06:16:16   29   erase                                     libcom_err2           1.42.12-2
+2019/02/14 06:16:16   30 install                                          tzcode             2018i-1
+2019/02/14 06:16:16   31   erase                                          tzcode             2018e-1
+2019/02/14 06:16:16   32 install                                   libuuid-devel            2.32.1-1
+2019/02/14 06:16:16   33   erase                                   libuuid-devel            2.25.2-2
+2019/02/14 06:16:16   34 install                                       libblkid1            2.32.1-1
+2019/02/14 06:16:16   35   erase                                       libblkid1            2.25.2-2
+2019/02/14 06:16:16   36 install                                    libgfortran4             7.4.0-1
+2019/02/14 06:16:16   37   erase                                    libgfortran4             7.3.0-3
+2019/02/14 06:16:16   38 install                                        gcc-core             7.4.0-1
+2019/02/14 06:16:16   39   erase                                        gcc-core             7.3.0-3
+2019/02/14 06:16:16   40 install                                       libfdisk1            2.32.1-1
+2019/02/14 06:16:16   41 install                                         gcc-g++             7.4.0-1
+2019/02/14 06:16:16   42   erase                                         gcc-g++             7.3.0-3
+2019/02/14 06:16:16   43 install                                     gcc-fortran             7.4.0-1
+2019/02/14 06:16:16   44   erase                                     gcc-fortran             7.3.0-3
+2019/02/14 06:16:16   45 install                                      util-linux            2.32.1-1
+2019/02/14 06:16:16   46   erase                                      util-linux            2.25.2-2
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/autoconf2.5/autoconf2.5-2.69-4.tar.xz
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libatomic1/libatomic1-7.4.0-1.tar.xz
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/attr/libattr1/libattr1-2.4.48-2.tar.xz
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgcc1/libgcc1-7.4.0-1.tar.xz
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.32.1-1.tar.xz
+2019/02/14 06:16:19 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mintty/mintty-2.9.6-0.tar.xz
+2019/02/14 06:16:20 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/tzdata/tzdata-2018i-1.tar.xz
+2019/02/14 06:16:20 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.32.1-1.tar.xz
+2019/02/14 06:16:20 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libstdc++6/libstdc++6-7.4.0-1.tar.xz
+2019/02/14 06:16:20 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libquadmath0/libquadmath0-7.4.0-1.tar.xz
+2019/02/14 06:16:20 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openblas/libopenblas/libopenblas-0.3.5-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.0.2-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgomp1/libgomp1-7.4.0-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libgc/libgc1/libgc1-7.6.10-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.44.5-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/tzcode/tzcode-2018i-1.tar.xz
+2019/02/14 06:16:21 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid-devel/libuuid-devel-2.32.1-1.tar.xz
+2019/02/14 06:16:22 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.32.1-1.tar.xz
+2019/02/14 06:16:22 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgfortran4/libgfortran4-7.4.0-1.tar.xz
+2019/02/14 06:16:23 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-core/gcc-core-7.4.0-1.tar.xz
+2019/02/14 06:16:23 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.32.1-1.tar.xz
+2019/02/14 06:16:24 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-g++/gcc-g++-7.4.0-1.tar.xz
+2019/02/14 06:16:25 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-fortran/gcc-fortran-7.4.0-1.tar.xz
+2019/02/14 06:16:25 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/util-linux-2.32.1-1.tar.xz
+2019/02/14 06:16:25 Uninstalling autoconf2.5
+2019/02/14 06:16:25 Uninstalling libatomic1
+2019/02/14 06:16:25 Uninstalling libattr1
+2019/02/14 06:16:25 Uninstalling libgcc1
+2019/02/14 06:16:25 Uninstalling libsmartcols1
+2019/02/14 06:16:25 Uninstalling mintty
+2019/02/14 06:16:25 Uninstalling tzdata
+2019/02/14 06:16:26 Uninstalling libuuid1
+2019/02/14 06:16:26 Uninstalling libstdc++6
+2019/02/14 06:16:26 Uninstalling libquadmath0
+2019/02/14 06:16:26 Uninstalling libopenblas
+2019/02/14 06:16:26 Uninstalling libmpfr6
+2019/02/14 06:16:26 Uninstalling libgomp1
+2019/02/14 06:16:26 Uninstalling libgc1
+2019/02/14 06:16:26 Uninstalling libcom_err2
+2019/02/14 06:16:26 Uninstalling tzcode
+2019/02/14 06:16:26 Uninstalling libuuid-devel
+2019/02/14 06:16:26 Uninstalling libblkid1
+2019/02/14 06:16:26 Uninstalling libgfortran4
+2019/02/14 06:16:26 Uninstalling gcc-core
+2019/02/14 06:16:26 Uninstalling gcc-g++
+2019/02/14 06:16:26 Uninstalling gcc-fortran
+2019/02/14 06:16:26 Uninstalling util-linux
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/autoconf2.5/autoconf2.5-2.69-4.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libatomic1/libatomic1-7.4.0-1.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/attr/libattr1/libattr1-2.4.48-2.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgcc1/libgcc1-7.4.0-1.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.32.1-1.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mintty/mintty-2.9.6-0.tar.xz
+2019/02/14 06:16:26 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/tzdata/tzdata-2018i-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.32.1-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libstdc++6/libstdc++6-7.4.0-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libquadmath0/libquadmath0-7.4.0-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openblas/libopenblas/libopenblas-0.3.5-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.0.2-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgomp1/libgomp1-7.4.0-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/libgc/libgc1/libgc1-7.6.10-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.44.5-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/tzcode/tzcode-2018i-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid-devel/libuuid-devel-2.32.1-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.32.1-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/libgfortran4/libgfortran4-7.4.0-1.tar.xz
+2019/02/14 06:16:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-core/gcc-core-7.4.0-1.tar.xz
+2019/02/14 06:16:31 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.32.1-1.tar.xz
+2019/02/14 06:16:31 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-g++/gcc-g++-7.4.0-1.tar.xz
+2019/02/14 06:16:34 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/gcc/gcc-fortran/gcc-fortran-7.4.0-1.tar.xz
+2019/02/14 06:16:34 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/util-linux-2.32.1-1.tar.xz
+2019/02/14 06:16:35 Changing gid back to original
+2019/02/14 06:16:35 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2019/02/14 06:16:44 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2019/02/14 06:16:47 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2019/02/14 06:16:47 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2019/02/14 06:16:47 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2019/02/14 06:16:48 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2019/02/14 06:16:48 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2019/02/14 06:16:48 Changing gid to Administrators
+2019/02/14 06:17:25 note: Installation Complete
+2019/02/14 06:17:25 Ending cygwin install

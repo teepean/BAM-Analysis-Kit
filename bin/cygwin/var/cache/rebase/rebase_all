@@ -50,6 +50,7 @@
 /usr/bin/cygdb_sql-5.3.dll
 /usr/bin/cygexpat-1.dll
 /usr/bin/cygfam-0.dll
+/usr/bin/cygfdisk-1.dll
 /usr/bin/cygffi-6.dll
 /usr/bin/cygfftw3-3.dll
 /usr/bin/cygfftw3_omp-3.dll
@@ -165,7 +166,7 @@
 /usr/lib/gawk/revtwoway.dll
 /usr/lib/gawk/rwarray.dll
 /usr/lib/gawk/time.dll
-/usr/lib/gcc/x86_64-pc-cygwin/7.3.0/cyglto_plugin.dll
+/usr/lib/gcc/x86_64-pc-cygwin/7.4.0/cyglto_plugin.dll
 /usr/lib/gio/modules/cyggiofam.dll
 /usr/lib/lapack/cygblas-0.dll
 /usr/lib/lapack/cyglapack-0.dll
