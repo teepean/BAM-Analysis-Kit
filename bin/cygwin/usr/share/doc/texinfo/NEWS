@@ -1,10 +1,7 @@
-$Id: NEWS 7939 2017-08-27 09:53:33Z gavin $
 This NEWS file records noteworthy changes, very tersely.
 See the manual for detailed information.
 
-  Copyright 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
-  2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
-  2013, 2014, 2015, 2016, 2017 Free Software Foundation, Inc.
+  Copyright 1992-2019 Free Software Foundation, Inc.
 
   Copying and distribution of this file, with or without modification,
   are permitted in any medium without royalty provided the copyright
@@ -12,6 +9,53 @@ See the manual for detailed information.
 
 ------------------------------------------------------------------------------
 
+6.6 (16 February 2019)
+* Language:
+  . new commands @&, @ampchar{}
+  . @cropmarks command removed
+  . @ctrl is no longer recognised (it was a way to insert literal
+    control characters in Info files, but deprecated since the 
+    time of Texinfo version 2)
+  . \usebracesinindexestrue is no longer recommended for using braces in
+    index entries, and has been a no-op for some time
+
+* texi2any
+  . extension modules fixed to work with the "thread-safe locales" of
+    Perl 5.28 and newer
+  . some code changed to stop warnings being given by newer versions of Perl
+  . for HTML output, use `id' to define link targets instead of the `name'
+    attribute on <a>
+  . A native-code implementation of the Texinfo parser has been included
+    on an experimental basis, which makes texi2any a lot faster.  Set the
+    `TEXINFO_XS_PARSER' environment variable to 1 to use.
+  . changes to HTML output:
+     . omit colon after node name in menus by default (use
+       `MENU_ENTRY_COLON' to add it back)
+     . no special CSS for commands like @smallexample
+     . new customization variable `SECTION_NAME_IN_TITLE' to use the
+       section name as the document <title>
+     . use section names instead of node names in generated menus
+  . pass on flags set with -D to TeX
+  . useless static libraries are not installed
+  . the newline after an @insertcopying is not output
+  . warning given for @multitable prototypes not in braces
+  . @indent and @noindent are not allowed inside the arguments to
+    commands where they are not meaningful
+  . @quote-arg and @allow-recursion are not recognised (these two used
+    to be recognised by makeinfo in macro definitions but were never 
+    implemented in texinfo.tex)
+  . `FIX_TEXINFO' removed as a customization variable
+  . do not recognise or warn about obsolete customization variables
+
+* info
+  . debugging output with -x is not diverted to a separate infodebug file
+
+* Development:
+  . switch from Subversion to git
+     - https://savannah.gnu.org/git/?group=texinfo
+  . automake 1.16
+
+
 6.5 (12 September 2017)
 * info:
   . some bugs fixed:

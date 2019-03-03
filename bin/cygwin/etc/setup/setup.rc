@@ -24,7 +24,6 @@ mirrors-lst
 	ftp://mirrors.syringanetworks.net/cygwin/;mirrors.syringanetworks.net;United States;Idaho
 	http://mirrors.syringanetworks.net/cygwin/;mirrors.syringanetworks.net;United States;Idaho
 	http://sourceware.mirrors.tds.net/pub/sourceware.org/cygwin/;sourceware.mirrors.tds.net;United States;Wisconsin
-	ftp://ftp.twaren.net/Unix/sourceware.org/cygwin/;ftp.twaren.net;Asia;Taiwan
 	http://cygwin.cathedral-networks.org/;cygwin.cathedral-networks.org;Europe;Norway
 	ftp://mirrors.dotsrc.org/mirrors/cygwin/;mirrors.dotsrc.org;Europe;Denmark
 	http://mirrors.dotsrc.org/cygwin/;mirrors.dotsrc.org;Europe;Denmark

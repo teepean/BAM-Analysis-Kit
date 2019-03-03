@@ -2959,3 +2959,77 @@ Solution 2/2 (default)
 2019/02/14 06:16:48 Changing gid to Administrators
 2019/02/14 06:17:25 note: Installation Complete
 2019/02/14 06:17:25 Ending cygwin install
+2019/03/03 10:21:40 Starting cygwin install, version 2.895
+2019/03/03 10:21:40 User has backup/restore rights
+2019/03/03 10:21:40 Current Directory: G:\cyglataus
+2019/03/03 10:21:40 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2019/03/03 10:21:42 source: network install
+2019/03/03 10:21:44 source: network install
+2019/03/03 10:21:45 root: D:\BAM-Analysis-Kit\bin\cygwin system
+2019/03/03 10:21:46 Selected local directory: G:\cyglataus
+2019/03/03 10:21:47 net: Preconfig
+2019/03/03 10:21:50 site: http://cygwin.mirror.constant.com/
+2019/03/03 10:21:50 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst.sig
+2019/03/03 10:21:50 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst
+2019/03/03 10:21:54 solving: 0 tasks, update: yes, use test packages: no
+2019/03/03 10:22:08 solving: 12 tasks, update: no, use test packages: no
+2019/03/03 10:22:08 Augmented Transaction List:
+2019/03/03 10:22:08    0 install                                          cygwin             3.0.1-1
+2019/03/03 10:22:08    1   erase                                          cygwin            2.11.2-1
+2019/03/03 10:22:08    2 install                                    cygwin-devel             3.0.1-1
+2019/03/03 10:22:08    3   erase                                    cygwin-devel            2.11.2-1
+2019/03/03 10:22:08    4 install                                python-pip-wheel            19.0.2-1
+2019/03/03 10:22:08    5 install                         python-setuptools-wheel            40.7.3-1
+2019/03/03 10:22:08    6 install                                   libopenssl100            1.0.2r-1
+2019/03/03 10:22:08    7   erase                                   libopenssl100            1.0.2p-1
+2019/03/03 10:22:08    8 install                                            info               6.6-1
+2019/03/03 10:22:08    9   erase                                            info               6.5-2
+2019/03/03 10:22:08   10 install                                        python27            2.7.15-1
+2019/03/03 10:22:08   11 install                                         openssl            1.0.2r-1
+2019/03/03 10:22:08   12   erase                                         openssl            1.0.2p-1
+2019/03/03 10:22:08   13 install                                         texinfo               6.6-1
+2019/03/03 10:22:08   14   erase                                         texinfo               6.5-2
+2019/03/03 10:22:08   15 install                                         python2            2.7.15-1
+2019/03/03 10:22:08   16   erase                                         python2            2.7.14-1
+2019/03/03 10:22:08   17 install                             python27-setuptools            40.7.3-1
+2019/03/03 10:22:08   18   erase                              python2-setuptools            34.3.2-1
+2019/03/03 10:22:12 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-3.0.1-1.tar.xz
+2019/03/03 10:22:12 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-devel/cygwin-devel-3.0.1-1.tar.xz
+2019/03/03 10:22:12 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-pip/python-pip-wheel/python-pip-wheel-19.0.2-1.tar.xz
+2019/03/03 10:22:13 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-setuptools/python-setuptools-wheel/python-setuptools-wheel-40.7.3-1.tar.xz
+2019/03/03 10:22:13 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/libopenssl100/libopenssl100-1.0.2r-1.tar.xz
+2019/03/03 10:22:13 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/texinfo/info/info-6.6-1.tar.xz
+2019/03/03 10:22:14 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/python2/python27/python27-2.7.15-1.tar.xz
+2019/03/03 10:22:14 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/openssl-1.0.2r-1.tar.xz
+2019/03/03 10:22:14 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/texinfo/texinfo-6.6-1.tar.xz
+2019/03/03 10:22:14 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/python2/python2-2.7.15-1.tar.xz
+2019/03/03 10:22:15 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-setuptools/python27-setuptools/python27-setuptools-40.7.3-1.tar.xz
+2019/03/03 10:22:15 Uninstalling cygwin
+2019/03/03 10:22:15 Uninstalling cygwin-devel
+2019/03/03 10:22:15 Uninstalling libopenssl100
+2019/03/03 10:22:15 Uninstalling info
+2019/03/03 10:22:15 Uninstalling openssl
+2019/03/03 10:22:15 Uninstalling texinfo
+2019/03/03 10:22:15 Uninstalling python2
+2019/03/03 10:22:15 Uninstalling python2-setuptools
+2019/03/03 10:22:15 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-3.0.1-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-devel/cygwin-devel-3.0.1-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-pip/python-pip-wheel/python-pip-wheel-19.0.2-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-setuptools/python-setuptools-wheel/python-setuptools-wheel-40.7.3-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/libopenssl100/libopenssl100-1.0.2r-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/texinfo/info/info-6.6-1.tar.xz
+2019/03/03 10:22:16 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/python2/python27/python27-2.7.15-1.tar.xz
+2019/03/03 10:22:20 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/openssl/openssl-1.0.2r-1.tar.xz
+2019/03/03 10:22:20 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/texinfo/texinfo-6.6-1.tar.xz
+2019/03/03 10:22:21 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/python2/python2-2.7.15-1.tar.xz
+2019/03/03 10:22:21 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/python-setuptools/python27-setuptools/python27-setuptools-40.7.3-1.tar.xz
+2019/03/03 10:22:21 Changing gid back to original
+2019/03/03 10:22:21 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2019/03/03 10:22:29 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2019/03/03 10:22:33 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2019/03/03 10:22:33 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2019/03/03 10:22:33 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2019/03/03 10:22:33 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2019/03/03 10:22:34 Changing gid to Administrators
+2019/03/03 10:22:35 note: Installation Complete
+2019/03/03 10:22:35 Ending cygwin install

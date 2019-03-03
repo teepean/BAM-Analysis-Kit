@@ -158,6 +158,7 @@ typedef enum
     CW_GETNSS_GRP_SRC,
     CW_EXCEPTION_RECORD_FROM_SIGINFO_T,
     CW_CYGHEAP_PROFTHR_ALL,
+    CW_WINPID_TO_CYGWIN_PID,
   } cygwin_getinfo_types;
 
 #define CW_LOCK_PINFO CW_LOCK_PINFO
@@ -220,6 +221,7 @@ typedef enum
 #define CW_GETNSS_GRP_SRC CW_GETNSS_GRP_SRC
 #define CW_EXCEPTION_RECORD_FROM_SIGINFO_T CW_EXCEPTION_RECORD_FROM_SIGINFO_T
 #define CW_CYGHEAP_PROFTHR_ALL CW_CYGHEAP_PROFTHR_ALL
+#define CW_WINPID_TO_CYGWIN_PID CW_WINPID_TO_CYGWIN_PID
 
 /* Token type for CW_SET_EXTERNAL_TOKEN */
 enum
@@ -269,8 +271,7 @@ enum
   PID_INITIALIZING     = 0x00800, /* Set until ready to receive signals. */
   PID_NEW	       = 0x01000, /* Available. */
   PID_ALLPIDS	       = 0x02000, /* used by pinfo scanner */
-  PID_EXECED	       = 0x04000, /* redirect to original pid info block */
-  PID_NOREDIR	       = 0x08000, /* don't redirect if execed */
+  PID_PROCINFO	       = 0x08000, /* caller just asks for process info */
   PID_EXITED	       = 0x40000000, /* Free entry. */
   PID_REAPED	       = 0x80000000  /* Reaped */
 };

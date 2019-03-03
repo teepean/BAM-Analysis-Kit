@@ -323,5 +323,6 @@
 /usr/lib/sasl2_3/cygsasldb-3.dll
 /usr/lib/sasl2_3/cygscram-3.dll
 /usr/lib/texinfo/MiscXS.dll
+/usr/lib/texinfo/Parsetexi.dll
 /usr/lib/texinfo/XSParagraph.dll
 /usr/libexec/coreutils/libstdbuf.so

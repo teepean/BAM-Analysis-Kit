@@ -7,6 +7,63 @@
  https://github.com/openssl/openssl/commits/ and pick the appropriate
  release branch.
 
+ Changes between 1.0.2q and 1.0.2r [26 Feb 2019]
+
+  *) 0-byte record padding oracle
+
+     If an application encounters a fatal protocol error and then calls
+     SSL_shutdown() twice (once to send a close_notify, and once to receive one)
+     then OpenSSL can respond differently to the calling application if a 0 byte
+     record is received with invalid padding compared to if a 0 byte record is
+     received with an invalid MAC. If the application then behaves differently
+     based on that in a way that is detectable to the remote peer, then this
+     amounts to a padding oracle that could be used to decrypt data.
+
+     In order for this to be exploitable "non-stitched" ciphersuites must be in
+     use. Stitched ciphersuites are optimised implementations of certain
+     commonly used ciphersuites. Also the application must call SSL_shutdown()
+     twice even if a protocol error has occurred (applications should not do
+     this but some do anyway).
+
+     This issue was discovered by Juraj Somorovsky, Robert Merget and Nimrod
+     Aviram, with additional investigation by Steven Collison and Andrew
+     Hourselt. It was reported to OpenSSL on 10th December 2018.
+     (CVE-2019-1559)
+     [Matt Caswell]
+
+  *) Move strictness check from EVP_PKEY_asn1_new() to EVP_PKEY_asn1_add0().
+     [Richard Levitte]
+
+ Changes between 1.0.2p and 1.0.2q [20 Nov 2018]
+
+  *) Microarchitecture timing vulnerability in ECC scalar multiplication
+
+     OpenSSL ECC scalar multiplication, used in e.g. ECDSA and ECDH, has been
+     shown to be vulnerable to a microarchitecture timing side channel attack.
+     An attacker with sufficient access to mount local timing attacks during
+     ECDSA signature generation could recover the private key.
+
+     This issue was reported to OpenSSL on 26th October 2018 by Alejandro
+     Cabrera Aldaya, Billy Brumley, Sohaib ul Hassan, Cesar Pereida Garcia and
+     Nicola Tuveri.
+     (CVE-2018-5407)
+     [Billy Brumley]
+
+  *) Timing vulnerability in DSA signature generation
+
+     The OpenSSL DSA signature algorithm has been shown to be vulnerable to a
+     timing side channel attack. An attacker could use variations in the signing
+     algorithm to recover the private key.
+
+     This issue was reported to OpenSSL on 16th October 2018 by Samuel Weiser.
+     (CVE-2018-0734)
+     [Paul Dale]
+
+  *) Resolve a compatibility issue in EC_GROUP handling with the FIPS Object
+     Module, accidentally introduced while backporting security fixes from the
+     development branch and hindering the use of ECC in FIPS mode.
+     [Nicola Tuveri]
+
  Changes between 1.0.2o and 1.0.2p [14 Aug 2018]
 
   *) Client DoS due to large DH parameter

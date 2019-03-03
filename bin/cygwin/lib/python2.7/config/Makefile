@@ -26,12 +26,12 @@ MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	2.7
-srcdir=		/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14
-VPATH=		/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14
-abs_srcdir=	/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14
-abs_builddir=	/usr/src/ports/python2/python2-2.7.14-1.x86_64/build
-build=		x86_64-unknown-cygwin
-host=		x86_64-unknown-cygwin
+srcdir=		/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15
+VPATH=		/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15
+abs_srcdir=	/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15
+abs_builddir=	/usr/src/ports/python2/python2-2.7.15-1.x86_64/build
+build=		x86_64-pc-cygwin
+host=		x86_64-pc-cygwin
 
 CC=		gcc
 CXX=		g++
@@ -73,7 +73,7 @@ MAKESETUP=      $(srcdir)/Modules/makesetup
 # Compiler options
 OPT=		-DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes
 BASECFLAGS=	 -fno-strict-aliasing
-CFLAGS=		$(BASECFLAGS) -ggdb -O2 -pipe -Wimplicit-function-declaration -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.14-1.x86_64/build=/usr/src/debug/python2-2.7.14-1 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14=/usr/src/debug/python2-2.7.14-1 $(OPT) $(EXTRA_CFLAGS)
+CFLAGS=		$(BASECFLAGS) -ggdb -O2 -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector-strong --param=ssp-buffer-size=4 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.15-1.x86_64/build=/usr/src/debug/python2-2.7.15-1 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15=/usr/src/debug/python2-2.7.15-1 $(OPT) $(EXTRA_CFLAGS)
 # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
 # be able to build extension modules using the directories specified in the
 # environment variables
@@ -159,7 +159,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--srcdir=/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14' '--prefix=/usr' '--exec-prefix=/usr' '--localstatedir=/var' '--sysconfdir=/etc' '--docdir=/usr/share/doc/python2' '--htmldir=/usr/share/doc/python2/html' '-C' '--enable-shared' '--enable-ipv6' '--with-dbmliborder=gdbm' '--with-libc=' '--with-libm=' '--with-system-ffi' '--with-system-expat' 'ac_cv_func_bind_textdomain_codeset=yes' 'CC=gcc' 'CFLAGS=-ggdb -O2 -pipe -Wimplicit-function-declaration -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.14-1.x86_64/build=/usr/src/debug/python2-2.7.14-1 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.14-1.x86_64/src/Python-2.7.14=/usr/src/debug/python2-2.7.14-1' 'LDFLAGS= -L.' 'LIBS=' 'CPPFLAGS='
+CONFIG_ARGS=	 '--srcdir=/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15' '--prefix=/usr' '--exec-prefix=/usr' '--localstatedir=/var' '--sysconfdir=/etc' '--docdir=/usr/share/doc/python2' '--htmldir=/usr/share/doc/python2/html' '-C' '--enable-shared' '--enable-ipv6' '--with-dbmliborder=gdbm' '--with-libc=' '--with-libm=' '--with-system-ffi' '--with-system-expat' 'ac_cv_func_bind_textdomain_codeset=yes' 'CC=gcc' 'CFLAGS=-ggdb -O2 -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector-strong --param=ssp-buffer-size=4 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.15-1.x86_64/build=/usr/src/debug/python2-2.7.15-1 -fdebug-prefix-map=/usr/src/ports/python2/python2-2.7.15-1.x86_64/src/Python-2.7.15=/usr/src/debug/python2-2.7.15-1' 'LDFLAGS= -L.' 'LIBS=' 'CPPFLAGS='
 
 
 # Subdirectories with code
@@ -203,7 +203,7 @@ BUILDPYTHON=	python$(BUILDEXE)
 PYTHON_FOR_REGEN=python2.7
 PYTHON_FOR_BUILD=./$(BUILDPYTHON) -E
 _PYTHON_HOST_PLATFORM=
-HOST_GNU_TYPE=  x86_64-unknown-cygwin
+HOST_GNU_TYPE=  x86_64-pc-cygwin
 
 # Tcl and Tk config info from --with-tcltk-includes and -libs options
 TCLTK_INCLUDES=	
@@ -418,7 +418,16 @@ LIBRARY_OBJS=	\
 
 # Default target
 all:		build_all
-build_all:	$(BUILDPYTHON) oldsharedmods sharedmods gdbhooks
+build_all:	check-clean-src $(BUILDPYTHON) oldsharedmods sharedmods gdbhooks
+
+# Check that the source is clean when building out of source.
+check-clean-src:
+	@if test -n "$(VPATH)" -a -f "$(srcdir)/Modules/python.o"; then \
+		echo "Error: The source directory ($(srcdir)) is not clean" ; \
+		echo "Building Python out of the source tree (in $(abs_builddir)) requires a clean source tree ($(abs_srcdir))" ; \
+		echo "Try to run: make -C \"$(srcdir)\" clean" ; \
+		exit 1; \
+	fi
 
 # Compile a binary with profile guided optimization.
 profile-opt:
@@ -445,7 +454,7 @@ build_all_generate_profile:
 
 run_profile_task:
 	: # FIXME: can't run for a cross build
-	$(LLVM_PROF_FILE) ./$(BUILDPYTHON) $(PROFILE_TASK) || true
+	$(LLVM_PROF_FILE) $(RUNSHARED) ./$(BUILDPYTHON) $(PROFILE_TASK) || true
 
 build_all_merge_profile:
 	$(LLVM_PROF_MERGER)
@@ -915,6 +924,14 @@ memtest:	all platform
 		-$(TESTPYTHON) $(TESTPROG) $(MEMTESTOPTS)
 		$(TESTPYTHON) $(TESTPROG) $(MEMTESTOPTS)
 
+# SSL tests
+.PHONY: multisslcompile multissltest
+multisslcompile: build_all
+	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py --compile-only
+
+multissltest: build_all
+	$(RUNSHARED) ./$(BUILDPYTHON) Tools/ssl/multissltests.py
+
 # Install everything
 install:	 commoninstall bininstall maninstall 
 	if test "x$(ENSUREPIP)" != "xno"  ; then \
@@ -937,7 +954,7 @@ altinstall:	commoninstall
 			$$ensurepip --root=$(DESTDIR)/ ; \
 	fi
 
-commoninstall:	 \
+commoninstall:	check-clean-src  \
 		altbininstall libinstall inclinstall libainstall \
 		sharedinstall oldsharedinstall altmaninstall \
 		
@@ -1378,10 +1395,9 @@ autoconf:
 
 # Create a tags file for vi
 tags::
-	cd $(srcdir); \
-	ctags -w Include/*.h; \
-	for i in $(SRCDIRS); do ctags -f tags -w -a $$i/*.[ch]; \
-	done; \
+	ctags -w $(srcdir)/Include/*.h
+	for i in $(SRCDIRS); do ctags -f tags -w -a $(srcdir)/$$i/*.[ch]; done
+	ctags -f tags -w -a $(srcdir)/Modules/_ctypes/*.[ch]
 	LC_ALL=C sort -o tags tags
 
 # Create a tags file for GNU Emacs
@@ -1481,7 +1497,7 @@ patchcheck:
 Python/thread.o:  $(srcdir)/Python/thread_atheos.h $(srcdir)/Python/thread_beos.h $(srcdir)/Python/thread_cthread.h $(srcdir)/Python/thread_foobar.h $(srcdir)/Python/thread_lwp.h $(srcdir)/Python/thread_nt.h $(srcdir)/Python/thread_os2.h $(srcdir)/Python/thread_pth.h $(srcdir)/Python/thread_pthread.h $(srcdir)/Python/thread_sgi.h $(srcdir)/Python/thread_solaris.h $(srcdir)/Python/thread_wince.h
 
 # Declare targets that aren't real files
-.PHONY: all build_all sharedmods oldsharedmods test quicktest memtest
+.PHONY: all build_all sharedmods check-clean-src oldsharedmods test quicktest memtest
 .PHONY: install altinstall oldsharedinstall bininstall altbininstall
 .PHONY: maninstall libinstall inclinstall libainstall sharedinstall
 .PHONY: frameworkinstall frameworkinstallframework frameworkinstallstructure
