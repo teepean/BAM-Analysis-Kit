@@ -1,6 +1,18 @@
-util-linux 2.32.1: Jul 16 2018
-* see Documentation/releases/v2.32-ReleaseNotes or the complete changelog at
-  https://www.kernel.org/pub/linux/utils/util-linux/v2.32/v2.32.1-ChangeLog
+util-linux 2.33.1: Jan 9 2019
+* see Documentation/releases/v2.33.1-ReleaseNotes or the complete changelog at
+  https://www.kernel.org/pub/linux/utils/util-linux/v2.33/v2.33.1-ChangeLog
+
+util-linux 2.33: Nov 6 2018
+* see Documentation/releases/v2.33-ReleaseNotes or the complete changelog at
+  https://www.kernel.org/pub/linux/utils/util-linux/v2.33/v2.33-ChangeLog
+
+util-linux 2.33-rc2: Oct 19 2018
+* see Documentation/releases/v2.33-ReleaseNotes or the complete changelog at
+  https://www.kernel.org/pub/linux/utils/util-linux/v2.33/v2.33-rc2-ChangeLog
+
+util-linux 2.33-rc1: Sep 25 2018
+* see Documentation/releases/v2.33-ReleaseNotes or the complete changelog at
+  https://www.kernel.org/pub/linux/utils/util-linux/v2.33/v2.33-rc1-ChangeLog
 
 util-linux 2.32: Mar 21 2018
 * see Documentation/releases/v2.32-ReleaseNotes or the complete changelog at

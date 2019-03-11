@@ -3033,3 +3033,73 @@ Solution 2/2 (default)
 2019/03/03 10:22:34 Changing gid to Administrators
 2019/03/03 10:22:35 note: Installation Complete
 2019/03/03 10:22:35 Ending cygwin install
+2019/03/11 23:06:50 Starting cygwin install, version 2.895
+2019/03/11 23:06:50 User has backup/restore rights
+2019/03/11 23:06:50 Current Directory: G:\cyglataus
+2019/03/11 23:06:50 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2019/03/11 23:06:52 source: network install
+2019/03/11 23:07:06 root: D:\BAM-Analysis-Kit\bin\cygwin system
+2019/03/11 23:07:07 Selected local directory: G:\cyglataus
+2019/03/11 23:07:07 net: Preconfig
+2019/03/11 23:07:09 site: http://cygwin.mirror.constant.com/
+2019/03/11 23:07:09 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst.sig
+2019/03/11 23:07:10 HTTP status 404 fetching http://cygwin.mirror.constant.com/x86_64/setup.zst
+2019/03/11 23:07:13 solving: 0 tasks, update: yes, use test packages: no
+2019/03/11 23:07:24 solving: 12 tasks, update: no, use test packages: no
+2019/03/11 23:07:24 Augmented Transaction List:
+2019/03/11 23:07:24    0 install                                          cygwin             3.0.3-1
+2019/03/11 23:07:24    1   erase                                          cygwin             3.0.1-1
+2019/03/11 23:07:24    2 install                                    cygwin-devel             3.0.3-1
+2019/03/11 23:07:24    3   erase                                    cygwin-devel             3.0.1-1
+2019/03/11 23:07:24    4 install                                        libuuid1            2.33.1-1
+2019/03/11 23:07:24    5   erase                                        libuuid1            2.32.1-1
+2019/03/11 23:07:24    6 install                                    libsqlite3_0            3.27.2-1
+2019/03/11 23:07:24    7   erase                                    libsqlite3_0            3.21.0-1
+2019/03/11 23:07:24    8 install                                   libsmartcols1            2.33.1-1
+2019/03/11 23:07:24    9   erase                                   libsmartcols1            2.32.1-1
+2019/03/11 23:07:24   10 install                                     libpkgconf3             1.6.0-1
+2019/03/11 23:07:24   11 install                                       libblkid1            2.33.1-1
+2019/03/11 23:07:24   12   erase                                       libblkid1            2.32.1-1
+2019/03/11 23:07:24   13 install                                         pkgconf             1.6.0-1
+2019/03/11 23:07:24   14 install                                       libfdisk1            2.33.1-1
+2019/03/11 23:07:24   15   erase                                       libfdisk1            2.32.1-1
+2019/03/11 23:07:24   16 install                                      pkg-config             1.6.0-1
+2019/03/11 23:07:24   17   erase                                      pkg-config            0.29.1-1
+2019/03/11 23:07:24   18 install                                      util-linux            2.33.1-1
+2019/03/11 23:07:24   19   erase                                      util-linux            2.32.1-1
+2019/03/11 23:07:24   20 install                                   libuuid-devel            2.33.1-1
+2019/03/11 23:07:24   21   erase                                   libuuid-devel            2.32.1-1
+2019/03/11 23:07:28 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-3.0.3-1.tar.xz
+2019/03/11 23:07:28 Downloaded G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-devel/cygwin-devel-3.0.3-1.tar.xz
+2019/03/11 23:07:28 Uninstalling cygwin
+2019/03/11 23:07:28 Uninstalling cygwin-devel
+2019/03/11 23:07:28 Uninstalling libuuid1
+2019/03/11 23:07:28 Uninstalling libsqlite3_0
+2019/03/11 23:07:28 Uninstalling libsmartcols1
+2019/03/11 23:07:28 Uninstalling libblkid1
+2019/03/11 23:07:28 Uninstalling libfdisk1
+2019/03/11 23:07:28 Uninstalling pkg-config
+2019/03/11 23:07:28 Uninstalling util-linux
+2019/03/11 23:07:28 Uninstalling libuuid-devel
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-3.0.3-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/cygwin/cygwin-devel/cygwin-devel-3.0.3-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.33.1-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.27.2-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.33.1-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/pkgconf/libpkgconf3/libpkgconf3-1.6.0-1.tar.xz
+2019/03/11 23:07:28 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.33.1-1.tar.xz
+2019/03/11 23:07:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/pkgconf/pkgconf-1.6.0-1.tar.xz
+2019/03/11 23:07:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.33.1-1.tar.xz
+2019/03/11 23:07:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/pkgconf/pkg-config/pkg-config-1.6.0-1.tar.xz
+2019/03/11 23:07:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/util-linux-2.33.1-1.tar.xz
+2019/03/11 23:07:29 Extracting from file://G:\cyglataus/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86_64/release/util-linux/libuuid-devel/libuuid-devel-2.33.1-1.tar.xz
+2019/03/11 23:07:29 Changing gid back to original
+2019/03/11 23:07:29 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2019/03/11 23:07:35 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2019/03/11 23:07:36 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_desktop-file-utils.sh"
+2019/03/11 23:07:36 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_glib2.0.sh"
+2019/03/11 23:07:36 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_man-db.sh"
+2019/03/11 23:07:36 running: D:\BAM-Analysis-Kit\bin\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/zp_shared-mime-info.sh"
+2019/03/11 23:07:36 Changing gid to Administrators
+2019/03/11 23:07:38 note: Installation Complete
+2019/03/11 23:07:38 Ending cygwin install

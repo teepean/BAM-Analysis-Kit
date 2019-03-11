@@ -1,0 +1,2 @@
+#!/bin/sh
+exec pkgconf --personality=i686-w64-mingw32 $@

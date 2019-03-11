@@ -28,8 +28,8 @@ coreutils coreutils-8.26-2.tar.bz2 0
 cppunit cppunit-1.13.2-1.tar.bz2 1
 cygutils cygutils-1.4.16-2.tar.bz2 0
 cygutils-extra cygutils-extra-1.4.16-2.tar.bz2 1
-cygwin cygwin-3.0.1-1.tar.bz2 0
-cygwin-devel cygwin-devel-3.0.1-1.tar.bz2 1
+cygwin cygwin-3.0.3-1.tar.bz2 0
+cygwin-devel cygwin-devel-3.0.3-1.tar.bz2 1
 dash dash-0.5.9.1-1.tar.bz2 0
 desktop-file-utils desktop-file-utils-0.23-1.tar.bz2 0
 diffutils diffutils-3.5-2.tar.bz2 0
@@ -56,7 +56,7 @@ less less-530-1.tar.bz2 1
 libargp libargp-20110921-3.tar.bz2 1
 libatomic1 libatomic1-7.4.0-1.tar.bz2 1
 libattr1 libattr1-2.4.48-2.tar.bz2 1
-libblkid1 libblkid1-2.32.1-1.tar.bz2 1
+libblkid1 libblkid1-2.33.1-1.tar.bz2 1
 libboost_atomic1.66 libboost_atomic1.66-1.66.0-1.tar.bz2 0
 libboost_chrono1.66 libboost_chrono1.66-1.66.0-1.tar.bz2 0
 libboost_container1.66 libboost_container1.66-1.66.0-1.tar.bz2 0
@@ -90,7 +90,7 @@ libcurl4 libcurl4-7.59.0-1.tar.bz2 0
 libdb5.3 libdb5.3-5.3.28-2.tar.bz2 1
 libexpat1 libexpat1-2.2.6-1.tar.bz2 0
 libfam0 libfam0-0.1.10-15.tar.bz2 1
-libfdisk1 libfdisk1-2.32.1-1.tar.bz2 0
+libfdisk1 libfdisk1-2.33.1-1.tar.bz2 0
 libffi6 libffi6-3.2.1-2.tar.bz2 1
 libfftw3-omp3 libfftw3-omp3-3.3.8-1.tar.bz2 0
 libfftw3_3 libfftw3_3-3.3.8-1.tar.bz2 1
@@ -134,6 +134,7 @@ libopenssl100 libopenssl100-1.0.2r-1.tar.bz2 0
 libp11-kit0 libp11-kit0-0.23.10-1.tar.bz2 1
 libpcre1 libpcre1-8.40-3.tar.bz2 1
 libpipeline1 libpipeline1-1.4.0-1.tar.bz2 1
+libpkgconf3 libpkgconf3-1.6.0-1.tar.bz2 0
 libpopt-common libpopt-common-1.16-2.tar.bz2 0
 libpopt0 libpopt0-1.16-2.tar.bz2 0
 libpsl5 libpsl5-0.18.0-1.tar.bz2 0
@@ -141,16 +142,16 @@ libquadmath0 libquadmath0-7.4.0-1.tar.bz2 1
 libreadline7 libreadline7-7.0.3-3.tar.bz2 0
 libsasl2_3 libsasl2_3-2.1.26-11.tar.bz2 0
 libsigsegv2 libsigsegv2-2.10-2.tar.bz2 0
-libsmartcols1 libsmartcols1-2.32.1-1.tar.bz2 1
-libsqlite3_0 libsqlite3_0-3.21.0-1.tar.bz2 0
+libsmartcols1 libsmartcols1-2.33.1-1.tar.bz2 1
+libsqlite3_0 libsqlite3_0-3.27.2-1.tar.bz2 0
 libssh2_1 libssh2_1-1.7.0-1.tar.bz2 0
 libssp0 libssp0-6.4.0-4.tar.bz2 1
 libstdc++6 libstdc++6-7.4.0-1.tar.bz2 0
 libtasn1_6 libtasn1_6-4.13-1.tar.bz2 1
 libtool libtool-2.4.6-6.tar.bz2 1
 libunistring2 libunistring2-0.9.10-1.tar.bz2 0
-libuuid-devel libuuid-devel-2.32.1-1.tar.bz2 0
-libuuid1 libuuid1-2.32.1-1.tar.bz2 1
+libuuid-devel libuuid-devel-2.33.1-1.tar.bz2 0
+libuuid1 libuuid1-2.33.1-1.tar.bz2 1
 libxml2 libxml2-2.9.4-2.tar.bz2 1
 login login-1.12-1.tar.bz2 0
 lynx lynx-2.8.7-2.tar.bz2 1
@@ -168,7 +169,8 @@ perl-Carp perl-Carp-1.3301-2.tar.bz2 0
 perl-Test-Harness perl-Test-Harness-3.42-1.tar.bz2 0
 perl_autorebase perl_autorebase-5.26.3-1.tar.bz2 1
 perl_base perl_base-5.26.3-1.tar.bz2 0
-pkg-config pkg-config-0.29.1-1.tar.bz2 1
+pkg-config pkg-config-1.6.0-1.tar.bz2 1
+pkgconf pkgconf-1.6.0-1.tar.bz2 0
 popt popt-1.16-2.tar.bz2 1
 publicsuffix-list-dafsa publicsuffix-list-dafsa-20180523-1.tar.bz2 0
 python-pip-wheel python-pip-wheel-19.0.2-1.tar.bz2 0
@@ -190,7 +192,7 @@ terminfo terminfo-6.0-12.20171125.tar.bz2 0
 texinfo texinfo-6.6-1.tar.bz2 0
 tzcode tzcode-2018i-1.tar.bz2 1
 tzdata tzdata-2018i-1.tar.bz2 0
-util-linux util-linux-2.32.1-1.tar.bz2 0
+util-linux util-linux-2.33.1-1.tar.bz2 0
 vim-minimal vim-minimal-8.0.1567-1.tar.bz2 0
 w32api-headers w32api-headers-5.0.4-1.tar.bz2 1
 w32api-runtime w32api-runtime-5.0.4-1.tar.bz2 1

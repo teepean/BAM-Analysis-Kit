@@ -72,7 +72,6 @@ mirrors-lst
 	http://mirror.homelab.no/cygwin/;mirror.homelab.no;Europe;Norway
 	ftp://cygwin.uib.no/pub/cygwin/;cygwin.uib.no;Europe;Norway
 	http://cygwin.uib.no/;cygwin.uib.no;Europe;Norway
-	http://cygwin.viem-it.no/;cygwin.viem-it.no;Europe;Norway
 	ftp://ucmirror.canterbury.ac.nz/pub/cygwin/;ucmirror.canterbury.ac.nz;Australasia;New Zealand
 	http://ucmirror.canterbury.ac.nz/cygwin/;ucmirror.canterbury.ac.nz;Australasia;New Zealand
 	ftp://mirror.rise.ph/cygwin/cygwin/;mirror.rise.ph;Asia;Philippines
@@ -83,10 +82,6 @@ mirrors-lst
 	http://mirror.qnren.qa/cygwin/;mirror.qnren.qa;Asia;Qatar
 	http://ftp.acc.umu.se/mirror/cygwin/;ftp.acc.umu.se;Europe;Sweden
 	http://cygwin.mirror.globo.tech/;cygwin.mirror.globo.tech;Canada;Quebec
-	ftp://ftp.cse.yzu.edu.tw/pub/cygwin/;ftp.cse.yzu.edu.tw;Asia;Taiwan
-	http://ftp.cse.yzu.edu.tw/pub/cygwin/;ftp.cse.yzu.edu.tw;Asia;Taiwan
-	ftp://ftp.yzu.edu.tw/cygwin/;ftp.yzu.edu.tw;Asia;Taiwan
-	http://ftp.yzu.edu.tw/cygwin/;ftp.yzu.edu.tw;Asia;Taiwan
 	ftp://ftp.is.co.za/mirrors/cygwin/;ftp.is.co.za;Africa;South Africa
 last-mirror
 	http://cygwin.mirror.constant.com/
