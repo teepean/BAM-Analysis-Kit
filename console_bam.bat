@@ -1,5 +1,5 @@
 @echo off
-title BAM Analysis Kit 1.8
+title BAM Analysis Kit 2.04
 
 REM     The MIT License (MIT)
 REM     Copyright © 2013-2015 Felix Immanuel
@@ -21,7 +21,7 @@ REM     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 REM     OTHER DEALINGS IN THE SOFTWARE.
 
 echo.
-echo *** BAM Analysis Kit 1.8 ***
+echo *** BAM Analysis Kit 2.04 ***
 echo.
 echo Project Website: http://www.y-str.org/2014/04/bam-analysis-kit.html
 echo Tools Used: SAMTools, picard, bamtools, lobSTR, telseq, Cygwin, GATK, Java
@@ -33,7 +33,7 @@ if [%1]==[] goto NOPARAM
 REM - start reporting versions..
 bin\cygwin\bin\bash.exe -c "echo -n 'lobSTR Version: ';/bin/lobSTR --version"
 bin\cygwin\bin\bash.exe -c "/bin/bedtools --version"
-echo Samtools Version: 1.2
+echo Samtools Version: 1.9
 bin\cygwin\bin\bash.exe -c "echo -n 'Cygwin Version: ';/bin/uname -r"
 bin\cygwin\bin\bash.exe -c "/bin/telseq --version|/bin/head -1"
 bin\jre\bin\java -version 2^>^&1 ^| findstr /i version
@@ -321,7 +321,7 @@ echo Invoke the variant caller ...
   IF "%%A" == "M" (
   
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T HaplotypeCaller -I bam_sorted_realigned.bam -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf"
-	bin\bow\bgzip.exe bam_chr%%A.vcf
+	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz	
 
 	echo Extracting mtDNA markers ..
@@ -342,8 +342,8 @@ echo Invoke the variant caller ...
 	IF EXIST bam_sorted_realigned.bam DEL /Q /F bam_sorted_realigned.bam
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -T IndelRealigner  -maxPosMove 10 -R ref.fa -I bam_sorted.bam -targetIntervals bam.intervals -o bam_sorted_realigned.bam"
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T HaplotypeCaller -I bam_sorted_realigned.bam -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf"
-	bin\jre\bin\java.exe -jar bin\haplogrep\haplogrep-2.1.16.jar --in bam_chr%%A.vcf --format vcf --out out\mtDNA-haplogroup.txt
-	bin\bow\bgzip.exe bam_chr%%A.vcf
+	bin\jre\bin\java.exe -jar bin\haplogrep\haplogrep-2.1.16.jar --in bam_chr%%A.vcf --format vcf --out out\mtDNA-haplogroup-haplogrep.txt
+	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz	
 	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g' > chr%%A.tab"	
 	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%REF\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g'|/bin/awk '{if($3 ~ /^[ATGC]$/) printf $1\"\"$2\"\"$3\" \"}'|/bin/sed 's/\s$//g'|/bin/sed 's/\s/, /g' > out/RSRS_mtDNA.txt"
@@ -353,7 +353,7 @@ echo Invoke the variant caller ...
   
   IF "%%A" == "Y" (
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T UnifiedGenotyper -glm SNP -I bam_sorted_realigned.bam -rf BadCigar -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf --output_mode EMIT_ALL_CONFIDENT_SITES"
-	bin\bow\bgzip.exe bam_chr%%A.vcf
+	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz
 	
 	echo Extracting Y-SNP markers ..
@@ -376,7 +376,7 @@ echo Invoke the variant caller ...
   
   ) ELSE (
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T UnifiedGenotyper -glm SNP -I bam_sorted_realigned.bam -rf BadCigar -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf --output_mode EMIT_ALL_CONFIDENT_SITES"
-	bin\bow\bgzip.exe bam_chr%%A.vcf
+	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz
     bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%TGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chr%%A.tab"
   )
@@ -450,18 +450,6 @@ IF EXIST chrM.tmp DEL /Q /F  chrM.tmp
 )
 )
 
-IF EXIST out\RSRS_mtDNA.txt bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/RSRS_mtDNA.txt"
-IF EXIST out\Variants_Y.txt bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/Variants_Y.txt"
-IF EXIST out\Y-STR_Markers.txt bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/Y-STR_Markers.txt"
-IF EXIST out\ISOGG_Y_Haplogroup.txt bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/ISOGG_Y_Haplogroup.txt"
-
-bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/filtered-autosomal-o37-results.csv"
-bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/filtered-x-chromosome-o37-results.csv"
-bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/genome_complete.txt"
-bin\cygwin\bin\bash.exe -c "/bin/unix2dos.exe ./out/genome_full_snps.txt"
-
-
-
 IF "%TELOMERE%" == "yes" (
 	echo.
 	echo Processing Telomere ...
@@ -527,13 +515,6 @@ IF EXIST out\Admixture_Globe13_Report.html DEL /Q /F out\admix_result_globe13.tx
 IF EXIST out\Admixture_Eurogenes_Report.html DEL /Q /F out\admix_result_eurogenes36.txt
 
 )
-
-
-bin\cygwin\bin\bash.exe -c "/bin/gzip.exe ./out/filtered-autosomal-o37-results.csv"
-bin\cygwin\bin\bash.exe -c "/bin/gzip.exe ./out/filtered-x-chromosome-o37-results.csv"
-bin\cygwin\bin\bash.exe -c "/bin/gzip.exe ./out/genome_complete.txt"
-bin\cygwin\bin\bash.exe -c "/bin/gzip.exe ./out/genome_full_snps.txt"
-
 
 IF EXIST genotype.txt DEL /Q /F genotype.txt
 IF EXIST snps.txt DEL /Q /F snps.txt
