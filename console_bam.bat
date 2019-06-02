@@ -1,5 +1,5 @@
-@echo off
-title BAM Analysis Kit 2.04
+REM @echo off
+title BAM Analysis Kit 2.09
 
 REM     The MIT License (MIT)
 REM     Copyright © 2013-2015 Felix Immanuel
@@ -21,10 +21,10 @@ REM     ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 REM     OTHER DEALINGS IN THE SOFTWARE.
 
 echo.
-echo *** BAM Analysis Kit 2.04 ***
+echo *** BAM Analysis Kit 2.09 ***
 echo.
 echo Project Website: http://www.y-str.org/2014/04/bam-analysis-kit.html
-echo Tools Used: SAMTools, picard, bamtools, lobSTR, telseq, Cygwin, GATK, Java
+echo Tools Used: SAMTools, picard, bamtools, lobSTR, telseq, Cygwin, GATK, Java, Yleaf v2, haplogrep
 echo Script Developer: Felix Immanuel ^<i@fi.id.au^>
 echo.
 
@@ -33,7 +33,7 @@ if [%1]==[] goto NOPARAM
 REM - start reporting versions..
 bin\cygwin\bin\bash.exe -c "echo -n 'lobSTR Version: ';/bin/lobSTR --version"
 bin\cygwin\bin\bash.exe -c "/bin/bedtools --version"
-echo Samtools Version: 1.9
+bin\bow\samtools.exe --version
 bin\cygwin\bin\bash.exe -c "echo -n 'Cygwin Version: ';/bin/uname -r"
 bin\cygwin\bin\bash.exe -c "/bin/telseq --version|/bin/head -1"
 bin\jre\bin\java -version 2^>^&1 ^| findstr /i version
@@ -41,11 +41,11 @@ bin\cygwin\bin\bash.exe -c "echo -n 'Picard Version: ';./bin/jre/bin/java.exe -j
 REM - end reporting versions..
 
 REM - saving old processing if it wasnt saved and accidentally started new processing
-IF EXIST out.old\genome_complete.txt.gz (
+IF EXIST out.old\genome_complete.txt (
  bin\cygwin\bin\bash.exe -c "/bin/rm -fr out.old"
 )
 
-IF EXIST out\genome_complete.txt.gz (
+IF EXIST out\genome_complete.txt (
  bin\cygwin\bin\bash.exe -c "/bin/mv out out.old"
  mkdir out
 )
@@ -195,11 +195,11 @@ echo.
 
 echo Sorting ...
 REM - using windows version to get rid of escape seq for unix
-bin\cygwin\bin\bow-new\samtools.exe sort -@ %BAMKIT_THREADS% %1 -o bam_complete_sorted.bam
+bin\bow\samtools.exe sort -@ %BAMKIT_THREADS% %1 -o bam_complete_sorted.bam
 
 echo.
 echo Indexing the sorted BAM file ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe index -@ %BAMKIT_THREADS% bam_complete_sorted.bam"
+bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_complete_sorted.bam
 
 bin\cygwin\bin\bash.exe -c "/bin/echo -e '# rsid\tchr\tpos\tgenotype' > out/genome_full_snps.txt"
 bin\cygwin\bin\bash.exe -c "/bin/echo -e '# chr\tpos\tgenotype\trsid' > out/genome_complete.txt"
@@ -217,9 +217,9 @@ echo.
 
 echo Splitting and preparing Chr %%A ...
 REM it can be chr22 or 22 -- must be a way to detect.
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% -H bam_complete_sorted.bam|/bin/cut -f2|/bin/grep SN|/bin/grep %%A|/bin/cut -d':' -f2|/bin/head -1 > chr"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H bam_complete_sorted.bam|/bin/cut -f2|/bin/grep SN|/bin/grep %%A|/bin/cut -d':' -f2|/bin/head -1 > chr"
 for /F "tokens=1" %%C in (chr) do (
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% -b bam_complete_sorted.bam %%C > chr%%A.bam"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -b bam_complete_sorted.bam %%C > chr%%A.bam"
 )
 
 copy ref\chr%%A.fa.gz ref.fa.gz > NUL
@@ -232,14 +232,14 @@ copy chr%%A.bam inchr.bam > NUL
 
 echo.
 echo Indexing Human Reference Genome ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe faidx ref.fa"
+bin\bow\samtools.exe faidx ref.fa
 echo.
 echo Creating Sequence Dictionary for Human Reference Genome ...
 bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/picard/picard.jar CreateSequenceDictionary R=ref.fa O=ref.dict"
 
 echo.
 echo Preparing BAM ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% inchr.bam | /bin/sed 's/\t/\tchr/2' > tmp.sam"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% inchr.bam | /bin/sed 's/\t/\tchr/2' > tmp.sam"
 bin\cygwin\bin\bash.exe -c "/bin/cat tmp.sam | /bin/sed 's/\tchrchr/\tchr/' > inchr.sam"
 
 if "%%A" == "M" (
@@ -249,21 +249,21 @@ if "%%A" == "M" (
   DEL /Q /F inchr_tmp.sam
 )
 
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% -bT ref.fa inchr.sam > reads.bam"
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% -H inchr.bam|/bin/grep -v SN > header01"
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe view -@ %BAMKIT_THREADS% -H reads.bam > header02"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -bT ref.fa inchr.sam > reads.bam"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H inchr.bam|/bin/grep -v SN > header01"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H reads.bam > header02"
 copy header01+header02 header /Y /B > NUL
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe reheader header reads.bam > bam_wh_tmp.bam"
+bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe reheader header reads.bam > bam_wh_tmp.bam"
 
 echo Adding or Replace Read Group Header ...
 bin\jre\bin\java.exe %BAMKIT_JVM% -jar bin\picard\picard.jar AddOrReplaceReadGroups INPUT=bam_wh_tmp.bam OUTPUT=bam_wh.bam SORT_ORDER=coordinate RGID=rgid RGLB=rglib RGPL=illumina RGPU=rgpu RGSM=sample VALIDATION_STRINGENCY=SILENT
 
 echo Sorting ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe sort -@ %BAMKIT_THREADS% bam_wh.bam -o bam_sorted.bam"
+bin\bow\samtools.exe sort -@ %BAMKIT_THREADS% bam_wh.bam -o bam_sorted.bam
 
 echo.
 echo Indexing the sorted BAM file ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe index -@ %BAMKIT_THREADS% bam_sorted.bam"
+bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_sorted.bam
 
 
 	REM --------- YSTR  
@@ -274,8 +274,8 @@ bin\cygwin\bin\bash.exe -c "/bin/samtools.exe index -@ %BAMKIT_THREADS% bam_sort
 	bin\cygwin\bin\bash.exe -c "/bin/lobSTR --index-prefix ref/lobSTR/lobSTR_  -f bam_sorted.bam --rg-sample ggtsample --rg-lib ggtlibrary --fft-window-size 24 --fft-window-step 12 -o bam_strs -v --bam --noweb -p %BAMKIT_THREADS%"
 
 	echo Sorting and Indexing ...
-	bin\cygwin\bin\bash.exe -c "/bin/samtools.exe sort -@ %BAMKIT_THREADS% bam_strs.aligned.bam -o bam_strs_sorted.bam"
-	bin\cygwin\bin\bash.exe -c "/bin/samtools.exe index -@ %BAMKIT_THREADS% bam_strs_sorted.bam"
+	bin\bow\samtools.exe sort -@ %BAMKIT_THREADS% bam_strs.aligned.bam -o bam_strs_sorted.bam
+	bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_strs_sorted.bam
 
 	echo lobSTR allelotyper vcf...
 	bin\cygwin\bin\bash.exe -c "export PATH=$PATH:/usr/local/bin:/usr/bin:/usr/lib/lapack; /bin/allelotype --command classify --index-prefix ref/lobSTR/lobSTR_ --out bam_ystrs --bam bam_strs_sorted.bam --noise_model /usr/local/share/lobSTR/models/illumina_v3.pcrfree  --min-border 5 --min-bp-before-indel 7 --maximal-end-match 15 --min-read-end-match 5 --strinfo ref/strinfo.tab -v --noweb"
@@ -307,7 +307,7 @@ echo Realignment of the sorted and indexed BAM file ...
 
 echo.
 echo Indexing the realigned BAM file ...
-bin\cygwin\bin\bash.exe -c "/bin/samtools.exe index -@ %BAMKIT_THREADS% bam_sorted_realigned.bam"
+bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_sorted_realigned.bam
 
 echo.
 echo Invoke the variant caller ...
@@ -325,8 +325,8 @@ echo Invoke the variant caller ...
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz	
 
 	echo Extracting mtDNA markers ..
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g' > chr%%A.tab"	
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g'|/bin/cut -f2,3|/bin/awk '{if($2 ~ /^[ATGC]$/) printf $1\"\"$2\" \"}'|/bin/sed 's/\s$//g'|/bin/sed 's/\s/, /g' > out/rCRS_mtDNA.txt"
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g' > chr%%A.tab"	
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g'|/bin/cut -f2,3|/bin/awk '{if($2 ~ /^[ATGC]$/) printf $1\"\"$2\" \"}'|/bin/sed 's/\s$//g'|/bin/sed 's/\s/, /g' > out/rCRS_mtDNA.txt"
 
 	REM - realign with RSRS to get accurate mtDNA markers in RSRS
 
@@ -335,19 +335,18 @@ echo Invoke the variant caller ...
 	IF EXIST ref.dict DEL /Q /F ref.dict
 	IF EXIST ref.fa.fai DEL /Q /F ref.fa.fai
 	COPY /Y ref\chrM.RSRS.fasta ref.fa >NUL
-	bin\cygwin\bin\bash.exe -c "/bin/samtools.exe faidx ref.fa"
+	bin\bow\samtools.exe faidx ref.fa
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/picard/picard.jar CreateSequenceDictionary R=ref.fa O=ref.dict"
 	IF EXIST bam.intervals DEL /Q /F bam.intervals
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -T RealignerTargetCreator   -window 3  -minReads 1 -R ref.fa -I bam_sorted.bam  -o bam.intervals"
 	IF EXIST bam_sorted_realigned.bam DEL /Q /F bam_sorted_realigned.bam
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -T IndelRealigner  -maxPosMove 10 -R ref.fa -I bam_sorted.bam -targetIntervals bam.intervals -o bam_sorted_realigned.bam"
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T HaplotypeCaller -I bam_sorted_realigned.bam -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf"
-	bin\jre\bin\java.exe -jar bin\haplogrep\haplogrep-2.1.16.jar --in bam_chr%%A.vcf --format vcf --out out\mtDNA-haplogroup-haplogrep.txt
+	bin\jre\bin\java.exe -jar bin\haplogrep\haplogrep-2.1.20.jar --in bam_chr%%A.vcf --format vcf --out out\mtDNA-haplogroup-haplogrep.txt
 	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz	
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g' > chr%%A.tab"	
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%REF\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g'|/bin/awk '{if($3 ~ /^[ATGC]$/) printf $1\"\"$2\"\"$3\" \"}'|/bin/sed 's/\s$//g'|/bin/sed 's/\s/, /g' > out/RSRS_mtDNA.txt"
-	bin\bamkit\mtdna_hg.exe out\RSRS_mtDNA.txt
+	bin\cygwin\bin\bash.exe -c "bin/bow//bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g' > chr%%A.tab"	
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%REF\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' | /bin/sed 's/\///g'|/bin/awk '{if($3 ~ /^[ATGC]$/) printf $1\"\"$2\"\"$3\" \"}'|/bin/sed 's/\s$//g'|/bin/sed 's/\s/, /g' > out/RSRS_mtDNA.txt"
 
   )
   
@@ -356,16 +355,27 @@ echo Invoke the variant caller ...
 	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz
 	
+	setlocal
+	set PATH=bin\bow;bin\python373
+	bin\python373\python bin\yleaf\Yleafw.py -bam bam_sorted_realigned.bam -ref hg19 -out out -q 10 -b 40 -t 8 -r 1
+	move out\out.hg out\y-haplogroup.txt
+	move out\bam_sorted_realigned\bam_sorted_realigned.chr out\y-haplogroup.chr
+	move out\bam_sorted_realigned\bam_sorted_realigned.fmf out\y-haplogroup.fmf
+	move out\bam_sorted_realigned\bam_sorted_realigned.log out\y-haplogroup.log
+	move out\bam_sorted_realigned\bam_sorted_realigned.out out\y-haplogroup.out
+	rmdir /S /Q out\bam_sorted_realigned
+	endlocal
+
 	echo Extracting Y-SNP markers ..
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chr%%A.tab"
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%CHROM\t%%POS\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chr%%A.tab"
 	
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%POS\t%%REF\t[%%IUPACGT]\n' bam_chrY.vcf |/bin/sed 's/chr//g' | /bin/sort -k 1 > chrY.tmp"
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%POS\t%%REF\t[%%IUPACGT]\n' bam_chrY.vcf |/bin/sed 's/chr//g' | /bin/sort -k 1 > chrY.tmp"
 	bin\bamkit\extract_ysnps.exe ref\ysnp_hg19.ref chrY.tmp
 	bin\cygwin\bin\bash.exe -c "/bin/echo -e 'Position\tReference\tGenotype' > out/Variants_Y.txt"	
 	
 	
 	
-	bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%POS\t%%REF\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chrY_1.tab"
+	bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%POS\t%%REF\t[%%IUPACGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chrY_1.tab"
 	
 	bin\cygwin\bin\bash.exe -c "/bin/awk 'NR==FNR{a[$2]=$3;next} {if(a[$1] == \"\") print $1\"\t\"$2\"\t\"$3;}' <(/bin/gzip -dc ref/dbsnp_chrY.tab.gz) chrY_1.tab|/bin/grep -P -v 'A\tA'|/bin/grep -P -v 'T\tT'|/bin/grep -P -v 'G\tG'|/bin/grep -P -v 'C\tC' >> out/Variants_Y.txt"
 	
@@ -378,7 +388,7 @@ echo Invoke the variant caller ...
 	bin\cygwin\bin\bash.exe -c "./bin/jre/bin/java.exe %BAMKIT_JVM% -jar bin/gatk/GenomeAnalysisTK.jar -l INFO -R ref.fa -T UnifiedGenotyper -glm SNP -I bam_sorted_realigned.bam -rf BadCigar -nct %BAMKIT_THREADS% -o bam_chr%%A.vcf --output_mode EMIT_ALL_CONFIDENT_SITES"
 	bin\bow\bgzip.exe -@ %BAMKIT_THREADS% bam_chr%%A.vcf
 	bin\bow\tabix.exe bam_chr%%A.vcf.gz
-    bin\cygwin\bin\bash.exe -c "/bin/bcftools.exe query -f '%%CHROM\t%%POS\t[%%TGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chr%%A.tab"
+    bin\cygwin\bin\bash.exe -c "bin/bow/bcftools.exe query -f '%%CHROM\t%%POS\t[%%TGT]\n' bam_chr%%A.vcf |/bin/sed 's/chr//g' > chr%%A.tab"
   )
 
 bin\cygwin\bin\bash.exe -c "/bin/awk 'NR==FNR{a[$1,$2]=$3;next} ($1,$2) in a{ print a[$1,$2],$1,$2,$3}' <(/bin/gzip -dc ref/dbsnp_chr%%A.tab.gz) chr%%A.tab|/bin/sed 's/\\s/\t/g' > snps.tmp"
