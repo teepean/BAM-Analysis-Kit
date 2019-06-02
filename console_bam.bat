@@ -1,4 +1,4 @@
-REM @echo off
+@echo off
 title BAM Analysis Kit 2.09
 
 REM     The MIT License (MIT)
