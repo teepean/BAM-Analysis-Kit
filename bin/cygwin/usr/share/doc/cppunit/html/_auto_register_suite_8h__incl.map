@@ -1,9 +1,0 @@
-<map id="AutoRegisterSuite.h" name="AutoRegisterSuite.h">
-<area shape="rect" id="node2" href="$_test_suite_factory_8h.html" title="cppunit/extensions\l/TestSuiteFactory.h" alt="" coords="129,80,267,121"/>
-<area shape="rect" id="node8" href="$_test_factory_registry_8h.html" title="cppunit/extensions\l/TestFactoryRegistry.h" alt="" coords="297,80,453,121"/>
-<area shape="rect" id="node3" href="$_test_factory_8h.html" title="cppunit/extensions\l/TestFactory.h" alt="" coords="129,169,259,211"/>
-<area shape="rect" id="node4" href="$_portability_8h.html" title="cppunit/Portability.h" alt="" coords="196,259,333,285"/>
-<area shape="rect" id="node6" href="$_cpp_unit_api_8h.html" title="cppunit/config/CppUnitApi.h" alt="" coords="172,341,357,367"/>
-<area shape="rect" id="node7" href="$_select_dll_loader_8h.html" title="cppunit/config/SelectDll\lLoader.h" alt="" coords="382,333,542,375"/>
-<area shape="rect" id="node9" href="$_cpp_unit_set_8h.html" title="cppunit/portability\l/CppUnitSet.h" alt="" coords="335,169,459,211"/>
-</map>

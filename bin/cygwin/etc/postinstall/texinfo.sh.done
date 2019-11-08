@@ -1,4 +1,0 @@
-if [ -x /usr/bin/mktexlsr ]
-then
-    /usr/bin/mktexlsr
-fi
