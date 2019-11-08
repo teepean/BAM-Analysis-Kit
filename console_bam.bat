@@ -249,7 +249,7 @@ if "%%A" == "M" (
   DEL /Q /F inchr_tmp.sam
 )
 
-bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -bT ref.fa inchr.sam > reads.bam"
+bin\cygwin\bin\bash.exe -c "/bin/samtoolsold.exe view -bT ref.fa inchr.sam > reads.bam"
 bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H inchr.bam|/bin/grep -v SN > header01"
 bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H reads.bam > header02"
 copy header01+header02 header /Y /B > NUL
