@@ -1,8 +1,9 @@
 @echo off
-title BAM Analysis Kit 2.09
+title BAM Analysis Kit 3.01
 
 REM     The MIT License (MIT)
-REM     Copyright © 2013-2015 Felix Immanuel
+REM     Copyright © 2013 - 2015 Felix Immanuel
+REM     Copyright © 2018 - 2019 Teemu Nätkinniemi
 REM     http://www.y-str.org
 REM     
 REM     Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,8 +32,6 @@ echo.
 if [%1]==[] goto NOPARAM
 
 REM - start reporting versions..
-bin\cygwin\bin\bash.exe -c "echo -n 'lobSTR Version: ';/bin/lobSTR --version"
-bin\cygwin\bin\bash.exe -c "/bin/bedtools --version"
 bin\bow\samtools.exe --version
 bin\cygwin\bin\bash.exe -c "echo -n 'Cygwin Version: ';/bin/uname -r"
 bin\cygwin\bin\bash.exe -c "/bin/telseq --version|/bin/head -1"
@@ -146,8 +145,6 @@ IF EXIST snps.sorted DEL /Q /F snps.sorted
 IF EXIST ref.sorted DEL /Q /F ref.sorted
 IF EXIST snps.tmp DEL /Q /F  snps.tmp
 IF EXIST chrY.tmp DEL /Q /F  chrY.tmp
-IF EXIST lobSTR_CODIS.out DEL /Q /F  lobSTR_CODIS.out
-IF EXIST lobSTR_Y-STR.out DEL /Q /F  lobSTR_Y-STR.out
 IF EXIST inchr.bam DEL /Q /F  inchr.bam
 IF EXIST bam_wh_tmp.bam DEL /Q /F  bam_wh_tmp.bam
 IF EXIST ref.fa DEL /Q /F  ref.fa
@@ -264,36 +261,6 @@ bin\bow\samtools.exe sort -@ %BAMKIT_THREADS% bam_wh.bam -o bam_sorted.bam
 echo.
 echo Indexing the sorted BAM file ...
 bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_sorted.bam
-
-
-	REM --------- YSTR  
-  IF "%%A" == "Y" (
-   IF "%YSTR%" == "yes" (
-	echo Extracting Y STR Values ...
-	echo lobSTR alignment ...
-	bin\cygwin\bin\bash.exe -c "/bin/lobSTR --index-prefix ref/lobSTR/lobSTR_  -f bam_sorted.bam --rg-sample ggtsample --rg-lib ggtlibrary --fft-window-size 24 --fft-window-step 12 -o bam_strs -v --bam --noweb -p %BAMKIT_THREADS%"
-
-	echo Sorting and Indexing ...
-	bin\bow\samtools.exe sort -@ %BAMKIT_THREADS% bam_strs.aligned.bam -o bam_strs_sorted.bam
-	bin\bow\samtools.exe index -@ %BAMKIT_THREADS% bam_strs_sorted.bam
-
-	echo lobSTR allelotyper vcf...
-	bin\cygwin\bin\bash.exe -c "export PATH=$PATH:/usr/local/bin:/usr/bin:/usr/lib/lapack; /bin/allelotype --command classify --index-prefix ref/lobSTR/lobSTR_ --out bam_ystrs --bam bam_strs_sorted.bam --noise_model /usr/local/share/lobSTR/models/illumina_v3.pcrfree  --min-border 5 --min-bp-before-indel 7 --maximal-end-match 15 --min-read-end-match 5 --strinfo ref/strinfo.tab -v --noweb"
-
-	echo Generating Y-STR values ...
-	bin\cygwin\bin\bash.exe -c "/bin/bedtools intersect -a bam_ystrs.vcf -b ref/lobSTR_ystr_hg19.bed -wa -wb | /bin/cut -f 1,2,10,14- | /bin/sed 's/:/\t/g' | /bin/cut -f 1,2,4,7,11- | /bin/sed 's/\//\t/' | /bin/cut -f 4 --complement | /bin/awk '{print $0 """\\t""" $6+$4/$5}' > lobSTR_Y-STR.out"
-	bin\cygwin\bin\bash.exe -c "/bin/cat lobSTR_Y-STR.out|/bin/cut -f7,8|/bin/sed 's/\t/ = /g' >> out/Y-STR_Markers.txt"
-
-	IF EXIST bam_strs.aligned.stats DEL /Q /F bam_strs.aligned.stats
-	IF EXIST bam_strs_sorted.bam DEL /Q /F bam_strs_sorted.bam
-	IF EXIST bam_strs_sorted.bam.bai DEL /Q /F bam_strs_sorted.bam.bai
-	IF EXIST bam_ystrs.allelotype.stats DEL /Q /F bam_ystrs.allelotype.stats
-	IF EXIST bam_ystrs.vcf DEL /Q /F bam_ystrs.vcf
-	IF EXIST bam_strs.aligned.bam DEL /Q /F bam_strs.aligned.bam	
-   ) 
-  )
-	REM --------- YSTR
-
 
 echo.
 echo Realignment of the sorted and indexed BAM file ...
@@ -421,8 +388,6 @@ IF EXIST snps.sorted DEL /Q /F snps.sorted
 IF EXIST ref.sorted DEL /Q /F ref.sorted
 IF EXIST snps.tmp DEL /Q /F  snps.tmp
 IF EXIST chrY.tmp DEL /Q /F  chrY.tmp
-IF EXIST lobSTR_CODIS.out DEL /Q /F  lobSTR_CODIS.out
-IF EXIST lobSTR_Y-STR.out DEL /Q /F  lobSTR_Y-STR.out
 IF EXIST inchr.bam DEL /Q /F  inchr.bam
 IF EXIST bam_wh_tmp.bam DEL /Q /F  bam_wh_tmp.bam
 IF EXIST ref.fa DEL /Q /F  ref.fa
