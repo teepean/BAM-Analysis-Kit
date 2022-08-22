@@ -42,11 +42,11 @@ REM - end reporting versions..
 
 REM - saving old processing if it wasnt saved and accidentally started new processing
 IF EXIST out.old\genome_complete.txt (
- bin\cygwin\bin\bash.exe -c "/bin/rm -fr out.old"
+ rmdir /S /Q out.old
 )
 
 IF EXIST out\genome_complete.txt (
- bin\cygwin\bin\bash.exe -c "/bin/mv out out.old"
+ move /Y out out.old
  mkdir out
 )
 
@@ -253,6 +253,7 @@ bin\cygwin\bin\bash.exe -c "/bin/samtoolsold.exe view -bT ref.fa inchr.sam > rea
 bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H inchr.bam|/bin/grep -v SN > header01"
 bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe view -@ %BAMKIT_THREADS% -H reads.bam > header02"
 copy header01+header02 header /Y /B > NUL
+bin\cygwin\bin\bash.exe -c "/bin/sed -i -e '/@PG/d' header"
 bin\cygwin\bin\bash.exe -c "bin/bow/samtools.exe reheader header reads.bam > bam_wh_tmp.bam"
 
 echo Adding or Replace Read Group Header ...
